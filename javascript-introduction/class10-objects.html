@@ -1,0 +1,67 @@
+<html>
+<head>
+  <title>Class 10 - Objects</title>
+</head>
+<body>
+  <script>
+
+    // Create object - First form
+    const obj = Object.create(Object.prototype, {
+      a: {value: "foo"},
+      b: {value: "bar"}
+    })
+
+    console.log(obj)
+    console.log(obj.hasOwnProperty("a"))
+    console.log(obj.hasOwnProperty("c"))
+
+    // Create object - Second form
+    const objLiteral = {
+      a: "foo",
+      b: "bar",
+      c: function() {
+        return 10 ** 2
+      },
+      d: [10, 20, 30]
+    }
+    console.log(objLiteral)
+    console.log(objLiteral.a)
+    console.log(objLiteral.c)
+    console.log(objLiteral.c())
+
+    // Create object - with shorthand declaration
+    const val1 = [100, 200, 300]
+    const val2 = function() {
+      return console.log('---')
+    }
+    const objLiteral2 = { val1, val2 }
+    console.log(objLiteral2)
+
+    // ANother example - shorthand declaration
+    let animals = {
+      cat: 'Miaow',
+      dog: 'Woof',
+      bird: 'Peet peet'
+    }
+    console.log(animals);
+
+    // Object Destructuring 
+    var { cat, dog, bird } = animals
+    console.log(cat, dog, bird)
+
+    // Spread Operator, Rest object after destructuring
+    var { cat, ...newObj } = animals
+    console.log(newObj)
+
+    const newObj1 = { cat, ...newObj } // Destruct properties 
+    console.log(newObj1)
+    const newObj2 = { cat, newObj } // Add a hole object as a property
+    console.log(newObj2)
+
+    // Delete property
+    delete newObj2.cat
+    console.log(newObj2)
+
+  </script>
+</body>
+</html>
