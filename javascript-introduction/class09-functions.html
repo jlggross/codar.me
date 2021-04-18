@@ -1,0 +1,59 @@
+<html>
+<head>
+  <title>Class 09 - Functions</title>
+</head>
+<body>
+  <script>
+    function calc() {
+      var sum = 1 + 2
+      return sum
+    }
+
+    // Print function declaration
+    console.log("> Function declaration:")
+    console.log(calc)
+
+    // Print function result
+    console.log("> Function return:")
+    console.log(calc())
+
+    let sum = calc()
+    console.log("sum: ", sum)
+
+    function calc2(value1, value2) {
+      var sum = value1 + value2
+      return sum
+    }
+    sum = calc2(10, 20)
+    console.log("calc2: ", sum)
+
+    // Function attributed to variable variable
+    var my_func1 = function (value) {
+      return value ** 2
+    }
+    console.log("my_func1: ", my_func1(10))
+
+    // Arrow function syntax
+    var my_func2 = (value) => {
+      return value ** 2
+    }
+    console.log("my_func2: ", my_func2(10))
+
+
+    // IIFE (Immediately Invoked Function Expression)
+    console.log("> IIFE")
+
+    var a = (function () {
+      console.log("----")
+    })()
+    console.log(a) // undefined
+
+    var b = (function () {
+      var nome = "Felipe";
+      return nome;
+    })()
+    console.log(b) // "Felipe"
+
+  </script>
+</body>
+</html>

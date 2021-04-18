@@ -1,0 +1,47 @@
+<html>
+<head>
+  <title>Class 08 - Var, let, const</title>
+</head>
+<body>
+  <script>
+    
+    // var has function scope
+    // let has block scope
+
+    // var
+    console.log("> Var")
+    var num1 = 10
+    if (true) {
+      var num1 = 20
+      console.log(num1)
+    }
+    console.log(num1)
+
+    // let
+    console.log("> Let")
+    let num2 = 10
+    if (true) {
+      let num2 = 20
+      console.log(num2)
+    }
+    console.log(num2)
+
+    // const
+    console.log("> Const")
+    let n1 = 10
+    const n2 = 10
+    console.log(++n1)
+    //console.log(++n2) // Can't alter const variable - Error
+
+    // For const objects we can alter its contents, but not the full object
+    const my_object = {
+      a: 10,
+      b: 10
+    }
+    console.log(my_object)
+    my_object.a = 20
+    console.log(my_object)
+
+  </script>
+</body>
+</html>
