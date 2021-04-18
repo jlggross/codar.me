@@ -1,0 +1,69 @@
+<html>
+<head>
+  <title>Class 06 - Conditionals</title>
+</head>
+<body>
+  <script>
+    var age = 18
+
+    // if-else
+    if (true) {
+      console.log("I entered in condition if")
+    } else {
+      console.log("I entered in condition else")
+    }
+
+    if (false) {
+      console.log("I entered in condition if")
+    } else {
+      console.log("I entered in condition else")
+    }
+
+    //if-else if
+    if (false) {
+      console.log("First if")
+    } else if (false) {
+      console.log("Second if, first else")
+    } else {
+      console.log("Second else")
+    }
+
+    // example
+    if (age >= 21) {
+      console.log("Equal or langer than 21")
+    } else if (age >= 18) {
+      console.log("Equal or langer than 18")
+    } else {
+      console.log("Less than 18")
+    }
+
+    // ternary if
+    if (age >= 18) { // full version
+      console.log("Equal or langer than 18")
+    } else {  
+      console.log("Less than 18")
+    }
+
+    console.log("> Ternary if:")
+
+    age >= 18 // ternary version
+      ? console.log("Equal or langer than 18") 
+      : console.log("Less than 18")
+
+    // switch
+    var gender = "male"
+    switch (gender) {
+      case "male":
+        console.log("Male")
+        break
+      case "female":
+        console.log("Female")
+        break
+      default:
+        console.log("Other")
+        break
+    }
+
+  </script>
+</body>
+</html>

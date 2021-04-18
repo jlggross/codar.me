@@ -1,0 +1,49 @@
+<html>
+<head>
+  <title>Class 03 - Arithmetic Operations</title>
+</head>
+<body>
+  <script>
+    var n1 = 10    
+    var n2 = 20
+    var result_add = n1 + n2  // + for addition
+    var result_sub = n1 - n2  
+    var result_div = n1 / n2  
+    var result_mult = n1 * n2  
+    var result_power = n1 ** n2  
+    var result_rest = n1 % n2  
+
+    console.log(n1, n2, result_add)
+    console.log("power: ", result_power)
+    console.log("rest: ", result_rest)
+
+    var name1 = "codar " + n1 + " me"  // + for concatenation
+    var name2 = `codar ${n1} me`     
+    var name3 = `the sum of ${n1} + ${n2} is ${n1 + n2}`
+    
+    console.log(name1)
+    console.log(name2)
+    console.log(name3)
+
+    var n3 = 10
+    n3 += 10
+    console.log(n3)
+    n3 -= 10
+    console.log(n3)
+    n3 *= 10
+    console.log(n3)
+    n3 /= 10
+    console.log(n3)
+
+    // pre and post increment
+    var n4 = 100
+    console.log("n4: ", n4++) // post increment
+    console.log("n4: ", n4)
+
+    var n5 = 100
+    console.log("n5: ", ++n5) // pre increment
+    console.log("n5: ", n5)
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<html>
+<head>
+  <title>Class 05 - Logical Operations</title>
+</head>
+<body>
+  <script>
+    // ! - Negation
+    // && - Conjunction, logic AND
+    // || - Disjunction, logic OR
+    
+    console.log("> Basic logic operators")    
+    console.log("! operator: ", !true)
+    console.log("&& operator: ", true && false)
+    console.log("|| operator: ", true || false)
+
+    // Falsy and Truthy : https://blog.rocketseat.com.br/entendendo-falsy-e-truthy-no-javascript/
+
+    console.log("> List of 7 falsy values")
+    0 ? console.log("truthy") : console.log("falsy") // zero is falsy
+    0n ? console.log("truthy") : console.log("falsy") // zero BigInt is falsy
+    null ? console.log("truthy") : console.log("falsy") // nulo is falsy
+    undefined ? console.log("truthy") : console.log("falsy") // undefined is falsy
+    false ? console.log("truthy") : console.log("falsy") // false is falsy
+    NaN ? console.log("truthy") : console.log("falsy") // Not a Number is falsy
+    "" ? console.log("truthy") : console.log("falsy")  //empty string is falsy
+
+    console.log("> Testing NaN")
+    var n2 = NaN
+    console.log(n2 && true) // returns NaN
+    console.log(n2 == NaN)  // returns false
+    console.log(n2 === NaN) // returns false
+    console.log(isNaN(n2))  // returns true
+
+    console.log("> Check falsy values")
+    if(!""){
+      console.log('"" returns false')
+    }
+    if(!NaN){
+      console.log('NaN returns false')
+    }
+    if(!null){
+      console.log('null returns false')
+    }
+    if(!undefined){
+      console.log('undefined returns false')
+    }
+
+    // Truthy values: All values unless they are falsy
+    console.log("> Check truthy values")
+    console.log("{} : ", {} && true)
+    console.log("[] : ", [] && true)
+
+    console.log("> Some truthy values")
+    true ? console.log("truthy") : console.log("falsy")       // true is truthy
+    ({}) ? console.log("truthy") : console.log("falsy")       // empty object is truthy
+    ([]) ? console.log("truthy") : console.log("falsy")       // empty array is truthy
+    1n ? console.log("truthy") : console.log("falsy")         // 1n is truthy
+    17 ? console.log("truthy") : console.log("falsy")         // number !== 0 is truthy
+    new Date() ? console.log("truthy") : console.log("falsy") // object is truthy
+    3.4 ? console.log("truthy") : console.log("falsy")        // decimal number is truthy
+    -99 ? console.log("truthy") : console.log("falsy")        // negative number is truthy
+    Infinity ? console.log("truthy") : console.log("falsy")   // positive infinity is truthy
+    -Infinity ? console.log("truthy") : console.log("falsy")  // negative infinity is truthy
+    "Rocketseat" ? console.log("truthy") : console.log("falsy") // string with value is truthy
+    "🚀 💺" ? console.log("truthy") : console.log("falsy")    // string wih value is truthy
+    " " ? console.log("truthy") : console.log("falsy")        // string with an empty space is truthy
+
+    // Bolean conversion
+    console.log("> Boolean conversion and logic value check")
+    var n1 = 100
+    console.log(!!n1) // double negation. Convert variable to bolean and check logic value
+
+    var n2 = NaN
+    console.log(!!n2)
+
+    var n3 = ""
+    console.log(!!n3)
+
+  </script>
+</body>
+</html>

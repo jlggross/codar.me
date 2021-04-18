@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Class 02 - Variables</title>
+  </head>
+  <body>
+
+    <script>
+
+      // Javascript has dynamic typing
+
+      var name1 = "Codar.me" // string variable
+      var name2 = 'Codar.me' // stirng variable
+      console.log(name1)
+
+      var year = 2020    // number, not int
+      var version = 1.0  // number, not float
+
+      var active = true    // boolean
+      var inactive = false // boolean
+
+      var contents1 = [true, 1.0, "john"] // array, with pure values
+      var contents2 = [year, version, active] // array, with variables
+      var contents3 = ["javascript", "nodejs", "react", "react native"] // array
+      console.log(contents3) // array starts at index 0
+      console.log(contents3[1]) // print element of index 1 of array
+
+      // object
+      var company = {
+        name: "Codar.me",
+        year: 2020,
+        version: 1.0,
+        active: true,
+        contents: ["javascript", "nodejs", "react", "react native"]
+      }
+      console.log(company)
+      console.log(company.version)
+      console.log(company.contents)
+      console.log(company.contents[2])
+
+      var name = "John"
+      console.log(typeof name)
+      name = 2021
+      console.log(typeof name)
+      name = [2021, 2022]
+      console.log(typeof name)
+
+    </script>
+  </body>
+</html>
