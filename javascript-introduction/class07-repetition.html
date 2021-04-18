@@ -1,67 +1,40 @@
 <html>
 <head>
-  <title>Class 06 - Conditionals</title>
+  <title>Class 07 - Repetition</title>
 </head>
 <body>
   <script>
-    var age = 18
+    // for loop
+    var sum = 0
+    for (var i = 1; i <= 10; i++) {
+      console.log(i)
+      sum += i
+    }
+    console.log(sum)
 
-    // if-else
-    if (true) {
-      console.log("I entered in condition if")
-    } else {
-      console.log("I entered in condition else")
+    // while
+    var i = 1
+    sum = 0
+    while(i <= 10) {
+      sum += i++ // adds i to sum, than increment i
+    }
+    console.log(sum)
+
+    var contents = ["javascript", "nodejs", "react"]
+    for(var i = 0; i < contents.length; i++) {
+      console.log(contents[i])
     }
 
-    if (false) {
-      console.log("I entered in condition if")
-    } else {
-      console.log("I entered in condition else")
+    // for in - gets element key
+    console.log("> For in")
+    for (var i in contents) {
+      console.log("---", i, "---", contents[i])
     }
 
-    //if-else if
-    if (false) {
-      console.log("First if")
-    } else if (false) {
-      console.log("Second if, first else")
-    } else {
-      console.log("Second else")
-    }
-
-    // example
-    if (age >= 21) {
-      console.log("Equal or langer than 21")
-    } else if (age >= 18) {
-      console.log("Equal or langer than 18")
-    } else {
-      console.log("Less than 18")
-    }
-
-    // ternary if
-    if (age >= 18) { // full version
-      console.log("Equal or langer than 18")
-    } else {  
-      console.log("Less than 18")
-    }
-
-    console.log("> Ternary if:")
-
-    age >= 18 // ternary version
-      ? console.log("Equal or langer than 18") 
-      : console.log("Less than 18")
-
-    // switch
-    var gender = "male"
-    switch (gender) {
-      case "male":
-        console.log("Male")
-        break
-      case "female":
-        console.log("Female")
-        break
-      default:
-        console.log("Other")
-        break
+    // for of - gets element content
+    console.log("> For of")
+    for (var i of contents) {
+      console.log("---", i)
     }
 
   </script>
