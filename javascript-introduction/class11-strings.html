@@ -5,8 +5,31 @@
 <body>
   <script>
 
+    const str1 = String("a string")
+    const str2 = "another string"
+
+    console.log(str2) // When printing a string the .toString() method is implict called
+    console.log(str2.toString()) 
+    console.log(str2.__proto__) // Hole structure of the String Object
+
+    console.log(str1.indexOf("r")) // Return index of element
+    console.log(str1.indexOf("kkk")) // Can't find, Return -1
     
+    if (str1.indexOf("kkk") === -1) {
+      console.log("Can't find element")
+    }
+    
+    console.log(str1[4])
+    console.log(str1.charAt(4))
+
+    console.log(str1.toUpperCase())
+    console.log(str1.toUpperCase().trim())
+    console.log(str1.includes("x")) // false
+    console.log(str1.includes("s")) // true
+
+    console.log(str1.split(" "))
 
   </script>
 </body>
 </html>
+ 
