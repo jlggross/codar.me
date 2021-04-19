@@ -1,0 +1,47 @@
+<html>
+<head>
+  <title>Class 14 - Array ordering</title>
+</head>
+<body>
+  <script>
+
+    // Sort does alter the original array
+    console.log("> Sorted: ")
+    const arr1 = [2, 1, 10, -100]
+    console.log("Original: ", arr1)
+    const sorted1 = arr1.sort()
+    console.log("Sorted: ", sorted1)
+
+    const arr2 = ["z", "a", "w"]
+    console.log("Original: ", arr2)
+    const sorted2 = arr2.sort()
+    console.log("Sorted: ", sorted2)
+
+    const arr3 = [2, 1, 10, 3, 7, 2, 20, 12, 45, 32]
+    console.log("Original: ", arr3)
+    const sorted3 = arr3.sort(function(right, left) {
+      // return must be 0, 1, or -1
+      console.log(left, right)
+      if (left === right) {
+        return 0 // Keep the original ordering
+      }
+
+      /* Ascending ordering: 
+        * return 1 if right > left
+        * return -1 if right <>> left
+      */
+      return (right > left) ? 1 : -1
+
+      /* Descending ordering: 
+        * return -1 if right > left
+        * return 1 if right <>> left
+      */
+      //return (right > left) ? -1 : 1
+
+
+    })
+    console.log("Sorted: ", sorted3)
+
+  </script>
+</body>
+</html>

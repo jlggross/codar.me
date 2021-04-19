@@ -5,6 +5,33 @@
 <body>
   <script>
 
+    // Map : returns an array
+    // Reduce : returns a single value
+    // Both do not alter the original array
+    console.log('> Reduce:')
+
+    const arr = [1, 4, 7, 8, 10, 20, 32, 41]
+
+    /*
+    - memo: is the value of the last iteration. For the first iteration memo is
+    set with the value of the second parameters in the reduce method.
+    - current: is the current value of the array in the current iteration.
+    - index: is the index of the current value of the array
+    - array: is the full array
+    */
+    const result = arr.reduce(function (memo, current, index, arr) {
+      console.log("index: ", index, "; current: ", current, "; memo: ", memo)
+      return memo + current
+    }, 0) // The second argument of the reduce method is the initial value of the sum (memo)
+    console.log(result)
+
+    // The same as before, beginning with 100
+    const result2 = arr.reduce(function (memo, current, index, arr) {
+      console.log("index: ", index, "; current: ", current, "; memo: ", memo)
+      return memo + current
+    }, 100) // The second argument of the reduce method is the initial value of the sum (memo)
+    console.log(result2)
+
   </script>
 </body>
 </html>
