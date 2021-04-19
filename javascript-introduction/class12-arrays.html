@@ -5,7 +5,83 @@
 <body>
   <script>
 
+    // Creating an array - First form
+    const arr1 = Array(1, true, 'lala', {}, function () {})
+    console.log(arr1)
+
+    // Creating an array - Second form
+    const arr2 = [1, true, 'lala', {}, function () {}]
+    console.log(arr2)
+    console.log(arr2.length)
+
+    // Array method - forEach
+    console.log("> forEach")
+    arr1.forEach(function (item) {
+      console.log('Item:', item)
+    })
+
+    // Array method - map
+    console.log("> Map")
+    console.log(arr1.map(function (item) {
+      return 2
+    }))
+    console.log(arr1) // Map does not alters the original array
+    console.log(arr1.map(function (item) {
+      return typeof item === 'function' ? "It's a function" : item
+    }))
+
+    // Array method - filter (remove items from array)
+    // if true : keep element
+    // if false : remove element
+    console.log("> Filter")
+    const arr3 = arr2.filter(function (item) {
+      return true
+    })
+    const arr4 = arr2.filter(function (item) {
+      return false
+    })
+    console.log(arr3)
+    console.log(arr4)
+
+    const arr5 = arr2.filter(function (item) {
+      return typeof item === 'function' ? false : true
+    })
+    console.log(arr5)
+
+    const arr6 = arr2.filter(function (item) {
+      return typeof item !== 'function' // cleaner version
+    })
+    console.log(arr6)
+
+    // Array method - push
+    console.log("> Push")
+    console.log(arr6.push('new string')) // After insertion return the new length
+    console.log(arr6)
+
+    // Array method - pop
+    console.log("> Pop")
+    console.log(arr6.pop()) // After removal return the removed item
+    console.log(arr6)
+
+    // Array method - shift
+    console.log("> Shift")
+    console.log(arr6.shift()) // Removes the first item and return the removed item
+    console.log(arr6)
+
+    // Destruct
+    console.log("> Destruct")
+    console.log(arr1)
+    const [var1, var2, var3, var4, var5] = arr1
+    console.log(var1, var2, var3, var4, var5)
+
+    console.log(arr1)
+    var [a, b] = arr1 // Select just the elements I want
+    console.log(a, b)
+    var [, a, , b] = arr1 // Select just the elements I want
+    console.log(a, b)
+    var [a, ...restOfArr] = arr1 // Select just the elements I want
+    console.log(a, restOfArr)
+
   </script>
 </body>
 </html>
- 
