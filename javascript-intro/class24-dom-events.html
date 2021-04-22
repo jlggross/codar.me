@@ -1,0 +1,49 @@
+<html>
+<head>
+  <title>Class 24 - DOM Events</title>
+  <style>
+	
+	.input {
+		width: 100px;
+		font-size: 18px;
+	}
+	
+	button {
+		font-size: 18px;
+	}
+	
+  </style>
+</head>
+<body>
+	<div id="app">
+		<input type="number" name="n1" id="n1" class="input">+
+		<input type="number" name="n2" id="n2" class="input">
+		<button onclick="console.log('made a click')">Calculate</button>
+		
+		<button onmousemove="console.log('passed here')">Calculate 2</button>
+	</div>
+
+	<script>
+	
+		/* Two types of events
+		- Inline event (in the html tag): 'onclick', 'onmousemove'	
+		- Set behaviour to elements
+		*/
+		
+		const inputN1 = window.document.querySelector("input#n1")
+		const inputN2 = window.document.querySelector("input#n2")
+		const button = window.document.querySelector("button")
+		console.log(button)
+		
+		// If event 'onclick occurs' triggers function
+		button.onclick = function() {
+			console.log("Triggered function on onclick event")
+			
+			const n1 = Number(inputN1.value)
+			const n2 = Number(inputN2.value)
+			console.log("Sum: ", n1 + n2)
+		}
+		
+	</script>
+</body>
+</html>

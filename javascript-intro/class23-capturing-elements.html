@@ -1,0 +1,44 @@
+<html>
+<head>
+  <title>Class 23 - Capturing elements</title>
+  <style>
+	
+	.input {
+		width: 100px;
+		font-size: 18px;
+	}
+	
+	button {
+		font-size: 18px;
+	}
+	
+  </style>
+</head>
+<body>
+	<div id="app">
+		<input type="number" name="n1" id="n1" class="input">+
+		<input type="number" name="n2" id="n2" class="input">
+		<button>Calculate</button>
+	</div>
+
+	<script>
+	
+		// Forms to get elements
+		
+		const input1 = window.document.getElementsByTagName("input")[0]
+		const input2 = window.document.getElementsByName("n2")[0]
+		const input3 = window.document.getElementById("n2")
+		
+		// Get div with id app, and inside the div the input with id n2
+		const input4 = window.document.querySelector("div#app input#n2")
+		
+		// Get body, than the div with id app, and inside the div the input with id n2
+		const input5 = window.document.querySelector("body div#app input#n2")
+	
+		console.log(input1)
+		console.log(input2)
+		console.log(input3)
+		console.log(input4)
+	</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+<head>
+  <title>Class 15 - Array - Element removal</title>
+</head>
+<body>
+  <script>
+
+    // Using slice and splice
+
+	// .pop() alters original array
+	// .shift() alters original array
+
+	const arr = ["a", "b", "c", "d", "e", "f"]
+	console.log(arr)
+
+	/* Splice - Alters the original array
+	- First argument is the first element to retrieve
+	- Second argument is the number of elements to retrieve
+	*/
+	console.log("splice: ", arr.splice(0, 2))
+	console.log("arr: ", arr)
+
+	console.log("splice: ", arr.splice(0, 2))
+	console.log("arr: ", arr)
+
+	// From element 0 remove 2 elements and add "x", "y", "z"
+	console.log("splice - adding elements: ", arr.splice(0, 1, "x", "y", "z"))
+	console.log("arr: ", arr)
+
+	/* Slice - Do not alter the original array
+	- Return an array from an index to another
+	*/
+	const arr2 = ["a", "b", "c", "d", "e", "f"]
+	console.log("slice: ", arr2.slice(1, 3))
+	console.log("arr2: ", arr2)
+
+	// With negative index - start from the last 2 elements
+	console.log("slice: ", arr2.slice(-2))
+	console.log("arr2: ", arr2)
+
+  </script>
+</body>
+</html>

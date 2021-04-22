@@ -1,0 +1,70 @@
+<html>
+<head>
+  <title>Class 16 - Arrow Functions</title>
+</head>
+<body>
+  <script>
+
+	/* About Arrow Functions x Classifc Functions:
+	https://medium.com/tfogo/advantages-and-pitfalls-of-arrow-functions-a16f0835799e
+	*/
+  
+    const arr1 = [1, true, "str", {}, function() {}]
+	
+	// Declaring a function with the 'function' word
+	const arr2 = arr1.map(function(item) {
+		return typeof item === "function" ? "it is a function" : item
+	})
+	console.log(arr2)
+
+	// Using arrow functions to declare functions
+	const arr3 = arr1.map((item) => {
+		return typeof item === "function" ? "it is a function" : item
+	})
+	console.log(arr3)
+	
+	// For just one argument in the function, we don't need to use '(' and ')'
+	const arr4 = arr1.map((item) => {
+		return typeof item === "function" ? "it is a function" : item
+	})
+	console.log(arr4)
+	
+	// A still more cleaner version, without 'return' clause and without '{' and '}'
+	const arr5 = arr1.map(item =>
+		typeof item === "function" ? "it is a function" : item
+	)
+	console.log(arr5)
+	
+	// Using iterator and arrow function
+	const iterator =  item =>
+		typeof item === "function" ? "it is a function" : item
+	const arr6 = arr1.map(iterator)
+	console.log(arr6)
+	 
+	// Differences of arrow functions and normal functions
+	function test() {
+		console.log("Classic Function: ", this, arguments) // refers to function test()
+		const otherFunction = () => {
+			console.log("Arrow Function: ", this, arguments) // also refers to functions test()
+		}
+		otherFunction()
+	}	
+	test(1, 2, 3)
+	 
+	
+	const sum1 = (n1, n2, n3) => n1 + n2 + n3
+	console.log(sum1(10, 15, 20))
+	
+	const sum2 = (n1, n2=5, n3=10) => n1 + n2 + n3
+	console.log(sum2(10)) // Use the default values
+	
+	// Arrow functions with rest parameters
+	const sum3 = (n1, ...nums) => console.log(nums)
+	console.log(sum3(1, 2, 3, 4, 5, 6)) // nums builds an array of all values except the first one (n1)
+	
+	const sum4 = (...nums) => console.log(nums)
+	console.log(sum4(1, 2, 3, 4, 5, 6)) // nums builds an array of all values
+	
+  </script>
+</body>
+</html>

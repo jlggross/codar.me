@@ -1,0 +1,50 @@
+<html>
+<head>
+  <title>Class 19 - Promise</title>
+</head>
+<body>
+  <script>
+
+	// Ways to declare a callback
+	function fn1() {}
+	const fn2 = function() {}
+	const fn3 = () => {}
+	
+	// Creating a Promise class by hand
+	class Promise1 {
+		constructor(callback) {
+			const a = 10
+			const b = 10
+			callback(a, b)
+		}
+	}
+	
+	/* Promise:
+	- It is a JavaScript class to work with asynchronous code.
+	- It is a promise to execute a certain piece of code.
+	
+	- Promise(callback)
+	*/
+	
+	console.log("Start")
+	
+    const promise = new Promise((resolve, reject) => {
+		console.log("Inside Promise")
+		
+		setTimeout(() => resolve("It Worked."), 3000)
+		
+		//reject("Error.")
+	})
+	//console.log(promise)
+	
+	// If promise is resolved the 'then' method is used
+	// If promise is rejected the 'catch' method is used
+	promise
+		.then(str => console.log("OK: ", str))
+		.catch(error => console.log("OK: ", error))
+	
+	console.log("End")
+	
+  </script>
+</body>
+</html>

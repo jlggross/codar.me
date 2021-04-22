@@ -1,0 +1,42 @@
+<html>
+<head>
+  <title>Class 26 - Local Storage</title>
+</head>
+<body>
+	<script>
+		
+		/* Data Persistence: Different in Browser, banck-end and mobile
+			* Banck-end: databases
+			* Front-end: store information in the browser for further use
+		*/		
+		
+		// localStorage.setItem("key", "value")
+		localStorage.setItem("key", "value")
+		
+		// Set
+		const user = "João"
+		localStorage.setItem("user", user)
+		
+		const user2 = {
+			name: "João",
+			age: 30
+		}
+		localStorage.setItem("user2", JSON.stringify(user2))
+		
+		// Get
+		console.log(localStorage.getItem("user"))
+		console.log(localStorage.getItem("key"))
+		
+		// Remove
+		localStorage.removeItem("key")
+		console.log(localStorage.getItem("key"))	
+
+		// Clear local storage
+		//localStorage.clear()
+		const recovered = localStorage.getItem("user2")
+		
+		console.log("Pure text: ", recovered)
+		console.log("Object: ", JSON.parse(recovered))
+	</script>
+</body>
+</html>

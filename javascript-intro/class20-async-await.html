@@ -1,0 +1,50 @@
+<html>
+<head>
+  <title>Class 20 - Async / Await</title>
+</head>
+<body>
+  <script>
+
+	function main() {	
+		console.log("Star Main")
+	
+		const promise = new Promise((resolve, reject) => {
+			console.log("Inside Promise Main")
+			setTimeout(() => resolve("It Worked."), 1000)
+		})
+		
+		promise
+			.then(str => console.log("Main:", str))
+			.catch(error => console.log("Main: ", error))
+		
+		console.log("End Main")
+	}
+	main()
+
+
+	// Using async / await
+	const promise = () => new Promise((resolve, reject) => {
+		console.log("Inside Promise Async")
+		//setTimeout(() => resolve("It Worked."), 3000)
+		setTimeout(() => reject("Error."), 3000)
+	})
+	
+	async function mainAsync() {	
+		console.log("Start Async")
+		
+		try {
+			// Equivalen to the promise 'then' method
+			const result = await promise() // Code wait at this point 
+			console.log("Async:", result)
+		} catch (error) {
+			// Equivalen to the promise 'catch' method
+			console.log("Async:", error)
+		}
+		
+		console.log("End Async")
+	}
+	mainAsync()
+	
+  </script>
+</body>
+</html>

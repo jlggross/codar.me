@@ -1,0 +1,53 @@
+<html>
+<head>
+  <title>Class 18 - Timers, setTimeout, setInterval</title>
+</head>
+<body>
+  <script>
+
+    // Callbacks and Asynchronous execution
+	
+	/* setTimeout(callback, time) - Execute a function (callback) after a certain time
+	- callback: The function to execute
+	- time: Time to wait
+	*/
+	
+	console.log("Beginning")
+	
+	// The execution of the callback is asynchronous
+	setTimeout(function () {
+		console.log("timeoutFunc")
+	}, 2000) // 2000 miliseconds
+	
+	// With arrow function
+	setTimeout(() => console.log("timeoutArrow"), 2000)
+	
+	console.log("End")
+	
+	/* setInterval(callback, time) - Execute a function (callback) after a certain time and repeat
+	- callback: The function to execute
+	- time: Time to wait
+	*/
+	
+	const intervalFunc = setInterval(function () {
+		console.log("intervalFunc")
+	}, 1000)
+	
+	// Arrow function callback
+	const intervalArrow = setInterval(() => console.log("intervalArrow"), 1000)
+		
+	// Controlling the interval callbacks
+	setTimeout(() => {
+		clearInterval(intervalFunc)
+		console.log("intervalFunc ended")
+	}, 4000)
+	
+	setTimeout(() => {
+		clearInterval(intervalArrow)
+		console.log("intervalArrow ended")
+	}, 8000)
+	
+	
+  </script>
+</body>
+</html>

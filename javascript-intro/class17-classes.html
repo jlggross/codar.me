@@ -1,0 +1,54 @@
+<html>
+<head>
+  <title>Class 17 - Classes</title>
+</head>
+<body>
+  <script>
+
+    class Calc {
+		constructor() {
+			this.history = []
+			console.log(this)
+		}
+		
+		sum(n1, n2) {
+			const result = n1 + n2
+			this.history.push(result) // Save all results in 'history'
+			return result
+		}
+	}
+
+	class CalcScientific extends Calc {
+		constructor() {
+			super()
+		}
+		
+		sub(n1, n2) {
+			const result = n1 - n2
+			this.history.push(result) // Save all results in 'history'
+			return result
+		}
+		
+		// static function does not have access to the scope of the function
+		static mult(n1, n2) {
+			const result = n1 * n2
+			return result
+		}
+	}
+	
+	const calc = new Calc()
+	console.log(calc.sum(2, 5))
+	console.log(calc.sum(1, 3))
+	console.log(calc.sum(3, 5))
+	//console.log(calc.sub(3, 5)) // Calc does not have function sub()
+	
+	const calc2 = new CalcScientific()
+	console.log(calc2.sum(2, 5))
+	console.log(calc2.sub(1, 3))
+	//console.log(calc2.mult(1, 3)) // Gives error
+	console.log(CalcScientific.mult(10, 10))
+	console.log(calc2.sum(3, 5))
+	
+  </script>
+</body>
+</html>
