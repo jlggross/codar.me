@@ -1,0 +1,35 @@
+Before starting the course:
+
+* Install VSCode
+* Install nodejs LTS version
+* VScode Extensions:
+	* Bracket Pair Colorizer
+	* EditorConfig for VSCode
+	* ESLint
+	* indent-rainbow
+	* lucy : Theme for VSCode
+	* Markdown all in One
+	* markdownlint
+	* Path Intelisense
+	* Prettier - Code formatter
+	* Settings Sync
+	* vscode-icons
+
+* Access the file settings.json of VSCode. CRTL + SHIFT + p -> Preferences - Open Settings (JSON). Add the following to the file:
+
+	"prettier.packageManager": "yarn",
+	"prettier.semi": false,
+	"prettier.singleQuote": true,
+	"prettier.trailingComma": "es5",
+
+	"editor.formatOnSave": true,
+	"editor.fontFamily": "JetBrains Mono",
+
+	"files.exclude": {
+        	"**/.git": true,
+	        "**/.svn": true,
+        	"**/.hg": true,
+	        "**/CVS": true,
+        	"**/.DS_Store": true,
+	        "**/node_modules": true
+	},

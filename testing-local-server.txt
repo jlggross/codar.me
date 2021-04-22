@@ -1,0 +1,9 @@
+To be able to import and export modules in javascript we need to run a local server
+
+One alternative is to open the VSCode terminal and navigate to the file's folder, then run:
+
+> python3 -m http.server 8000
+
+Than, to execute the html file, we just have to go to the browser:
+
+http://localhost:8000/<file>.html

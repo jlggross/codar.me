@@ -1,0 +1,6 @@
+Class 01: Configuration
+
+* Install a terminal for Windows:
+
+Fluent Terminal: https://github.com/felixse/FluentTerminal
+Scoop package manager https://github.com/lukesampson/scoop
