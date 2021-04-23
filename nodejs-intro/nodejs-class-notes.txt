@@ -1,6 +1,144 @@
-Class 01: Configuration
+NodeJS Intro Course
+
+------------------------------------------------------------------------
+Class 01: Configuration and running first script with node.js
 
 * Install a terminal for Windows:
+	Fluent Terminal: https://github.com/felixse/FluentTerminal
+	Scoop package manager https://github.com/lukesampson/scoop
 
-Fluent Terminal: https://github.com/felixse/FluentTerminal
-Scoop package manager https://github.com/lukesampson/scoop
+* Steps to execute: 
+1. Open terminal
+
+2. Check node.js version: 
+> node -v
+
+3. Create index.js file. Create a function, run it and print the return with console.log()
+
+4. In the terminal, go to the file's folder and run the command below to execute the javascript file
+> node index.js
+
+------------------------------------------------------------------------
+Class 02 - Modules - CommonJS
+
+* Modules is a way to break our code into separate files 
+
+* We have two ways to create modules:
+1. CommonJS
+  * It is not the official way of creating modules, but it's been used before
+	ESM was created
+	* We create a separate file for our function and use the 'module' object from 
+	node.js with the 'export' method to export the function. This can only export 
+	one function.
+		* If we want to export more function then we have to create and object 
+		containing the functions and export the object
+	* In the file we want to use the exported function we just use the 'require'
+	method
+2. ESM - ES Modules - EcmaScript Modules
+	* EcmaScript is the oficial JavaScript programming language name.
+	* ESM is the official way to implement modules in JavaScript. 
+	* You can find many references to ESM in the JavaScript documentation.
+	* Is the more recent approach, coming since 2015.
+
+------------------------------------------------------------------------
+Class 03 - Modules - ESM
+
+* First of all we have to create a file called 'package.json' and insert:
+
+{
+  "type": "module"
+}
+
+This is needed so node can recognize our javaScript files as modules, allowing
+them to import other modules
+
+* We can also re-export all the function of a .js file
+
+------------------------------------------------------------------------
+Class 04 - Package Manager
+
+* By default node.js comes with npm (Node Package Manager) package manager
+installed
+* We can check the version of npm with:
+
+> npm -v
+
+* Website www.npmjs.com to check available packages to download/install
+
+* Another package manager is yarn (Yarn Package Manager)
+	* yarn was created to solve some issues related to npm
+	* Installing yarn https://yarnpkg.com/getting-started
+	* yarn also uses package.json for the project's configuration
+
+* yarn  to create package.json file:
+> yarn init
+	* name: choose name (we chose 'modules')
+	* version: choose version (we chose 0.0.0)
+	* description: write description
+	* entry point: which file is the first to run when we execute the application
+	* private: true
+
+* to publish the package in the npm's website we can run. If 'private' is set to 
+'true' than the package will not be published.
+> npm publish
+
+* To add dependencies to our package we can run:
+> yarn add --dev @codar/eslint-plugin
+	* This add dev dependencies to our project. It does not add code to the project. Instead 
+	it adds resources to help the project's development.
+	* It will create a yarn.lock file
+	* This will also add a new line in the package.json file
+> yarn add react
+	* This add software/package dependencies which are a necessity to development the project
+
+
+* To install the project's dependencies we just run:
+> yarn install
+
+------------------------------------------------------------------------
+Class 05 - Creating a NPM account, Publishing a package
+
+1. We create an account in NPM: https://www.npmjs.com/signup
+
+2. Login to npm
+> npm login
+
+3. Check project name on npm website
+	* First we have to check if the package name exists
+	* Go to https://www.npmjs.com/package/<package name>
+	* If the page you try to access does not exist, than you can create a package with that name to publish
+
+4. We create a package with yarn
+	* Enter via terminal to the folder you want to create the package
+	* Initiate the package
+	> yarn init
+		* name: resume-jlggross
+		* version: 0.1.0
+		* description: João Gross Resume
+		* entry point: index.js
+		* author: João Gross 
+		* license: MIT
+		* private: 
+
+5. We add 'module.exports = "João Gross"' to our index.js file
+
+6. We publish the package in the NPM website
+> npm publish
+
+7. Check package in https://www.npmjs.com/package/resume-jlggross
+
+8. Now we make modifications on our package and try to publish again
+	* This yields an error because we changed the package, so we have to publish
+	a new version.
+
+9. Change package version
+	* Open file 'package.json' and alter the version to 0.2.0
+	* Now we can publish with 'npm publish'
+	* We can also check the new version at https://www.npmjs.com/package/resume-jlggross
+
+10. At https://www.npmjs.com/package/resume-jlggross run 'Try on RunKit'
+
+------------------------------------------------------------------------
+Class 06 - Scoped Packages
+
+------------------------------------------------------------------------

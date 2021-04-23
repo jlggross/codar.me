@@ -1,0 +1,15 @@
+{
+  "name": "modules",
+  "version": "0.0.0",
+  "description": "My description",
+  "main": "index.js",
+  "author": "João Gross",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@codar/eslint-plugin": "^0.1.3"
+  },
+  "dependencies": {
+    "react": "^17.0.2"
+  }
+}
