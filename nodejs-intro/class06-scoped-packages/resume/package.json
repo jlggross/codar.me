@@ -1,0 +1,11 @@
+{
+  "name": "resume-jlggross",
+  "version": "0.2.0",
+  "description": "João Gross Resume",
+  "main": "index.js",
+  "author": "João Gross",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}

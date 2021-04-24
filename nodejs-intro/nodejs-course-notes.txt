@@ -141,4 +141,117 @@ Class 05 - Creating a NPM account, Publishing a package
 ------------------------------------------------------------------------
 Class 06 - Scoped Packages
 
+* Go to you npm profile page.
+* You can see a 'Packages' tab and an 'Organizations' tab.
+* The 'Organizations' tab is related to scoped packages
+	* https://www.npmjs.com/package/@codar/eslint-plugin is an example of scoped package
+	* The URL of these kinds of packages has the organization identified with an '@',
+	in the case above it is '@codar'. The package name is 'eslint-plugin'.
+
+1. Create and Organization. It will be 'jlggross-projects' in our case
+
+2. Open file 'package.json' and alter the package name:
+
+"name": "resume-jlggross" => "name": "@jlggross-projects/resume-jlggross"
+
+3. Also configure the package to be public:
+
+"publishConfig": {
+    "access": "public"
+  }
+
+4. Login to npm and publish the package
+> npm login
+> npm publish
+
+5. Check package online https://www.npmjs.com/package/@jlggross-projects/resume-jlggross
+
+------------------------------------------------------------------------
+Class 07 - Install Dependencies
+
+* To install a package we use:
+> yarn add package-name
+> yarn add resume-jlggross
+	* yarn checks the package's name in the npm listing and add the dependency to
+	the package.json file
+	* When we add a package to our project yarn creates a node_modules folder
+	and download the package
+
+* To install a specific version of the package:
+> yarn add package-name@version
+> yarn add resume-jlggross@0.1.0
+
+* To use the package we have to refer to the module in a js file:
+const about = require("resume-jlggross")
+	* Here we created a javascript file named resume.js
+
+* Than we can run resume.js file with node:
+> node resume.js
+
+------------------------------------------------------------------------
+Class 08 - HTTP Protocol (Theory)
+
+* Composed of 3 parts:
+	* Address
+	* Headers
+	* Body : body of the requisition
+
+* We have a request and then a response.
+	* Request and response, both work with the HTTP protocol.
+
+* Address: We use URL (Universal Resource Locator)
+	* Full URL: http://www.google.com/search?q=codarme
+	* URL structure:		
+		* Protocol: http://
+		* Host: www.google.com
+			* Subdomain (optional): www
+			* Unique identifier inside a TLD, also called domain: google
+			* TLD (Top Level Domain): .com
+		* Resource: /search
+			* This is the resource we want to access in the server
+		* Query string: ?q=codarme
+			* The parameters to the 
+			* Used to filter data in the back-end
+
+* Header: Used to provide information for requests e responses. They
+give context to the request.
+	* Content type: Specify the type of content
+	* Origin: URL origin
+	* Authorization: Tell who is logged in the application
+
+* Body: Totally related to the header's content type. The content of 
+the body is also called payload.
+	* Exists only for PUT and POST requests
+	* Does not exist for GET and DELETE requests
+		* The GET response has a body (payload)
+
+* HTTP Protocol Methods (or Verbs)
+	* GET: Get resources
+	* POST: Create resources
+	* PUT: Alter resources
+	* DELETE: Remove resources
+	* Others
+
+* Response : Status Code
+	* Contains the status code plus the text of that status code
+	* With this information we can know how the request ended.
+	* Some Status Code:
+		* 404 : Not found
+		* 100 - 199 : Information codes
+		* 200 : Ok
+		* 200 - 299 : Success codes
+		* 300 - 399 : Redirect codes
+		* 301 : Permanent redirect
+		* 400 - 499 : Client request error codes. The client has to deal with the error.
+		* 500 - 599 : Server request error codes. The server has to deal with the error.
+		
+
+------------------------------------------------------------------------
+Class 08 - HTTP Protocol (Practice)
+
+Creating our first node.js server/API
+
+* The http package comes installed by default with node.js
+* We define our server with callback and port to listen
+
 ------------------------------------------------------------------------
