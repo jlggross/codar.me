@@ -253,5 +253,135 @@ Creating our first node.js server/API
 
 * The http package comes installed by default with node.js
 * We define our server with callback and port to listen
+* To run our server:
+> node index.js
+* We go to localhost:8080 to check the results
+
+------------------------------------------------------------------------
+Class 09 - Docker and MongoDB (Theory)
+
+* Docker is a tool designed to make it easy the creation, deploy, and execution
+using containers.
+* A container is a unit of software that encapsulates the code and all of its 
+dependencies to execute the code in a fast and reliable way regardless of the
+environment
+	* Includes everything that is necessary to run the software, such as the code
+	itself, system tools, configurations 
+
+* Access https://www.docker.com/, download and install it
+
+* Check docker version:
+> docker -
+
+* Docker images: Similar to a virtual machine, but lighter. A container run 
+from a docker image
+	* At Docker Hub we have a bunch of freely available docker 
+
+* MongoDB docker image
+	* Go to https://hub.docker.com/_/mongo
+		* Oficial mongo docker image
+	
+	* To download the docker image from docker hub:
+	> docker pull mongo
+	
+	* After downloading the image we can check the image locally:
+	> docker image ls
+	
+	* Run docker:
+	> docker run --name mongodb -p 27017:27017 -d mongo:latest
+		* mongodb: container name
+		* 27017:27017 : Port to access docker. Makes a bind of the internal port 27017
+		of the docker container to an external port (outside the container), which
+		is also 27017.
+			* The port in the left is the external port
+			* The port in the right is the internal port
+		* -d: To run in background
+		* mongo:latest : Specifies the image we want to upload to this container
+			* Using just mongo also works, and docker will get the latest version
+			* We can specify the version
+	
+	* Check running containers:
+	> docker ps
+
+	* Stop docker container:
+	> docker stop mongodb
+
+	* Check stopped containers:
+	> docker ps -
+	
+	* Start container again:
+	> docker start mongodb
+
+	* Restart container again:
+	> docker restart mongodb
+
+	* Destroy container: 
+	> docker rm -vf mongodb
+
+	* Execute docker container (after running it):
+	> docker exec -it mongodb bash
+		* -it : interactive
+		* mongodb : container name
+		* bash : command we want to access inside the container. Bash is to access 
+		the container's terminal
+
+	* Check mongodb version inside the container:
+	> mongo --version
+
+	* Get inside mongodb:
+	> mongo -u root -p
+		* password: 
+
+	* With mongodb running in a docker container we can create an application and 
+	connect to this database
+
+------------------------------------------------------------------------
+Class 09 - Docker and MongoDB (Practice)
+
+* docker-compose : Another way to run containers
+
+* Install docker-compose: https://docs.docker.com/compose/install/
+
+* Check if docker-compose is installed in our system:
+> docker-compose -v
+	
+Class09 - Practice:
+* We created a folder 'api' and a file named 'docker-compose.yml'
+* Go to VSCode extensions and install YAML
+* Open docker-compose.yml and configure the file
+	* See how it is configured in the class09/api folder 
+* We have to enter at folder api through the command line
+* To run the docker compose:
+> docker-compose up -d
+	* If the container named in docker-compose.yml is already running an error 
+	will pop. You have to make sure the docker image is not running. It is 
+	possible to delete the container with:
+	> docker rm -vf mongodb
+* You can check if the docker image started with:
+> docker ps -a
+* Enter container bash:
+> docker exec -it mongodb bash
+* Enter mongodb:
+> mongo -u root -p
+* Show dbs:
+> show dbs
+
+* To put the container down:
+> docker-compose down
+	* Checking 'docker ps -a' will not list the container anymore
+
+* To restart container:
+> docker-compose restart
+
+Docker Compose
+* Much simpler command line way to run a docker image
+* The downside is to configure a file docker-compose.yml
+* But after the file is configured is is much more easier with docker-compose
+* Instead of executing each docker image by hand with 'docker run', and 
+and linking them manually, with docker compose we have a single file to do this 
+orchestration and put up all the services/containers at once. 
+* This lessens the admins or developers responsibility to manage and deploy and
+to worry with running all the commands to run the	services and its dependencies.
+ 
 
 ------------------------------------------------------------------------
