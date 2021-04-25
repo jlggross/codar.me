@@ -383,5 +383,28 @@ orchestration and put up all the services/containers at once.
 * This lessens the admins or developers responsibility to manage and deploy and
 to worry with running all the commands to run the	services and its dependencies.
  
+------------------------------------------------------------------------
+Class 10 - Working with databases
+
+1. Go to 'api' folder and run '$ yarn init'. A file package.json is created
+
+2. '$ yarn add mongoose'. mongoose is a dependency. It is a RM, a library used
+to connect to the database. It has various methods to manipulate the database.
+
+3. '$ yarn add --dev nodemon'
+Nodemon is used to run our server in simpler way
+
+4. index.js runs our server. It is basically the same code from class08, where
+we created our first http server. But now we have configurations for the database
+too.
+
+5. The connection to the database can be done with 'mongoose.connect()'. To 
+configure this method we have to check the information configured in docker-compose.yml.
+
+6. Put docker image up with '$ docker-compose up -d'. You can check running containers 
+with '$ docker ps -a'
+
+7.We run our server '$ node index.js' and can access it in the browser through
+http://localhost:8080/ 
 
 ------------------------------------------------------------------------

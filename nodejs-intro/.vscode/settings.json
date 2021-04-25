@@ -1,6 +1,12 @@
 {
   "cSpell.ignoreWords": [
+    "codar",
+    "codarme",
     "mongodb",
+    "nodemon",
+    "npm",
+    "npm's",
     "npmjs"
-  ]
+  ],
+  "prettier.singleQuote": true
 }
