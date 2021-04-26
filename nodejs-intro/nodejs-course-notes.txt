@@ -538,3 +538,12 @@ by node.js, called 'end'. We create another callback to this event.
 To make the POST in the front-end we have to send a message in Insomnia.
 
 ------------------------------------------------------------------------
+Class 14 - Dynamic Routes
+
+We encapsulated the behavior for each route and method inside a 'routes'
+variable. Our code is now cleaner and easier to read.
+
+We also created new files so we could put each functionality of our 
+application in a different file.
+
+------------------------------------------------------------------------
