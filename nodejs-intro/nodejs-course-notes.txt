@@ -628,3 +628,22 @@ applications.
 serveless applications
 
 ------------------------------------------------------------------------
+Class 17 - Restify Framework
+
+Now we begin a new project. In this class we will create our first restify 
+server.
+
+1. First of all we start a project with '$ yarn init'. package.json is created.
+
+2. '$ yarn add --dev nodemon'
+
+3. '$ yarn add restify'
+
+4. We create a file index.js and start coding our server.
+
+Restify manages the routes for us. We don't need to worry about that as
+we did for our pure node.js server.
+
+5. Remember that we can use the VSCode Plugin to test HTTP Requests
+
+------------------------------------------------------------------------
