@@ -547,3 +547,32 @@ We also created new files so we could put each functionality of our
 application in a different file.
 
 ------------------------------------------------------------------------
+Class 15 - Database Update
+
+1. Always remember to enter the applications folder and run 'yarn start'
+to run the script defined in package.json
+
+2. We created another function in controller.js to update the database.
+We configured another request at Insomnia to make a Put Request. Using
+'Form URL Encoded' we make a request Put of 'id' and 'name'. 
+	* The 'id' will tell us which register to update
+	* 'name' will be the new name set to the register with id equal to 'id'.
+
+In the update function from controller.js we use mongoose method updateOne
+to make an update to a single register, identified by its id.
+
+3. To make the PUT request, first make a GET request and in the listing 
+choose a register and save its id. This id will be used in the PUT request.
+In the PUT request insert the following information to the FORM:
+
+id - saved id
+name - new name
+
+After sending the message the updated will be completed, updating the name
+to the register with id 'id'.
+
+4. Now we can make a GET request to check the altered register. In the 
+listing of user search for the id you previously copied and check the 
+new name (updated).
+
+------------------------------------------------------------------------
