@@ -1,5 +1,6 @@
 const http = require('http')
 const mongoose = require('mongoose')
+const { parse } = require('url') // Comes with node.js
 
 // mongodb://user:password@host:port/database-name
 // localhost could also be 127.0.0.0 or 0.0.0.0
@@ -27,21 +28,28 @@ const UserModel = mongoose.model('User', schema)
 // Mongoose will parse the string and create a table 'users'
 
 const server = http.createServer(async (req, res) => {
-  // Insert data into the database
-  // We run this just once to populate the database
-  // await UserModel.create({
-  //  name: "João Gross"
-  // })
-
-  // Get data from the database
-  const users = await UserModel.find({})
-  console.log(users)
-
-  // Send a response to our use (browser)
   res.writeHead(200, { 'Context-Type': 'application/json' })
-  res.write(JSON.stringify(users))
+
+  const url = parse(req.url)
+
+  if (url.pathname === '/users' && req.method === 'GET') {
+    // Get data from the database
+    const users = await UserModel.find({})
+
+    // Send a response to our use (browser)
+    res.write(JSON.stringify(users))
+  }
+
+  if (url.pathname === '/users' && req.method === 'POST') {
+    res.write('Create a user')
+  }
+
   res.end()
 })
 
 // Starts the server at localhost:8080
 server.listen(8080)
+
+// Using Rest Client
+// GET http://localhost:8080/users
+// POST http://localhost:8080/users

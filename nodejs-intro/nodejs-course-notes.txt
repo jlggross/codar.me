@@ -415,3 +415,82 @@ and later we read this information and send it to the front-end user (browser).
 a package.json file with 'yarn init' to specify our project's dependencies.
 
 ------------------------------------------------------------------------
+Class 11 - Creating Routes
+
+1. We added to the package.json file the following:
+
+"scripts": {
+    "start": "nodemon index.js"
+}
+
+It creates a script named 'start'. So running '$ yarn start' will run the 
+script. The script runs 'nodemon index.js' running our server. Instead of 
+using 'node index.js' to run the server, nodemon will stop and restart our 
+server automatically every time we alter and save index.js
+
+Nodemon is a good tool for a developing environment.
+
+Try altering the index.js file and save it. Keep an eye at the terminal to 
+check the server being restarted by nodemon.
+
+2. We altered our server so it can send different messages to the user 
+based on the url pathname. 
+
+If the client enters in 'localhost:8080/users' 
+than it will send the front-end the users from the mongo database.
+
+If the client is at 'localhost:8080' or any other url path, than it send 
+the client a message 'Another message'.
+
+Resume: We created two routes for our application. One route is 
+localhost:8080/users and all other url paths. For each of the two groups of 
+urls we had an specific message sent to the client.
+
+------------------------------------------------------------------------
+Class 12 - API Requests
+
+1. To simulate POST requests we actually have to build a html page a force 
+a post. To avoid it we can use an application called Insomnia. You can
+download the software here: https://insomnia.rest/download
+
+2. Go to the command line and start the server with 'yarn start', which
+will run our script configure in package.json
+
+3. Start Insomnia software and create a new request (CTRL + N). Access
+localhost:8080/users and select a GET or POST method. When you run the 
+request you will see the return from the server on the console.
+	* Insomnia is a software to work with HTTP requests.
+
+Other alternatives:
+
+1. Besides Insomnia there is still another application we can use fro HTTP
+requests. It's called Postman: https://www.postman.com/downloads/.
+
+2. There is a web version to mock api too: https://hoppscotch.io/pt-br
+
+3. Command line approach using curl to mock APIs:
+
+> curl -X POST 'http://localhost:8080/users'
+> curl -X GET 'http://localhost:8080/users'
+
+* Tip: In VSCode you can open two terminal with a split screen. In one
+you run 'yarn start' to run the server. In the second you can use curl 
+to mock requests.
+
+4. VSCode Extension: REST Client
+Allows us to send HTTP request and view the response in VSCode directly.
+
+To use the extension first write either one of the requests below:
+
+GET http://localhost:8080/users
+POST http://localhost:8080/users
+
+Copy one of them, press CTRL + SHIFT + p, type 'rest send', and select
+the option 'Rest Client: Send Request'. Rest Client will understand the
+request copied in memory (CTRL + C) and run the request/response in a
+new tab.
+
+------------------------------------------------------------------------
+Class 13 - Registering data to database
+
+------------------------------------------------------------------------

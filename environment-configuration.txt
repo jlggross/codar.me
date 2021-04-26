@@ -14,6 +14,7 @@ Before starting the course:
 	* Prettier - Code formatter
 	* Settings Sync
 	* vscode-icons
+	* REST Client: Allow us to make API HTTP requests from VSCode
 
 * Access the file settings.json of VSCode. CRTL + SHIFT + p -> Preferences - Open Settings (JSON). Add the following to the file:
 
