@@ -576,3 +576,55 @@ listing of user search for the id you previously copied and check the
 new name (updated).
 
 ------------------------------------------------------------------------
+Class 16 - Database remove
+
+1. Similar to the update operations, we first have to create a DELETE 
+request in Insomnia. We use 'Form URL Encoded' to send the id we want to 
+remove from the users table in mongo db.
+	* We just have to specify the id to remove the register.
+
+2. After running the DELETE operation we can check the user listing in the
+GET Request tab of Insomnia.
+
+3. The remove function in controller.js uses the deleteOne method from 
+mongoose to DELETE a register from the database.
+
+------------------------------------------------------------------------
+Class 17 - API, Frameworks (Theory)
+
+What is an API (Application Programming Interface)?
+* Every exposed interface that a software or developer can use
+* Methods of data structures are APIs
+* API is not just related to the back-end, but it is the most common use.
+
+Framework
+* It is a software package that implements many tasks, making the developer
+job easier, avoiding to re-implement some functions
+
+Node.js frameworks
+* Express: The most used framework to Node.js. It is very simple to use and 
+abstracts a lot of operations. 
+	* Works with middlewares. We can add code inside our routes.
+	* The downside is that it has some security issues.
+	* Has a vast collection of plugins.
+	* Easy to integrate with a lot of different services.
+
+* Koa: Developed by the same team that created Express. It is intended
+to be an improvement over Express. 
+
+* Restify: Designed to create Node.js REST . Has many functionalities similar
+to Express.js.
+	* Has many built-in plugins
+
+* Nest.js: Robust, has been used to work with big applications, like enterprise
+applications.
+	* Very good documentation.
+	* Has a lot of built-in functionality. No need for external software for
+	most uses.
+
+* hapi
+
+* Micro: Created by Zeit. Designed to work with microservices and
+serveless applications
+
+------------------------------------------------------------------------

@@ -50,4 +50,14 @@ const update = (req, res) => {
   })
 }
 
-module.exports = { list, save, update }
+const remove = (req, res) => {
+  parseBody(req, async (body) => {
+    const conditionals = { _id: body.id }
+    const user = await UserModel.deleteOne(conditionals)
+
+    res.write(JSON.stringify(user))
+    res.end()
+  })
+}
+
+module.exports = { list, save, update, remove }

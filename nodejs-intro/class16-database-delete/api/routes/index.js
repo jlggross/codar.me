@@ -5,6 +5,7 @@ const routes = {
     GET: users.list,
     POST: users.save,
     PUT: users.update,
+    DELETE: users.remove,
   },
 }
 
