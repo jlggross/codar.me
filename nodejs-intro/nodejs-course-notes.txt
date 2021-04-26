@@ -407,4 +407,11 @@ with '$ docker ps -a'
 7.We run our server '$ node index.js' and can access it in the browser through
 http://localhost:8080/ 
 
+Resume: We put up a docker container with mongodb running and configured mongoose
+to access it. In the server we first inserted a piece of data to the mongo database
+and later we read this information and send it to the front-end user (browser).
+
+* Reminder: Before all that we had to configure docker-compose.yml and create
+a package.json file with 'yarn init' to specify our project's dependencies.
+
 ------------------------------------------------------------------------
