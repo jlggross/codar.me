@@ -7,5 +7,3 @@ server.get('/', (req, res) => {
 })
 
 server.listen(8080, () => console.log('Server up.'))
-
-// GET http://localhost:8080
