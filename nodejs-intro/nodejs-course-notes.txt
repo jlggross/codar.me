@@ -838,11 +838,108 @@ that will catch all the errors of class Error()
 3. We also created a simple authentication middleware, just to test the 
 error messages
 
+4. To run the project:
+* Project dependencies: yarn install --production=false
+* Mongodb Docker container: docker-compose up -d
+* Server - Back-end: yarn start 
+* Front-end: npx browser-sync start --server --file "./*.html" --no-open --no-notify --directory
+
+* Make sure that the authentication middleware is not yielding any error, 
+so we can test the front-end accessing the database
+
 ------------------------------------------------------------------------
 Class 23 - Running API with Docker
 
 * We have already created our API, but if we want to share with other 
 developers, or keep developing it, a docker container will help encapsulate
 our API into a single software unit.
+
+1. In the docker_compose.yml file we create a new service called 'api'
+
+* ports: We will execute at port 8080 and point inside the service to the 
+port 8080
+* working_dir: At first, our external api will enter docker, so we need to create a working 
+directory
+* volumes: All of our files, represented by a . will be transferred to the
+docker working_dir 
+* command: The command we will run inside docker (in the working_dir) to
+start our api
+
+2. Our database will no longer connect to the server in the localhost, 
+the localhost now refers to the docker image. So in the database.js file we
+have to make the following changes:
+
+From this: mongodb://root:example@localhost:27017/api?authSource=admin
+To this: mongodb://root:example@mongodb:27017/api?authSource=admin
+
+* This is needed because the server will access mongo from the docker image
+directly. 
+* The services 'mongodb'' and 'api' are in the same network, so they can see
+each other
+
+2. Running docker compose:
+> docker-compose up -d
+
+3. We can check the docker images with:
+> docker ps -a
+
+4. To remove all docker images we can do:
+> docker-compose down
+
+5. To check the logs of the dockers images:
+> docker-compose logs -f
+
+6. Checking the api working
+* After running step 2. we can check the api running at localhost:8080/users
+
+Resume: Docker compose will create a network with the two services, 'mongodb'
+and 'api', and the name of the services will be mapped to the IP of each 
+respective container, so we can use the name as host (as seem in the database.js
+file)
+
+Important: Before running the server we have to install all dependencies
+and devDependencies
+
+> yarn install --production=false
+
+------------------------------------------------------------------------
+Git commands
+
+This is a special note on git commands:
+
+* Configure github access:
+git config --global user.name "jlggross"
+git config --global user.email "joaolggross@gmail.com"
+git config --list # check the configurations
+
+* Create repository:
+git init
+
+* Add files to a commit:
+git add . 					# Add all files
+git add <filename> 	# Specific file
+
+* Status of files:
+git status 					# Say if file has been created, deleted, modified
+
+* Make commit:
+git commit -m "My message"
+
+* See commit history:
+git log
+
+* Associate git repository to local repository:
+git remote add origin git@github.com:jlggross/codar.me.git
+
+* Check repository linking to github:
+git remote -v
+
+	Expected output:
+	> origin  https://github.com/jlggross/codar.me.git (fetch)
+	> origin  https://github.com/jlggross/codar.me.git (push)
+
+* Send commits to github:
+git push -u origin main
+git push									# Also works. Clean version
 
 ------------------------------------------------------------------------
