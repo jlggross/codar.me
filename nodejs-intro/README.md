@@ -25,6 +25,13 @@ Each class has code sufficient to execute without any modifications, you'll just
 
 ## Configuring your environment
 
+Some software you will need to run the class examples:
+
+* Microsoft VSCode
+* Git
+* NPM and Yarn
+* Node.js
+
 
 
 ## Configuring VSCode
