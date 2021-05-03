@@ -23,19 +23,12 @@ In this repository you can have access to all the classes from this course. Each
 
 Each class has code sufficient to execute without any modifications, you'll just need to download the dependencies and devDependencies of each class before running it. Please check the section on how to configure and download the required software to run the code for each class.
 
-## Configuring your environment
+## Configuring your Environment and VSCode
 
-Some software you will need to run the class examples:
+I have already wrote a session on these two topics. You can see them here: 
 
-* Microsoft VSCode
-* Git
-* NPM and Yarn
-* Node.js
-
-
-
-## Configuring VSCode
-
+* [Configuring your Environment](https://github.com/jlggross/codar.me/blob/main/README.md#configuring-your-environment)
+* [Configuring VSCode](https://github.com/jlggross/codar.me/blob/main/README.md#configuring-vscode)
 
 # How to run each class
 
