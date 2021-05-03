@@ -26,6 +26,21 @@ The topics discussed in the introductory courses are the following:
 * Introduction to React: TODO
 * Introduction to React Native: TODO
 
+# Configuring your Environment
+
+Some software you will need to run the class examples:
+
+* Microsoft VSCode
+* NPM and Yarn
+* Node.js
+* Git
+
+In the root folder of the codar.me repository there is a file named [01-Instalacao-ferramentas.pdf](https://github.com/jlggross/codar.me/blob/main/01-Instalacao-ferramentas.pdf) with detailed instructions on how to install NPM and Yarn, Node.js and VSCode. These tutorial is in PT-BR and was provided by the RocketSeat team in the NLW5 event. 
+
+If you face some issues with different versions of software, there is still another tutorial named [02-Atualizacao-versoes-diferentes.pdf](https://github.com/jlggross/codar.me/blob/main/02-Atualizacao-versoes-diferentes.pdf) that will guide you to updatye the version of either NPM, Yarn or Node.js. This is another tutorial provided by the RocketSeat team in the NLW5 event.
+
+As for Git, you can download it following the steps described here: https://git-scm.com/downloads. I'm using Windows, so after downloading and installing Git a Git bash will be available in the VSCode terminal, which is very helpful to write Unix commands.
+
 # Configuring VSCode
 
 For the traning described here I used VSCode. VSCode provides some useful extensions and you could use some as well to enhance productivity. 
