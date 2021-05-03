@@ -25,7 +25,7 @@ Each class has code sufficient to execute without any modifications, you'll just
 
 ## Configuring your Environment and VSCode
 
-I have already wrote a session on these two topics. You can see them here: 
+I have already written a section on these two topics. You can see them here: 
 
 * [Configuring your Environment](https://github.com/jlggross/codar.me/blob/main/README.md#configuring-your-environment)
 * [Configuring VSCode](https://github.com/jlggross/codar.me/blob/main/README.md#configuring-vscode)
@@ -60,22 +60,14 @@ The first option is for the classes where we haven't configured a script in pack
 
 Here you are going to see some detailed explanation about each class from this course. 
 
-## Class 01 Configuration and running first script with node.js
+## Class 01: Configuration and running first script with node.js
 
-* Install a terminal for Windows:
-	Fluent Terminal: https://github.com/felixse/FluentTerminal
-	Scoop package manager https://github.com/lukesampson/scoop
+The configuration steps covered in a section above. To run the first node.js script we have to:
 
-* Steps to execute: 
-1. Open terminal
+1. Select the Git bash terminal in VsCode
+2. In the terminal, go to the file's folder and run the command `node index.js`
 
-2. Check node.js version: 
-> node -v
-
-3. Create index.js file. Create a function, run it and print the return with console.log()
-
-4. In the terminal, go to the file's folder and run the command below to execute the javascript file
-> node index.js
+We can check the node.js version with `node -v`
 
 ------------------------------------------------------------------------
 Class 02 - Modules - CommonJS
