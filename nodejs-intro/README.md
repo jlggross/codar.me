@@ -19,14 +19,48 @@ This course is an introduction to node.js. The topics covered in this course are
 
 In this repository you can have access to all the classes from this course. Each class has an specific number and name, so it is easier to identify the classes content. There are a total of 23 classes and a final project with 5 steps.
 
+## About the classes
+
 Each class has code sufficient to execute without any modifications, you'll just need to download the dependencies and devDependencies of each class before running it. Please check the section on how to configure and download the required software to run the code for each class.
+
+## Configuring your environment
+
+
+
+## Configuring VSCode
+
 
 # How to run each class
 
-First of all you need to choose one class and download its contents. From class 04 and 
+First of all you need to choose one class and download its contents. From class 04 onwards we start to have dependencies and devDependencies so we have to download them before executing the code from the class. 
 
-------------------------------------------------------------------------
-Class 01: Configuration and running first script with node.js
+If you already have yarn installed in your system, from the terminal, you just have to go to the folder of the class and run:
+
+```
+$ yarn install --production=false
+```
+
+Yarn will look the depndencies in the package.json file and download it. Also, as specified by option --production=false, we say to yarn that our class is not yet ready for production, so it will also download the devDependencies.
+
+After the download of packages is complete you can either run the class code using one of the following options:
+
+```
+$ node index.js
+``` 
+
+or 
+
+```
+$ yarn start
+```
+
+The first option is for the classes where we haven't configured a script in package.json. The second option is for those classes where **nodemon** is included in the dependencies.
+
+# Classes details
+
+Here you are going to see some detailed explanation about each class from this course. 
+
+## Class 01 Configuration and running first script with node.js
 
 * Install a terminal for Windows:
 	Fluent Terminal: https://github.com/felixse/FluentTerminal
