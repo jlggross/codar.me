@@ -21,8 +21,8 @@ routes.map((route) => server[route.method](route.path, route.handler))
 // Creating an authentication middleware
 const auth = (req, res, next) => {
   const err = new Error('Auth error')
-  //next() // No error
-  next(err) // server.on('restifyError') catches the error
+  next() // No error
+  //next(err) // server.on('restifyError') catches the error
 }
 server.get('/', [auth, (req, res) => res.send('Access granted.')])
 
