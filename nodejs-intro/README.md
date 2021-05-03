@@ -1,5 +1,29 @@
-# 
-NodeJS Intro Course
+# Node.js Introduction Course
+
+This course is an introduction to node.js. The topics covered in this course are the following:
+
+* CommonJS and ESM modules
+* Package management using NPM and Yarn
+* Downloading and publishing packages with NPM
+* Project dependencies and devDependencies
+* HTTP Protocol
+* Docker and MongoDB
+* Using docker-compose
+* Routes management
+* Database access and information retrieval
+* Restify framework and middlewares
+* CORS configuration
+* Error handling
+* Multiple docker containers and communication between them
+* Final project (frontend + backend)
+
+In this repository you can have access to all the classes from this course. Each class has an specific number and name, so it is easier to identify the classes content. There are a total of 23 classes and a final project with 5 steps.
+
+Each class has code sufficient to execute without any modifications, you'll just need to download the dependencies and devDependencies of each class before running it. Please check the section on how to configure and download the required software to run the code for each class.
+
+# How to run each class
+
+First of all you need to choose one class and download its contents. From class 04 and 
 
 ------------------------------------------------------------------------
 Class 01: Configuration and running first script with node.js
