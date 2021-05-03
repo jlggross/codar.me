@@ -26,6 +26,45 @@ The topics discussed in the introductory courses are the following:
 * Introduction to React: TODO
 * Introduction to React Native: TODO
 
+# Configuring VSCode
+
+For the traning described here I used VSCode. VSCode provides some useful extensions and you could use some as well to enhance productivity. 
+
+Some VSCode Extensions I use:
+* Bracket Pair Colorizer
+* EditorConfig for VSCode
+* ESLint
+* indent-rainbow
+* lucy : Theme for VSCode
+* Markdown all in One
+* markdownlint
+* Path Intelisense
+* Prettier - Code formatter
+* Settings Sync
+* vscode-icons
+* REST Client: Allow us to make API HTTP requests from VSCode
+
+To configure some of the extensions listed above we have to acces the file settings.json of VSCode. Press CRTL + SHIFT + p -> Preferences - Open Settings (JSON). A JSON file will open. Add the following to the file:
+
+```
+"prettier.packageManager": "yarn",
+"prettier.semi": false,
+"prettier.singleQuote": true,
+"prettier.trailingComma": "es5",
+
+"editor.formatOnSave": true,
+"editor.fontFamily": "JetBrains Mono",
+
+"files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/node_modules": true
+},
+```
+
 # Main Course 
 
 As soon as I finish the introductory courses I will update this section with more information.
