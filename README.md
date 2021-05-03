@@ -19,7 +19,7 @@ Preliminar to the course itself there are some introductory courses that give an
 
 The introductory courses are the following:
 
-* [**Introduction to Javascript**](https://github.com/jlggross/codar.me/tree/main/javascript-intro): Variables, Data Types, Logical Operators, Arithmetic Operators, Conditionals, Repetition Structures, Functions, Arrays, Strings, Arrow Functions, Classes, Promises, Async/Await, Fetch API, DOM interation.
-* [**Introduction to NodeJS**](https://github.com/jlggross/codar.me/tree/main/nodejs-intro): 
+* [**Introduction to Javascript**](https://github.com/jlggross/codar.me/tree/main/javascript-intro): Variables, Data Types, Logical Operators, Arithmetic Operators, Conditionals, Repetition Structures, Functions, Arrays, Strings, Arrow Functions, Classes, Promises, Async/Await, Fetch API, DOM interation, final project.
+* [**Introduction to NodeJS**](https://github.com/jlggross/codar.me/tree/main/nodejs-intro): CommonJS, ESM, package management, downloading and publishing NPM packages, YARN, dependencies, HTTP Protocol, Docker and MongoDB, Usong docker-compose, routes management, database access, information retrieval, restify framework, middlewares, CORS cofifguration, error handling, multiple docker containers, final project.
 * Introduction to React: TODO
 * Introduction to React Native: TODO
