@@ -17,7 +17,7 @@ The interesting part about this course is that it is not designed just to teach 
 
 Preliminar to the course itself there are some introductory courses that give an overview of the workings some technologies that will the used further. These introductory courses have each a folder in this repository, with the small projects that were built and the steps needed to get the final result. Also, each of these introductory courses have their own explanation notes on the technologies that were seen and how to reproduce the final results. 
 
-The introductory courses are the following:
+The topics discussed in the introductory courses are the following:
 
 * [**Introduction to Javascript**](https://github.com/jlggross/codar.me/tree/main/javascript-intro): Variables, Data Types, Logical Operators, Arithmetic Operators, Conditionals, Repetition Structures, Functions, Arrays, Strings, Arrow Functions, Classes, Promises, Async/Await, Fetch API, DOM interation, final project.
 * [**Introduction to NodeJS**](https://github.com/jlggross/codar.me/tree/main/nodejs-intro): CommonJS, ESM, package management, downloading and publishing NPM packages, YARN, dependencies, HTTP Protocol, Docker and MongoDB, Usong docker-compose, routes management, database access, information retrieval, restify framework, middlewares, CORS cofifguration, error handling, multiple docker containers, final project.
