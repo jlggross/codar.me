@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+		
+* {
+	font-family: Roboto, sans-serif;
+	color: #333;
+}
+
+body {
+	background: #EDF0F2;
+	padding: 0;
+	margin: 0;
+}
+
+h1, h2 {
+	text-transform: uppercase; 
+}
+
+#app {
+	padding: 25px;
+}
+
+input {
+	width: 250px;
+	font-size: 16px;
+	padding: 8px;
+	border-radius: 3px;
+	border: 1px solic #CCC;
+}
+
+#form button {
+	background: #43BC70;
+	padding: 8px 12px;
+	font-size: 16px;
+	border-radius: 3px;
+	color: #FFF;
+	border: 0;
+}
+
+#tasks button {
+	background: transparent;
+	font-size: 12px;
+	border: 0;
+	color: red;
+}
