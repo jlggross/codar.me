@@ -128,10 +128,8 @@ $ git remote add origin git@github.com:jlggross/codar.me.git
 ```bash
 $ git remote -v
 ```
-  
-  Expected output:
-  * origin  https://github.com/jlggross/codar.me.git (fetch)
-  * origin  https://github.com/jlggross/codar.me.git (push)
+
+Expected output: "origin  https://github.com/jlggross/codar.me.git (fetch)" and "origin  https://github.com/jlggross/codar.me.git (push)"
 
 * Send commits to github:
 ```bash
