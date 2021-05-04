@@ -74,6 +74,12 @@ Here you are going to see some detailed explanation about each class from this c
 * [Class 10: Working with databases](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-10-working-with-databases)
 * [Class 11: Creating Routes](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-11-creating-routes)
 * [Class 12: API Requests](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-12-api-requests)
+* [Class 13: Registering data to database](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-13-registering-data-to-database)
+* [Class 14: Dynamic Routes](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-14-dynamic-routes)
+* [Class 15: Database Update](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-15-database-update)
+* [Class 16: Database remove](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-16-database-remove)
+* [Class 17: API, Frameworks (Theory)](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-17-api-frameworks-theory)
+* [Class 17: Restify Framework](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-17-restify-framework)
 
 ## Class 01: Configuration and running first script with node.js
 
@@ -613,7 +619,7 @@ callback = (chunk) => {
 * We encapsulated the behavior for each route and method inside a 'routes' variable. Our code is now cleaner and easier to read.
 * We also created new files so we could put each functionality of our application in a different file.
 
-# Class 15: Database Update
+## Class 15: Database Update
 1. Always remember to enter the applications folder and run 'yarn start' to run the script defined in package.json
 
 2. We created another function in controller.js to update the database.
