@@ -80,6 +80,45 @@ To configure some of the extensions listed above we have to acces the file setti
 },
 ```
 
+# Git refresher
+
+This is a special note on git commands:
+
+* Configure github access:
+`git config --global user.name "jlggross"`
+`git config --global user.email "joaolggross@gmail.com"`
+`git config --list # check the configurations`
+
+* Create repository:
+`git init`
+
+* Add files to a commit:
+`git add .` 		# Add all files
+`git add <filename>` 	# Specific file
+
+* Status of files:
+`git status` 		# Say if file has been created, deleted, modified
+
+* Make commit:
+`git commit -m "My message"`
+
+* See commit history:
+`git log`
+
+* Associate git repository to local repository:
+`git remote add origin git@github.com:jlggross/codar.me.git`
+
+* Check repository linking to github:
+`git remote -v`
+
+Expected output:
+$ origin  https://github.com/jlggross/codar.me.git (fetch)
+$ origin  https://github.com/jlggross/codar.me.git (push)
+
+* Send commits to github:
+`git push -u origin main`
+`git push`	                # Also works. Clean version
+
 # Main Course 
 
 As soon as I finish the introductory courses I will update this section with more information.
