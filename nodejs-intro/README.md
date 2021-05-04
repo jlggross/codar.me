@@ -64,6 +64,24 @@ I've created a dedicated section with notes of each class and for the steps of t
   * [Running the Project](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#running-the-project)
 * [Final Taughts](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#final-taughts)
 
+# Technologies of this course
+
+As mentioned, this is a course focused on node.js. Along with node.js we are going to see the following technologies:
+
+* **NPM and Yarn:** We will be using them to download packages to our project. The dependencies management will be done with yarn.
+* **Docker:** There is a brief on docker containers in the class I started using docker. I will talk about how to download a docker image, put a docker image up in air (running image) and how to connect and interact with it. Also, at the end of the course, in class 23, we are going to create a docker image of our completed API  
+* **Docker-Compose:** Docker Compose is a Docker image orchestrator. When manipulating a group of docker containers, an orchestrator will save us time through a file that has all the configurations necessary to run all conatiners. 
+* **MongoDB:** Mongo is the database we are going to work with to save and retrieve data with the created API. Mongo will be handled by a dopcker image.
+* **Restify:** Restify is a framework to work with node.js. It has many functionality already implemented which makes our development job easier. The code is cleaner and more secure.
+
+## Useful working tools
+
+In some of the classes we use third party tools for testing. Two of this tools are listed below:
+
+* **Insomnia:** A desktop application used to interact with HTTP-based APIs. We can simulate HTTP requests for our API, which is useful for testing and validation. Check classes 12, 13, 15 and 16 for details on Insomnia use.
+  * To simulate POST requests, for instance, we actually have to build a HTML page and force a post. To avoid it Insomnia can be used.
+* **Browser Sync:** BrowserSync creates a small server, but if you already have a server setup, BrowserSync can hook into that server and act as a proxy. Next, it injects a javascript file on every page; This file makes use of WebSockets to communicate between the server and the client to watch changes to your code or browser action. As soon as BrowserSync detects an action it performs a page reload ([Source](https://scotch.io/tutorials/how-to-use-browsersync-for-faster-development)). We use Browser Sync at class 21.
+
 # About the classes
 
 Each class has code sufficient to execute without any modifications, you'll just need to download the dependencies and devDependencies of each class before running it. Please check the section on how to configure and download the required software to run the code for each class.
