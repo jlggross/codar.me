@@ -406,9 +406,9 @@ $ docker rm -vf mongodb
 ```bash
 $ docker exec -it mongodb bash
 ```
-  * -it : interactive
-  * mongodb : container name
-  * bash : command we want to access inside the container. Bash is to access the container's terminal
+    * -it : interactive
+    * mongodb : container name
+    * bash : command we want to access inside the container. Bash is to access the container's terminal
 
 * Check mongodb version inside the container:
 ```bash
@@ -507,7 +507,7 @@ Resume:
 
 6. Put docker image up with `$ docker-compose up -d`. You can check running containers with `$ docker ps -a`
 
-7.We run our server `$ node index.js` and can access it in the browser through http://localhost:8080/ 
+7. We run our server `$ node index.js` and can access it in the browser through http://localhost:8080/ 
 
 Resume: We put up a docker container with mongodb running and configured mongoose to access it. In the server we first inserted a piece of data to the mongo database and later we read this information and send it to the front-end user (browser).
 
