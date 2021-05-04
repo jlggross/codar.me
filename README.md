@@ -130,8 +130,8 @@ $ git remote -v
 ```
   
   Expected output:
-  * $ origin  https://github.com/jlggross/codar.me.git (fetch)
-  * $ origin  https://github.com/jlggross/codar.me.git (push)
+  * origin  https://github.com/jlggross/codar.me.git (fetch)
+  * origin  https://github.com/jlggross/codar.me.git (push)
 
 * Send commits to github:
 ```bash
