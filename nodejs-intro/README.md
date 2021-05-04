@@ -335,83 +335,91 @@ $ node index.js
 
 * Accessing http://localhost:8080 in the browser we can check the results
 
-------------------------------------------------------------------------
-Class 09 - Docker and MongoDB (Theory)
-
-* Docker is a tool designed to make it easy the creation, deploy, and execution
-using containers.
-* A container is a unit of software that encapsulates the code and all of its 
-dependencies to execute the code in a fast and reliable way regardless of the
-environment
-	* Includes everything that is necessary to run the software, such as the code
-	itself, system tools, configurations 
-
+## Class 09: Docker and MongoDB (Theory)
+* Docker is a tool designed to make it easy the creation, deploy, and execution using containers.
+* A container is a unit of software that encapsulates the code and all of its dependencies to execute the code in a fast and reliable way regardless of the environment
+  * Includes everything that is necessary to run the software, such as the code itself, system tools, configurations 
 * Access https://www.docker.com/, download and install it
-
 * Check docker version:
-> docker -
 
-* Docker images: Similar to a virtual machine, but lighter. A container run 
-from a docker image
-	* At Docker Hub we have a bunch of freely available docker 
+```bash
+$ docker -v
+```
 
+* Docker images: Similar to a virtual machine, but lighter. A container run from a docker image
+  * At Docker Hub we have a bunch of freely available docker 
 * MongoDB docker image
-	* Go to https://hub.docker.com/_/mongo
-		* Oficial mongo docker image
+  * Go to https://hub.docker.com/_/mongo
+    * Oficial mongo docker image
+  * To download the docker image from docker hub:
+  ```bash
+  $ docker pull mongo
+  ```
+  * After downloading the image we can check the image locally:
+  ```bash
+  $ docker image ls
+  ```
+  * Run docker:
+  ```bash
+  $ docker run --name mongodb -p 27017:27017 -d mongo:latest
+  ```
+    * mongodb: container name
+    * 27017:27017 : Port to access docker. Makes a bind of the internal port 27017 of the docker container to an external port (outside the container), which is also 27017.
+      * The port in the left is the external port
+      * The port in the right is the internal port
+    * -d: To run in background
+    * mongo:latest : Specifies the image we want to upload to this container
+      * Using just mongo also works, and docker will get the latest version
+      * We can specify the version
 	
-	* To download the docker image from docker hub:
-	> docker pull mongo
-	
-	* After downloading the image we can check the image locally:
-	> docker image ls
-	
-	* Run docker:
-	> docker run --name mongodb -p 27017:27017 -d mongo:latest
-		* mongodb: container name
-		* 27017:27017 : Port to access docker. Makes a bind of the internal port 27017
-		of the docker container to an external port (outside the container), which
-		is also 27017.
-			* The port in the left is the external port
-			* The port in the right is the internal port
-		* -d: To run in background
-		* mongo:latest : Specifies the image we want to upload to this container
-			* Using just mongo also works, and docker will get the latest version
-			* We can specify the version
-	
-	* Check running containers:
-	> docker ps
+* Check running containers:
+```bash
+$ docker ps
+```
 
-	* Stop docker container:
-	> docker stop mongodb
+* Stop docker container:
+```bash
+$ docker stop mongodb
+```
 
-	* Check stopped containers:
-	> docker ps -
-	
-	* Start container again:
-	> docker start mongodb
+* Check stopped containers:
+```bash
+$ docker ps -
+```
 
-	* Restart container again:
-	> docker restart mongodb
+* Start container again:
+```bash
+$ docker start mongodb
+```
 
-	* Destroy container: 
-	> docker rm -vf mongodb
+* Restart container again:
+```bash
+$ docker restart mongodb
+```
 
-	* Execute docker container (after running it):
-	> docker exec -it mongodb bash
-		* -it : interactive
-		* mongodb : container name
-		* bash : command we want to access inside the container. Bash is to access 
-		the container's terminal
+* Destroy container: 
+```bash
+$ docker rm -vf mongodb
+```
 
-	* Check mongodb version inside the container:
-	> mongo --version
+* Execute docker container (after running it):
+```bash
+$ docker exec -it mongodb bash
+```
+  * -it : interactive
+  * mongodb : container name
+  * bash : command we want to access inside the container. Bash is to access the container's terminal
 
-	* Get inside mongodb:
-	> mongo -u root -p
-		* password: 
+* Check mongodb version inside the container:
+```bash
+$ mongo --version
+```
 
-	* With mongodb running in a docker container we can create an application and 
-	connect to this database
+* Get inside mongodb:
+```bash
+$ mongo -u root -p
+```
+  * With mongodb running in a docker container we can create an application and connect to this database
 
 ------------------------------------------------------------------------
 Class 09 - Docker and MongoDB (Practice)
