@@ -61,7 +61,7 @@ Some VSCode Extensions I use:
 
 To configure some of the extensions listed above we have to acces the file settings.json of VSCode. Press CRTL + SHIFT + p -> Preferences - Open Settings (JSON). A JSON file will open. Add the following to the file:
 
-```
+```JSON
 "prettier.packageManager": "yarn",
 "prettier.semi": false,
 "prettier.singleQuote": true,
