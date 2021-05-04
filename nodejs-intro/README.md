@@ -24,6 +24,8 @@ I've created a dedicated section with notes of each class and for the steps of t
 # Table of Contents
 
 * [Node.js Introduction Course](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#nodejs-introduction-course)
+* [Technologies of this course](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#final-taughts)
+  * [Useful testing tools](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#useful-testing-tools)  
 * [About the classes](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#about-the-classes)
   * [Configuring your environment and VSCode](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#configuring-your-environment-and-vscode)  
   * [How to run the code from each class](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#how-to-run-the-code-from-each-class)
@@ -74,7 +76,7 @@ As mentioned, this is a course focused on node.js. Along with node.js we are goi
 * **MongoDB:** Mongo is the database we are going to work with to save and retrieve data with the created API. Mongo will be handled by a dopcker image.
 * **Restify:** Restify is a framework to work with node.js. It has many functionality already implemented which makes our development job easier. The code is cleaner and more secure.
 
-## Useful working tools
+## Useful testing tools
 
 In some of the classes we use third party tools for testing. Two of this tools are listed below:
 
