@@ -914,11 +914,11 @@ The backend will be built from ground zero. Every piece of knowledge that we gat
 
 Below you can see a listing with links to the 5 steps of the final project's development:
 
-* [Final Project, Step 1: Creating the server and configurations]()
-* [Final Project, Step 2: Retrieving a list from the backend]()
-* [Final Project, Step 3: Integrating with database]()
-* [Final Project, Step 4: Saving data in the API]()
-* [Final Project, Step 5: Removing data from the DB]()
+* [Final Project, Step 1: Creating the server and configurations](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#final-project-step-1-creating-the-server-and-configurations)
+* [Final Project, Step 2: Retrieving a list from the backend](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#final-project-step-2-retrieving-a-list-from-the-backend)
+* [Final Project, Step 3: Integrating with database](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#final-project-step-3-integrating-with-database)
+* [Final Project, Step 4: Saving data in the API](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#final-project-step-4-saving-data-in-the-api)
+* [Final Project, Step 5: Removing data from the DB](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#final-project-step-5-removing-data-from-the-db)
 
 ## Final Project, Step 1: Creating the server and configurations
 * The project is an extension of the TODO list project from the javascript course.
