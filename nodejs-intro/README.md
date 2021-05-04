@@ -84,60 +84,71 @@ We can check the node.js version with `$ node -v`
 * You can find many references to ESM in the JavaScript documentation.
 * Is the more recent approach, coming since 2015.
 
-------------------------------------------------------------------------
-Class 03 - Modules - ESM
-
+## Class 03: Modules - ESM
 * First of all we have to create a file called 'package.json' and insert:
 
+```JSON
 {
   "type": "module"
 }
+```
 
-This is needed so node can recognize our javaScript files as modules, allowing
-them to import other modules
-
+* This is needed so **node** can recognize our JavaScript files as modules, allowing them to import other modules
 * We can also re-export all the function of a .js file
 
-------------------------------------------------------------------------
-Class 04 - Package Manager
-
-* By default node.js comes with npm (Node Package Manager) package manager
-installed
-* We can check the version of npm with:
-
-> npm -v
-
+## Class 04: Package Manager
+* By default node.js comes with npm (Node Package Manager) package manager installed
+* We can check the version of npm with `npm -v`
 * Website www.npmjs.com to check available packages to download/install
-
 * Another package manager is yarn (Yarn Package Manager)
-	* yarn was created to solve some issues related to npm
-	* Installing yarn https://yarnpkg.com/getting-started
-	* yarn also uses package.json for the project's configuration
+  * yarn was created to solve some issues related to npm
+  * Installing yarn https://yarnpkg.com/getting-started
+  * yarn also uses package.json for the project's configuration
 
-* yarn  to create package.json file:
-> yarn init
-	* name: choose name (we chose 'modules')
-	* version: choose version (we chose 0.0.0)
-	* description: write description
-	* entry point: which file is the first to run when we execute the application
-	* private: true
+1. Create a package.json file with yarn
 
-* to publish the package in the npm's website we can run. If 'private' is set to 
-'true' than the package will not be published.
-> npm publish
+```bash
+$ yarn init
+```
 
-* To add dependencies to our package we can run:
-> yarn add --dev @codar/eslint-plugin
-	* This add dev dependencies to our project. It does not add code to the project. Instead 
-	it adds resources to help the project's development.
-	* It will create a yarn.lock file
-	* This will also add a new line in the package.json file
-> yarn add react
-	* This add software/package dependencies which are a necessity to development the project
+Some values are required when running `$ yarn init`: 
+* name: choose name (we chose 'modules')
+* version: choose version (we chose 0.0.0)
+* description: write description
+* entry point: which file is the first to run when we execute the application
+* private: true
+  * If 'private' is set to 'true' than the package will not be published.
 
+2. To publish our package
 
-* To install the project's dependencies we just run:
-> yarn install
+```bash
+$ npm publish
+```
+
+3. Adding dependencies to the project
+
+Example:
+
+```bash
+$ yarn add react
+```
+
+* This add software/package dependencies which are a necessity to development the project
+
+4. Adding devDependencies to the project
+
+```bash
+$ yarn add --dev @codar/eslint-plugin
+```
+
+* This add devDependencies to our project. It does not add code to the project. Instead it adds resources to help the project's development.
+  * This will also add a new line in the package.json file
+
+5. Install project's dependencies
+
+```bash
+$ yarn install
+```
 
 ------------------------------------------------------------------------
 Class 05 - Creating a NPM account, Publishing a package
