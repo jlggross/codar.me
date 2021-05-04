@@ -80,6 +80,13 @@ Here you are going to see some detailed explanation about each class from this c
 * [Class 16: Database remove](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-16-database-remove)
 * [Class 17: API, Frameworks (Theory)](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-17-api-frameworks-theory)
 * [Class 17: Restify Framework](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-17-restify-framework)
+* [Class 18: Middlewares](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-18-middlewares)
+* [Class 19: Restify Middlewares](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-19-restify-middlewares)
+* [Class 20: Routes and Parameters](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-20-routes-and-parameters)
+* [Class 21: CORS (Theory)](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-21-cors-theory)
+* [Class 21: CORS (Practice)](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-21-cors-practice)
+* [Class 22: Error handling](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-21-cors-practice)
+
 
 ## Class 01: Configuration and running first script with node.js
 
@@ -845,60 +852,53 @@ server.use((req, res, next) => {
 * Front-end: npx browser-sync start --server --file "./*.html" --no-open --no-notify --directory
 * Make sure that the authentication middleware is not yielding any error, so we can test the front-end accessing the database
 
-------------------------------------------------------------------------
-Class 23 - Running API with Docker
+## Class 23: Running API with Docker
 
-* We have already created our API, but if we want to share with other 
-developers, or keep developing it, a docker container will help encapsulate
-our API into a single software unit.
+* We have already created our API, but if we want to share with other developers, or keep developing it, a docker container will help encapsulate our API into a single software unit.
 
 1. In the docker_compose.yml file we create a new service called 'api'
 
-* ports: We will execute at port 8080 and point inside the service to the 
-port 8080
-* working_dir: At first, our external api will enter docker, so we need to create a working 
-directory
-* volumes: All of our files, represented by a . will be transferred to the
-docker working_dir 
-* command: The command we will run inside docker (in the working_dir) to
-start our api
+* ports: We will execute at port 8080 and point inside the service to the port 8080
+* working_dir: At first, our external api will enter docker, so we need to create a working directory
+* volumes: All of our files, represented by a . will be transferred to the docker working_dir 
+* command: The command we will run inside docker (in the working_dir) to start our api
 
-2. Our database will no longer connect to the server in the localhost, 
-the localhost now refers to the docker image. So in the database.js file we
-have to make the following changes:
-
-From this: mongodb://root:example@localhost:27017/api?authSource=admin
-To this: mongodb://root:example@mongodb:27017/api?authSource=admin
-
-* This is needed because the server will access mongo from the docker image
-directly. 
-* The services 'mongodb'' and 'api' are in the same network, so they can see
-each other
+2. Our database will no longer connect to the server in the localhost, the localhost now refers to the docker image. So in the database.js file we have to make the following changes:
+* From this: mongodb://root:example@localhost:27017/api?authSource=admin
+* To this: mongodb://root:example@mongodb:27017/api?authSource=admin
+* This is needed because the server will access mongo from the docker image directly. 
+* The services 'mongodb'' and 'api' are in the same network, so they can see each other
 
 2. Running docker compose:
-> docker-compose up -d
+```bash
+$ docker-compose up -d
+```
 
 3. We can check the docker images with:
-> docker ps -a
+```bash
+$ docker ps -a
+```
 
 4. To remove all docker images we can do:
-> docker-compose down
+```bash
+$ docker-compose down
+```
 
 5. To check the logs of the dockers images:
-> docker-compose logs -f
+```bash
+$ docker-compose logs -f
+```
 
 6. Checking the api working
 * After running step 2. we can check the api running at localhost:8080/users
 
-Resume: Docker compose will create a network with the two services, 'mongodb'
-and 'api', and the name of the services will be mapped to the IP of each 
-respective container, so we can use the name as host (as seem in the database.js
-file)
+Resume: Docker compose will create a network with the two services, 'mongodb' and 'api', and the name of the services will be mapped to the IP of each respective container, so we can use the name as host (as seem in the database.js file)
 
-Important: Before running the server we have to install all dependencies
-and devDependencies
+Important: Before running the server we have to install all dependencies and devDependencies
 
-> yarn install --production=false
+```bash
+$ yarn install --production=false
+```
 
 ------------------------------------------------------------------------
 Git commands
