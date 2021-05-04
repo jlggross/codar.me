@@ -255,74 +255,73 @@ const about = require("resume-jlggross")
 ```bash
 $ node resume.js
 ```
-------------------------------------------------------------------------
-Class 08 - HTTP Protocol (Theory)
+
+## Class 08: HTTP Protocol (Theory)
 
 * Composed of 3 parts:
-	* Address
-	* Headers
-	* Body : body of the requisition
+  * Address
+  * Headers
+  * Body : body of the requisition
 
 * We have a request and then a response.
-	* Request and response, both work with the HTTP protocol.
+  * Request and response, both work with the HTTP protocol.
 
 * Address: We use URL (Universal Resource Locator)
-	* Full URL: http://www.google.com/search?q=codarme
-	* URL structure:		
-		* Protocol: http://
-		* Host: www.google.com
-			* Subdomain (optional): www
-			* Unique identifier inside a TLD, also called domain: google
-			* TLD (Top Level Domain): .com
-		* Resource: /search
-			* This is the resource we want to access in the server
-		* Query string: ?q=codarme
-			* The parameters to the 
-			* Used to filter data in the back-end
+  * Full URL: http://www.google.com/search?q=codarme
+  * URL structure:		
+    * Protocol: http://
+    * Host: www.google.com
+      * Subdomain (optional): www
+      * Unique identifier inside a TLD, also called domain: google
+      * TLD (Top Level Domain): .com
+    * Resource: /search
+      * This is the resource we want to access in the server
+    * Query string: ?q=codarme 
+      * The parameters to the 
+      * Used to filter data in the back-end
 
-* Header: Used to provide information for requests e responses. They
-give context to the request.
-	* Content type: Specify the type of content
-	* Origin: URL origin
-	* Authorization: Tell who is logged in the application
+* Header: Used to provide information for requests e responses. They give context to the request.
+  * Content type: Specify the type of content
+  * Origin: URL origin
+  * Authorization: Tell who is logged in the application
 
-* Body: Totally related to the header's content type. The content of 
-the body is also called payload.
-	* Exists only for PUT and POST requests
-	* Does not exist for GET and DELETE requests
-		* The GET response has a body (payload)
+* Body: Totally related to the header's content type. The content of the body is also called payload.
+  * Exists only for PUT and POST requests
+  * Does not exist for GET and DELETE requests
+    * The GET response has a body (payload)
 
 * HTTP Protocol Methods (or Verbs)
-	* GET: Get resources
-	* POST: Create resources
-	* PUT: Alter resources
-	* DELETE: Remove resources
-	* Others
+  * GET: Get resources
+  * POST: Create resources
+  * PUT: Alter resources
+  * DELETE: Remove resources
+  * Others
 
 * Response : Status Code
-	* Contains the status code plus the text of that status code
-	* With this information we can know how the request ended.
-	* Some Status Code:
-		* 404 : Not found
-		* 100 - 199 : Information codes
-		* 200 : Ok
-		* 200 - 299 : Success codes
-		* 300 - 399 : Redirect codes
-		* 301 : Permanent redirect
-		* 400 - 499 : Client request error codes. The client has to deal with the error.
-		* 500 - 599 : Server request error codes. The server has to deal with the error.
-		
+  * Contains the status code plus the text of that status code
+  * With this information we can know how the request ended.
+  * Some Status Code:
+    * 404 : Not found
+    * 100 - 199 : Information codes
+    * 200 : Ok
+    * 200 - 299 : Success codes
+    * 300 - 399 : Redirect codes
+    * 301 : Permanent redirect
+    * 400 - 499 : Client request error codes. The client has to deal with the error.
+    * 500 - 599 : Server request error codes. The server has to deal with the error.
+	
+## Class 08: HTTP Protocol (Practice)
 
-------------------------------------------------------------------------
-Class 08 - HTTP Protocol (Practice)
-
-Creating our first node.js server/API
-
+* We create our first node.js server/API
 * The http package comes installed by default with node.js
 * We define our server with callback and port to listen
 * To run our server:
-> node index.js
-* We go to localhost:8080 to check the results
+
+```bash
+$ node index.js
+```
+
+* Accessing http://localhost:8080 in the browser we can check the results
 
 ------------------------------------------------------------------------
 Class 09 - Docker and MongoDB (Theory)
