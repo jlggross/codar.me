@@ -21,18 +21,61 @@ In this repository you can have access to all the classes from this course. Each
 
 I've created a dedicated section with notes of each class and for the steps of the final project, I recommend you check them out.
 
-## About the classes
+# Table of Contents
+
+* [Node.js Introduction Course](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#nodejs-introduction-course)
+* [About the classes](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#about-the-classes)
+  * [Configuring your environment and VSCode](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#configuring-your-environment-and-vscode)  
+  * [How to run each class](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#how-to-run-each-class)
+* [Class Notes](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#class-notes)
+  * [Class 01: Configuration and running first script with node.js](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-01-configuration-and-running-first-script-with-nodejs)
+  * [Class 02: Modules - CommonJS](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-02-modules---commonjs)
+  * [Class 03: Modules - ESM](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-03-modules---esm)
+  * [Class 04: Package Manager](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-04-package-manager)
+  * [Class 05: Creating a NPM account, Publishing a package](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-05-creating-a-npm-account-publishing-a-package)
+  * [Class 06: Scoped Packages](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-06-scoped-packages)
+  * [Class 07: Install Dependencies](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-07-install-dependencies)
+  * [Class 08: HTTP Protocol (Theory)](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-08-http-protocol-theory)
+  * [Class 08: HTTP Protocol (Practice)](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-08-http-protocol-practice)
+  * [Class 09: Docker and MongoDB (Theory)](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-09-docker-and-mongodb-theory)
+  * [Class 09: Docker and MongoDB (Practice)](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-09-docker-and-mongodb-practice)
+  * [Class 10: Working with databases](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-10-working-with-databases)
+  * [Class 11: Creating Routes](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-11-creating-routes)
+  * [Class 12: API Requests](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-12-api-requests)
+  * [Class 13: Registering data to database](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-13-registering-data-to-database)
+  * [Class 14: Dynamic Routes](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-14-dynamic-routes)
+  * [Class 15: Database Update](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-15-database-update)
+  * [Class 16: Database remove](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-16-database-remove)
+  * [Class 17: API, Frameworks (Theory)](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-17-api-frameworks-theory)
+  * [Class 17: Restify Framework (Practice)](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-17-restify-framework-practice)
+  * [Class 18: Middlewares](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-18-middlewares)
+  * [Class 19: Restify Middlewares](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-19-restify-middlewares)
+  * [Class 20: Routes and Parameters](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-20-routes-and-parameters)
+  * [Class 21: CORS (Theory)](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-21-cors-theory)
+  * [Class 21: CORS (Practice)](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-21-cors-practice)
+  * [Class 22: Error handling](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-22-error-handling)
+  * [Class 23: Running API with Docker](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-23-running-api-with-docker)
+* [Final Project](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#final-project)
+  * [Final Project, Step 1: Creating the server and configurations](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#final-project-step-1-creating-the-server-and-configurations)
+  * [Final Project, Step 2: Retrieving a list from the backend](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#final-project-step-2-retrieving-a-list-from-the-backend)
+  * [Final Project, Step 3: Integrating with database](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#final-project-step-3-integrating-with-database)
+  * [Final Project, Step 4: Saving data in the API](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#final-project-step-4-saving-data-in-the-api)
+  * [Final Project, Step 5: Removing data from the DB](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#final-project-step-5-removing-data-from-the-db)
+  * [Running the Project](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#running-the-project)
+* [Final Taughts](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#final-taughts)
+
+# About the classes
 
 Each class has code sufficient to execute without any modifications, you'll just need to download the dependencies and devDependencies of each class before running it. Please check the section on how to configure and download the required software to run the code for each class.
 
-## Configuring your Environment and VSCode
+## Configuring your environment and VSCode
 
 I have already written a section on these two topics. You can see them here: 
 
 * [Configuring your Environment](https://github.com/jlggross/codar.me/blob/main/README.md#configuring-your-environment)
 * [Configuring VSCode](https://github.com/jlggross/codar.me/blob/main/README.md#configuring-vscode)
 
-# How to run each class
+## How to run each class
 
 First of all you need to choose one class and download its contents. From class 04 onwards we start to have dependencies and devDependencies so we have to download them before executing the code from the class. 
 
@@ -61,36 +104,6 @@ The first option is for the classes where we haven't configured a script in pack
 # Class Notes
 
 Here you are going to see some detailed explanation about each class from this course. **If you prefer you can skip this explanations and to directly to the** [**steps notes of the final project**](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#final-project).
-
-You can access each class through the links below:
-
-* [Class 01: Configuration and running first script with node.js](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-01-configuration-and-running-first-script-with-nodejs)
-* [Class 02: Modules - CommonJS](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-02-modules---commonjs)
-* [Class 03: Modules - ESM](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-03-modules---esm)
-* [Class 04: Package Manager](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-04-package-manager)
-* [Class 05: Creating a NPM account, Publishing a package](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-05-creating-a-npm-account-publishing-a-package)
-* [Class 06: Scoped Packages](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-06-scoped-packages)
-* [Class 07: Install Dependencies](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-07-install-dependencies)
-* [Class 08: HTTP Protocol (Theory)](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-08-http-protocol-theory)
-* [Class 08: HTTP Protocol (Practice)](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-08-http-protocol-practice)
-* [Class 09: Docker and MongoDB (Theory)](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-09-docker-and-mongodb-theory)
-* [Class 09: Docker and MongoDB (Practice)](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-09-docker-and-mongodb-practice)
-* [Class 10: Working with databases](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-10-working-with-databases)
-* [Class 11: Creating Routes](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-11-creating-routes)
-* [Class 12: API Requests](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-12-api-requests)
-* [Class 13: Registering data to database](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-13-registering-data-to-database)
-* [Class 14: Dynamic Routes](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-14-dynamic-routes)
-* [Class 15: Database Update](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-15-database-update)
-* [Class 16: Database remove](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-16-database-remove)
-* [Class 17: API, Frameworks (Theory)](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-17-api-frameworks-theory)
-* [Class 17: Restify Framework](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-17-restify-framework)
-* [Class 18: Middlewares](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-18-middlewares)
-* [Class 19: Restify Middlewares](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-19-restify-middlewares)
-* [Class 20: Routes and Parameters](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-20-routes-and-parameters)
-* [Class 21: CORS (Theory)](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-21-cors-theory)
-* [Class 21: CORS (Practice)](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-21-cors-practice)
-* [Class 22: Error handling](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-22-error-handling)
-* [Class 23: Running API with Docker](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-23-running-api-with-docker)
 
 ## Class 01: Configuration and running first script with node.js
 
@@ -681,7 +694,7 @@ Node.js frameworks
 * hapi
 * Micro: Created by Zeit. Designed to work with microservices and serveless applications
 
-## Class 17: Restify Framework
+## Class 17: Restify Framework (Practice)
 Now we begin a new project. In this class we will create our first restify server.
 
 1. First of all we start a project with '$ yarn init'. package.json is created.
