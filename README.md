@@ -98,31 +98,46 @@ $ git init
 ```
 
 * Add files to a commit:
-`git add .` 		# Add all files
-`git add <filename>` 	# Specific file
+
+```bash
+$ git add . 		# Add all files
+$ git add <filename> 	# Specific file
+```
 
 * Status of files:
-`git status` 		# Say if file has been created, deleted, modified
+```bash
+$ git status 		# Say if file has been created, deleted, modified
+```
 
 * Make commit:
-`git commit -m "My message"`
+```bash
+$ git commit -m "My message"
+```
 
 * See commit history:
-`git log`
+```bash
+$ git log
+```
 
 * Associate git repository to local repository:
-`git remote add origin git@github.com:jlggross/codar.me.git`
+```bash
+$ git remote add origin git@github.com:jlggross/codar.me.git
+```
 
 * Check repository linking to github:
-`git remote -v`
+```bash
+$ git remote -v
+```
 
 Expected output:
 $ origin  https://github.com/jlggross/codar.me.git (fetch)
 $ origin  https://github.com/jlggross/codar.me.git (push)
 
 * Send commits to github:
-`git push -u origin main`
-`git push`	                # Also works. Clean version
+```bash
+$ git push -u origin main
+$ git push	                # Also works. Clean version
+```
 
 # Main Course 
 
