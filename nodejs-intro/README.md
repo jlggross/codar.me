@@ -24,7 +24,7 @@ I've created a dedicated section with notes of each class and for the steps of t
 # Table of Contents
 
 * [Node.js Introduction Course](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#nodejs-introduction-course)
-* [Technologies of this course](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#final-taughts)
+* [Technologies of this course](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#technologies-of-this-course)
   * [Useful testing tools](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#useful-testing-tools)  
 * [About the classes](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#about-the-classes)
   * [Configuring your environment and VSCode](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#configuring-your-environment-and-vscode)  
