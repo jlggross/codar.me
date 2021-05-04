@@ -15,6 +15,15 @@ The interesting part about this training is that it is not designed just to teac
 
 This is very useful to get a taste on how a real application is developed and the problems faced during the process.
 
+# Table of Contents
+
+* [Codar.me - Desenvolvendo Software de Verdade](https://github.com/jlggross/codar.me#codarme---desenvolvendo-software-de-verdade)
+* [Pre-Course](https://github.com/jlggross/codar.me#pre-course)
+  * [Configuring your Environment](https://github.com/jlggross/codar.me#configuring-your-environment)
+  * [Configuring VSCode](https://github.com/jlggross/codar.me#configuring-vscode)
+  * [Git refresher](https://github.com/jlggross/codar.me#git-refresher)
+* [Main Course](https://github.com/jlggross/codar.me#main-course)
+
 # Pre-Course
 
 Preliminar to the course itself there are some introductory courses that give an overview of the workings some technologies that will the used further. These introductory courses have each a folder in this repository, with the small projects that were built and the steps needed to get the final result. Also, each of these introductory courses have their own explanation notes on the technologies that were seen and how to reproduce the final results. 
@@ -26,7 +35,7 @@ The topics discussed in the introductory courses are the following:
 * Introduction to React: TODO
 * Introduction to React Native: TODO
 
-# Configuring your Environment
+## Configuring your Environment
 
 Some software you will need to run the class examples:
 
@@ -41,7 +50,7 @@ If you face some issues with different versions of software, there is still anot
 
 As for Git, you can download it following the steps described here: https://git-scm.com/downloads. I'm using Windows, so after downloading and installing Git a Git bash will be available in the VSCode terminal, which is very helpful to write Unix commands.
 
-# Configuring VSCode
+## Configuring VSCode
 
 For the traning described here I used VSCode. VSCode provides some useful extensions and you could use some as well to enhance productivity. 
 
@@ -80,7 +89,7 @@ To configure some of the extensions listed above we have to acces the file setti
 },
 ```
 
-# Git refresher
+# Git Refresher
 
 This is a special note on git commands:
 
