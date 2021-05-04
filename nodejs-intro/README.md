@@ -36,7 +36,7 @@ First of all you need to choose one class and download its contents. From class 
 
 If you already have yarn installed in your system, from the terminal, you just have to go to the folder of the class and run:
 
-```
+```bash
 $ yarn install --production=false
 ```
 
@@ -44,13 +44,13 @@ Yarn will look the depndencies in the package.json file and download it. Also, a
 
 After the download of packages is complete you can either run the class code using one of the following options:
 
-```
+```bash
 $ node index.js
 ``` 
 
 or 
 
-```
+```bash
 $ yarn start
 ```
 
@@ -65,9 +65,9 @@ Here you are going to see some detailed explanation about each class from this c
 The configuration steps covered in a section above. To run the first node.js script we have to:
 
 1. Select the Git bash terminal in VsCode
-2. In the terminal, go to the file's folder and run the command `node index.js`
+2. In the terminal, go to the file's folder and run the command `$ node index.js`
 
-We can check the node.js version with `node -v`
+We can check the node.js version with `$ node -v`
 
 ------------------------------------------------------------------------
 Class 02 - Modules - CommonJS
