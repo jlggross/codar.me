@@ -58,7 +58,19 @@ The first option is for the classes where we haven't configured a script in pack
 
 # Classes details
 
-Here you are going to see some detailed explanation about each class from this course. 
+Here you are going to see some detailed explanation about each class from this course. You can access each class through the links below:
+
+* [Class 01: Configuration and running first script with node.js](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-01-configuration-and-running-first-script-with-nodejs)
+* [Class 02: Modules - CommonJS](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-02-modules---commonjs)
+* [Class 03: Modules - ESM](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-03-modules---esm)
+* [Class 04: Package Manager](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-04-package-manager)
+* [Class 05: Creating a NPM account, Publishing a package](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-05-creating-a-npm-account-publishing-a-package)
+* [Class 06: Scoped Packages](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-06-scoped-packages)
+* [Class 07: Install Dependencies](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-07-install-dependencies)
+* [Class 08: HTTP Protocol (Theory)](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-08-http-protocol-theory)
+* [Class 08: HTTP Protocol (Practice)](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-08-http-protocol-practice)
+* []()
+* 
 
 ## Class 01: Configuration and running first script with node.js
 
