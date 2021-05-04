@@ -680,44 +680,25 @@ Now we begin a new project. In this class we will create our first restify serve
 * Restify manages the routes for us. We don't need to worry about that as we did for our pure node.js server.
 5. Remember that we can use the VSCode Plugin to test HTTP Requests
 
-------------------------------------------------------------------------
-Class 18 - Middlewares
-
-Middleware are functions that after execution they can chain with other
-functions.
-
-Middlewares have a parameter that is used to call the next middleware to 
-execute.
-
-Route resolution: Restify checks the client URL (path) and its request. 
-Before deciding which route the client request came from, the pre() 
-middleware functions are executed.
+## Class 18: Middlewares
+* Middleware are functions that after execution they can chain with other functions.
+* Middlewares have a parameter that is used to call the next middleware to execute.
+* Route resolution: Restify checks the client URL (path) and its request. 
+* Before deciding which route the client request came from, the pre()  middleware functions are executed.
 
 Two types of middlewares
-* pre() : Executed before the routes resolution. Before restify can decide
-which route to send a client request, all pre() functions are executed.
-	* In a pre() function we can alter the routes resolution
+* pre() : Executed before the routes resolution. Before restify can decide which route to send a client request, all pre() functions are executed.
+  * In a pre() function we can alter the routes resolution
+* use() : Executed after the routes resolution. When a use() function executes the route is already defined. We already know which method to call based on the URL the client made the request.
 
-* use() : Executed after the routes resolution. When a use() function 
-executes the route is already defined. We already know which method to call
-based on the URL the client made the request.
+1. In our code example, the route for '/' with a GET request goes through pre(), use() and then get(). The console.log() statements show how the middlewares chain between each other.
+* Check result for GET http://localhost:8080/
+* Check result for GET http://localhost:8080/users
+* To use the VSCode HTTP request plugin we have to copy the request and press CTRL + SHIFT + p, write 'rest client' and select option 'Rest Client: Send Request'
+  * It is import to make this procedure in the specified order, because copying the text and clicking anywhere else in the workplace it sufficient for the plugin to not work properly. 
 
-1. In our code example, the route for '/' with a GET request goes through
-pre(), use() and then get(). The console.log() statements show how the 
-middlewares chain between each other.
-	* Check result for GET http://localhost:8080/
-	* Check result for GET http://localhost:8080/users
-	* To use the VSCode HTTP request plugin we have to copy the request and 
-	press CTRL + SHIFT + p, write 'rest client' and select option 
-	'Rest Client: Send Request'
-		* It is import to make this procedure in the specified order, because
-		copying the text and clicking anywhere else in the workplace it sufficient
-		for the plugin to not work properly. 
-
-------------------------------------------------------------------------
-Class 19 - Restify Middlewares
-
-Plugins: http://restify.com/docs/plugins-api/
+## Class 19: Restify Middlewares
+* Plugins: http://restify.com/docs/plugins-api/
 
 sanitizePath
 * Cleans sloppy URLs. Used before the route resolution.
@@ -726,22 +707,20 @@ acceptParser
 * Parser the Accept header
 
 Resume of class: Middlewares were configured.
-------------------------------------------------------------------------
-Class 20 - Routes and Parameters
 
+## Class 20: Routes and Parameters
 1. We can create specific routes for each user by their 'id'. 
 
-2. We copied the files database.js and docker-compose.yml from classes (see class16).
-We also updated the file package.json, adding a script to run nodemon
+2. We copied the files database.js and docker-compose.yml from classes (see class16). We also updated the file package.json, adding a script to run nodemon
 
 3. In the terminal we have to add mongoose to our project:
-> yarn add mongoose
+```bash
+$ yarn add mongoose
+```
 
-4. The 'routes' folder from class16 has also been copied to the restify project.
-It includes the 'users' folder.
+4. The 'routes' folder from class16 has also been copied to the restify project. It includes the 'users' folder.
 
-5. File index.js from routes folder has to be updated with a route including the users id:.
-The structure where the routes are defined has been also changed.
+5. File index.js from routes folder has to be updated with a route including the users id:. The structure where the routes are defined has been also changed.
 
 6. model.js stays the same
 
@@ -755,68 +734,52 @@ parseBody job.
 9. We added a map function to the routes at index.js (server file).
 
 Both work:
-	server.get()
-	server["get"]()
+* server.get()
+* server["get"]()
 
-------------------------------------------------------------------------
-Class 21 - CORS (Theory)
-
+## Class 21: CORS (Theory)
 * Browsers have a security mechanism called Same-Origin-Policy
 
-* Same-Origin Policy: Responsible for restricting the way a document or script
-from an origin can interact with a recourse from other origin
-	* It's a security mechanism to isolated potential malicious files
+* Same-Origin Policy: Responsible for restricting the way a document or script from an origin can interact with a recourse from other origin
+  * It's a security mechanism to isolated potential malicious files
 
-* Cross-Site Request Forgery - CSRF: A common attack where a malicious website
-tries to take advantage of the cookies storage system of the browser
-	* For all HTTP request, the browser adds all HTTP cookies associated to 
-	a certain domain, which is useful for authentication and session configuration
-		* You can make login at a website, with your user and password, and later
-		when you access that website again the cookies stored in the browser can
-		be used to make an automatic login
-	* This forgery technique can be used to steal login information form a user
-	or even enable the attacker to access the logged area of the website in your 
-	name.
+* Cross-Site Request Forgery - CSRF: A common attack where a malicious website tries to take advantage of the cookies storage system of the browser
+  * For all HTTP request, the browser adds all HTTP cookies associated to a certain domain, which is useful for authentication and session configuration
+    * You can make login at a website, with your user and password, and later when you access that website again the cookies stored in the browser can be used to make an automatic login
+    * This forgery technique can be used to steal login information form a user or even enable the attacker to access the logged area of the website in your name.
 
-* Cross-Origin Resource Sharing - CORS: Standard that eases the policy of the 
-same origin, allowing applications to access resources from other origins
-	* A CORS error tries to avoid the CSRF attack.
-	* So resources shared in the same origin may trigger a CORS error if not
-	implemented correctly. That is why projects in javascript tested in the
-	browser that share resources between files (import/export clauses) can
-	lead to CORS errors.
-		* To avoid this error in the browser we have to use a local webserver.
+* Cross-Origin Resource Sharing - CORS: Standard that eases the policy of the same origin, allowing applications to access resources from other origins
+  * A CORS error tries to avoid the CSRF attack.
+  * So resources shared in the same origin may trigger a CORS error if not implemented correctly. That is why projects in javascript tested in the browser that share resources between files (import/export clauses) can lead to CORS errors.
+    * To avoid this error in the browser we have to use a local webserver.
 
 Resume:
-* CORS eases the Same-Origin Policy implemented in the browser (security policy),
-which is important to avoid CSRF attacks.
+* CORS eases the Same-Origin Policy implemented in the browser (security policy), which is important to avoid CSRF attacks.
 
 Project
 * Link: https://github.com/Rob--W/cors-anywhere
-* Description: The project in the link above allows a client to make an HTTP without
-using the a server. This can be useful to avoid de CORS error, because HTTP requests
-can only be done server to server.
-* Usage: This link https://youtu.be/gPzMRoPDrFk?t=217 explains exactly how to use
-the proxy server in the client to make an HTTP request to a server, without using 
-our own server.
+* Description: The project in the link above allows a client to make an HTTP without using the a server. This can be useful to avoid de CORS error, because HTTP requests can only be done server to server.
+* Usage: This link https://youtu.be/gPzMRoPDrFk?t=217 explains exactly how to use the proxy server in the client to make an HTTP request to a server, without using our own server.
 
 More on CORS: https://developer.mozilla.org/pt-BR/docs/Web/HTTP/CORS
 
-------------------------------------------------------------------------
-Class 21 - CORS (Practice)
+## Class 21: CORS (Practice)
 
 Working with CORS in our program
 
 1. We create an index.html in the root folder of the project (restify folder).
 * It has a fetch api for 'http://localhost:8080/users'
 * /user it the path defined in our routes folder, in the index.js file
-* The index.html is a front-end file that access the path we defined in the 
-back-end
+* The index.html is a front-end file that access the path we defined in the back-end
 
 2. We install the package browser-sync from npm:
-https://www.npmjs.com/package/browser-sync
-https://browsersync.io/
-> npm install browser-sync
+* https://www.npmjs.com/package/browser-sync
+* https://browsersync.io/
+
+```bash
+$ npm install browser-sync
+```
+
 We use browser-sync to run the .html file in the background
 
 3. Functions list, save, update and remove from controller.js
@@ -827,14 +790,18 @@ We use browser-sync to run the .html file in the background
 * Check file controller.js for more details.
 
 4. On a second terminal tab we run the server:
-> yarn start
+```bash
+$ yarn start
+```
 
 5. Server at localhost:8080/users
 * At the browser we can access our server at localhost:8080/users
 * If the database has no information, an empty object will show up
 
 6. Running browser-sync:
-> npx browser-sync start --server --file "./*.html" --no-open --no-notify --directory
+```bash
+$ npx browser-sync start --server --file "./*.html" --no-open --no-notify --directory
+```
 
 7. index.html at localhost:3000/index.html
 * At the browser we access localhost:3000/index.html
@@ -850,36 +817,33 @@ We use browser-sync to run the .html file in the background
 8. To make it possible for the server and the front-end to communicate
 we go to the index.js file and add the CORS headers to the response:
 
+```javascript
 server.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'http://localhost:3000')
   res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE')
   return next()
 })
+```
 
-With this piece of code we will no longer face the CORS error.
+* With this piece of code we will no longer face the CORS error.
 
-9. We also have to make sure the database is loaded, so we add 
-require('./database') in the top of the index.js file
-------------------------------------------------------------------------
-Class 22 - Error handling
+9. We also have to make sure the database is loaded, so we add require('./database') in the top of the index.js file
+
+## Class 22: Error handling
 
 1. We created a new file error.js
 * Class Error to throw errors
 
-2. In index.js we can create a new listening event on 'restifyError'
-that will catch all the errors of class Error()
+2. In index.js we can create a new listening event on 'restifyError' that will catch all the errors of class Error()
 
-3. We also created a simple authentication middleware, just to test the 
-error messages
+3. We also created a simple authentication middleware, just to test the error messages
 
 4. To run the project:
 * Project dependencies: yarn install --production=false
 * Mongodb Docker container: docker-compose up -d
 * Server - Back-end: yarn start 
 * Front-end: npx browser-sync start --server --file "./*.html" --no-open --no-notify --directory
-
-* Make sure that the authentication middleware is not yielding any error, 
-so we can test the front-end accessing the database
+* Make sure that the authentication middleware is not yielding any error, so we can test the front-end accessing the database
 
 ------------------------------------------------------------------------
 Class 23 - Running API with Docker
