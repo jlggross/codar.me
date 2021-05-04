@@ -85,11 +85,15 @@ To configure some of the extensions listed above we have to acces the file setti
 This is a special note on git commands:
 
 * Configure github access:
+
 ```git config --global user.name "jlggross"```
+
 ```git config --global user.email "joaolggross@gmail.com"```
+
 ```git config --list # check the configurations```
 
 * Create repository:
+
 `git init`
 
 * Add files to a commit:
