@@ -26,7 +26,7 @@ I've created a dedicated section with notes of each class and for the steps of t
 * [Node.js Introduction Course](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#nodejs-introduction-course)
 * [About the classes](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#about-the-classes)
   * [Configuring your environment and VSCode](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#configuring-your-environment-and-vscode)  
-  * [How to run each class](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#how-to-run-each-class)
+  * [How to run the code from each class](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#how-to-run-the-code-from-each-class)
 * [Class Notes](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#class-notes)
   * [Class 01: Configuration and running first script with node.js](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-01-configuration-and-running-first-script-with-nodejs)
   * [Class 02: Modules - CommonJS](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-02-modules---commonjs)
@@ -75,7 +75,7 @@ I have already written a section on these two topics. You can see them here:
 * [Configuring your Environment](https://github.com/jlggross/codar.me/blob/main/README.md#configuring-your-environment)
 * [Configuring VSCode](https://github.com/jlggross/codar.me/blob/main/README.md#configuring-vscode)
 
-## How to run each class
+## How to run the code from each class
 
 First of all you need to choose one class and download its contents. From class 04 onwards we start to have dependencies and devDependencies so we have to download them before executing the code from the class. 
 
