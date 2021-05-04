@@ -175,7 +175,7 @@ $ yarn install
   * entry point: index.js
   * author: João Gross 
   * license: MIT
-  * private: 
+  * private: false
 
 5. We add 'module.exports = "João Gross"' to our index.js file
 
@@ -198,9 +198,7 @@ $ npm publish
 
 10. At https://www.npmjs.com/package/resume-jlggross run 'Try on RunKit'
 
-------------------------------------------------------------------------
-Class 06 - Scoped Packages
-
+## Class 06: Scoped Packages
 * Go to you npm profile page.
 * You can see a 'Packages' tab and an 'Organizations' tab.
 * The 'Organizations' tab is related to scoped packages
@@ -208,46 +206,55 @@ Class 06 - Scoped Packages
 	* The URL of these kinds of packages has the organization identified with an '@',
 	in the case above it is '@codar'. The package name is 'eslint-plugin'.
 
+Steps
 1. Create and Organization. It will be 'jlggross-projects' in our case
 
 2. Open file 'package.json' and alter the package name:
-
-"name": "resume-jlggross" => "name": "@jlggross-projects/resume-jlggross"
+  * "name": "resume-jlggross" => "name": "@jlggross-projects/resume-jlggross"
 
 3. Also configure the package to be public:
 
+```JSON
 "publishConfig": {
     "access": "public"
   }
+```
 
 4. Login to npm and publish the package
-> npm login
-> npm publish
+```
+$ npm login
+$ npm publish
+```
 
-5. Check package online https://www.npmjs.com/package/@jlggross-projects/resume-jlggross
+5. Check package online: https://www.npmjs.com/package/@jlggross-projects/resume-jlggross
 
-------------------------------------------------------------------------
-Class 07 - Install Dependencies
-
+## Class 07: Install Dependencies
 * To install a package we use:
-> yarn add package-name
-> yarn add resume-jlggross
-	* yarn checks the package's name in the npm listing and add the dependency to
-	the package.json file
-	* When we add a package to our project yarn creates a node_modules folder
-	and download the package
+
+```bash
+$ yarn add package-name
+$ yarn add resume-jlggross
+```
+
+* yarn checks the package's name in the npm listing and add the dependency to the package.json file
+* When we add a package to our project yarn creates a node_modules folder and download the package
 
 * To install a specific version of the package:
-> yarn add package-name@version
-> yarn add resume-jlggross@0.1.0
+```bash
+$ yarn add package-name@version
+$ yarn add resume-jlggross@0.1.0
+```
 
 * To use the package we have to refer to the module in a js file:
+```javascript
 const about = require("resume-jlggross")
-	* Here we created a javascript file named resume.js
+```
+  * Here we created a javascript file named resume.js
 
 * Than we can run resume.js file with node:
-> node resume.js
-
+```bash
+$ node resume.js
+```
 ------------------------------------------------------------------------
 Class 08 - HTTP Protocol (Theory)
 
