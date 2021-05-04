@@ -60,7 +60,7 @@ The first option is for the classes where we haven't configured a script in pack
 
 # Class Notes
 
-Here you are going to see some detailed explanation about each class from this course. **If you prefer you can skip this explanations and to directly to the [steps notes of the final project](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#final-project)**.
+Here you are going to see some detailed explanation about each class from this course. **If you prefer you can skip this explanations and to directly to the** [**steps notes of the final project**](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#final-project).
 
 You can access each class through the links below:
 
