@@ -19,6 +19,8 @@ This course is an introduction to node.js. The topics covered in this course are
 
 In this repository you can have access to all the classes from this course. Each class has an specific number and name, so it is easier to identify the classes content. There are a total of 23 classes and a final project with 5 steps.
 
+I've created a dedicated section with notes of each class and for the steps of the final project, I recommend you check them out.
+
 ## About the classes
 
 Each class has code sufficient to execute without any modifications, you'll just need to download the dependencies and devDependencies of each class before running it. Please check the section on how to configure and download the required software to run the code for each class.
@@ -56,9 +58,11 @@ $ yarn start
 
 The first option is for the classes where we haven't configured a script in package.json. The second option is for those classes where **nodemon** is included in the dependencies.
 
-# Classes details
+# Class Notes
 
-Here you are going to see some detailed explanation about each class from this course. You can access each class through the links below:
+Here you are going to see some detailed explanation about each class from this course. If you prefer you can skip this explanations and to directly to the steps notes of the final project.
+
+You can access each class through the links below:
 
 * [Class 01: Configuration and running first script with node.js](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-01-configuration-and-running-first-script-with-nodejs)
 * [Class 02: Modules - CommonJS](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-02-modules---commonjs)
@@ -85,8 +89,8 @@ Here you are going to see some detailed explanation about each class from this c
 * [Class 20: Routes and Parameters](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-20-routes-and-parameters)
 * [Class 21: CORS (Theory)](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-21-cors-theory)
 * [Class 21: CORS (Practice)](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-21-cors-practice)
-* [Class 22: Error handling](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-21-cors-practice)
-
+* [Class 22: Error handling](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-22-error-handling)
+* [Class 23: Running API with Docker](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-23-running-api-with-docker)
 
 ## Class 01: Configuration and running first script with node.js
 
@@ -900,103 +904,70 @@ Important: Before running the server we have to install all dependencies and dev
 $ yarn install --production=false
 ```
 
-------------------------------------------------------------------------
-Git commands
+# Final Project
 
-This is a special note on git commands:
+The final project consists of a TODO list web application. At the end of step 5 we will be able to include and remove tasks, and also see the complete listing of previous included tasks. 
 
-* Configure github access:
-git config --global user.name "jlggross"
-git config --global user.email "joaolggross@gmail.com"
-git config --list # check the configurations
+The frontend has been already developed in the JavaScript Introduction Course, but here we will have to adapt it to communicate with the backend.
 
-* Create repository:
-git init
+The backend will be built from ground zero. Every piece of knowledge that we gathered through the 23 classes will be used here. You can think of this final project as a recap of all the concepts and technologies covered in this course.
 
-* Add files to a commit:
-git add . 					# Add all files
-git add <filename> 	# Specific file
+Below you can see a listing with links to the 5 steps of the final project's development:
 
-* Status of files:
-git status 					# Say if file has been created, deleted, modified
+* [Final Project, Step 1: Creating the server and configurations]()
+* [Final Project, Step 2: Retrieving a list from the backend]()
+* [Final Project, Step 3: Integrating with database]()
+* [Final Project, Step 4: Saving data in the API]()
+* [Final Project, Step 5: Removing data from the DB]()
 
-* Make commit:
-git commit -m "My message"
-
-* See commit history:
-git log
-
-* Associate git repository to local repository:
-git remote add origin git@github.com:jlggross/codar.me.git
-
-* Check repository linking to github:
-git remote -v
-
-	Expected output:
-	> origin  https://github.com/jlggross/codar.me.git (fetch)
-	> origin  https://github.com/jlggross/codar.me.git (push)
-
-* Send commits to github:
-git push -u origin main
-git push									# Also works. Clean version
-
-------------------------------------------------------------------------
-Project - Step 1 - Creating the server and configurations
-
-* The project is an extension of the TODO list project from the javascript
-course.
+## Final Project, Step 1: Creating the server and configurations
+* The project is an extension of the TODO list project from the javascript course.
 * Now are project will include a server side too
 * The project is divided in:
-
-- web: todo list project from javascript course
-- server: server side
-
+  * web: todo list project from javascript course
+  * server: server side
 * Let's start building our server.
 
 1. Yarn Init. Go to the server folder and use the command:
-> yarn init
-
-	* server name: server
-	* version: 0.1.0
-	* entry point: index.js
-	* private: true (to avoid committing to the npm website)
+```bash
+$ yarn init
+```
+* server name: server
+* version: 0.1.0
+* entry point: index.js
+* private: true (to avoid committing to the npm website)
 
 File package.json is created.
 
 2. Add dependencies
-> yarn add mongoose restify
+```bash
+$ yarn add mongoose restify
+```
 
 3. Add devDependencies
-> yarn add --dev nodemon
+```bash
+$ yarn add --dev nodemon
+```
 
-4. We created our middlewares, cors access, and server listening
-at port 3002.
+4. We created our middlewares, cors access, and server listening at port 3002.
 
-5. We add a script at package.json to use 'yarn start' to run 
-'nodemon index.js'
+5. We add a script at package.json to use `$ yarn start` to run `$ nodemon index.js`
 
-6. We run 'yarn start' to start the server and we can access the server
-at http://localhost:3002/. 
+6. We run `$ yarn start` to start the server and we can access the server at http://localhost:3002/. 
 
-------------------------------------------------------------------------
-Project - Step 2 - Retrieving a list from the backend
+## Final Project, Step 2: Retrieving a list from the backend
 
 1. We created a new route to the TODOS list ('/todos')
 
-2. To run the server go to the server folder and run 'yarn start'
+2. To run the server go to the server folder and run `$ yarn start`
 
-3. In the frontend we created a onLoad() function that 
-executes when the window loads.
+3. In the frontend we created a onLoad() function that executes when the window loads.
 
-4. We create a fetch() in the function onLoad() to get 
-the information from our server at http://localhost:3002/todos
+4. We create a fetch() in the function onLoad() to get the information from our server at http://localhost:3002/todos
 
-Resume: In this step we configured a new route in the backend 
-at path '/todos' and also created a function in the frontend
-to fetch data from the backend
+Resume: In this step we configured a new route in the backend at path '/todos' and also created a function in the frontend to fetch data from the backend.
 
-------------------------------------------------------------------------
-Project - Step 3 - Integrating with database
+## Final Project, Step 3: Integrating with database
 
 We are going to create the persistence of data in our database
 
@@ -1004,33 +975,29 @@ We are going to create the persistence of data in our database
 * The database.js has the configurations to connect to the database
 
 2. Remove active mongodb container and respective volume
-> docker rm -vf mongodb
-> docker ps -a 	# To check if the container is still active
+```bash
+$ docker rm -vf mongodb
+$ docker ps -a 	# To check if the container is still active
+```
 
 3. We create a docker-compose.yml file
-* ports: mongodb will be accessed at port 271017 and docker
-will map to port 27017 internally when this access happen
+* ports: mongodb will be accessed at port 271017 and docker will map to port 27017 internally when this access happen
 
 4. Run mongodb docker container
-> docker-compose up -d
+```bash
+$ docker-compose up -d
+```
 
-5. When starting the server with 'yarn start' we should
-see a message 'MongoDB: Connected!'
+5. When starting the server with `$ yarn start` we should see a message 'MongoDB: Connected!'
 
-6. we create a module/todos folder with model.js and 
-controller.js files inside it
+6. we create a module/todos folder with model.js and  controller.js files inside it
 * model.js: Defines the mongoDB schema
-* controller.js: Will have the actions to create and remove
-items. The list from controller.js is exported and imported 
-in index.js.
-	* The list of tasks is them passed to our route with path 
-	'/todos'
+* controller.js: Will have the actions to create and remove items. The list from controller.js is exported and imported in index.js.
+  * The list of tasks is them passed to our route with path '/todos'
 
 7. Checking result in frontend
 * We should see an empty list of tasks in the frontend
-* Hitting F12 in the keyboard and going to the Network tab
-we should see the todos path getting a 200 message from
-the server and an empty list of values
+* Hitting F12 in the keyboard and going to the Network tab we should see the todos path getting a 200 message from the server and an empty list of values
 
 8. We also created a POST route in the index.js file
 * The routes could have been created in a separate file.
@@ -1038,67 +1005,60 @@ the server and an empty list of values
 * We also created a save method in the controller.js file.
 * The save function is not operational yet
 
-------------------------------------------------------------------------
-Project - Step 4 - Saving data in the API
+## Final Project, Step 4: Saving data in the API
 
-1. In the controller.js file we created a new function 
-addInDOM().
+1. In the controller.js file we created a new function addInDOM().
 
 2. We have to have a more robust CORS control.
-> yarn add cors
-> yarn start
-
+```bash
+$ yarn add cors
+$ yarn start
+```
 * We added a middleware to deal with cors
 
 3. We changed the save function from controller.js
-* The model.js had a simple typing error in the schema,
-we changed 'test' by 'text'. It allowed the text inserted 
-in the frontend to be added end sent to the backend with POST
-(save method from controller.js)
+* The model.js had a simple typing error in the schema, we changed 'test' by 'text'. It allowed the text inserted in the frontend to be added end sent to the backend with POST (save method from controller.js)
 
-4. In function addTask() from main.js we configured the fetch POST,
-that is, saving a task in the DB. The fetch returns a promise and 
-we take the promises return, pass to JSON and then add the task in the
-DOM with function addInDOM()
+4. In function addTask() from main.js we configured the fetch POST, that is, saving a task in the DB. The fetch returns a promise and we take the promises return, pass to JSON and then add the task in the DOM with function addInDOM()
 
 Resume:
-* Now when we open the frontend in the browser we have already
-the list of tasks displayed (GET from the DB). 
+* Now when we open the frontend in the browser we have already the list of tasks displayed (GET from the DB). 
 * We also can insert another item, saving it to the DB
-* We can check all the itens in the database through the link
-http://localhost:3002/todos
-------------------------------------------------------------------------
-Project - Step 5 - Removing data from the DB
+* We can check all the itens in the database through the link http://localhost:3002/todos
 
-1. We modified function removeTask() from main.js to fetch each
-by by its id. 
-* If the response to the fetch was ok (200) then remove the element
-from the DOM.
+## Final Project, Step 5: Removing data from the DB
+
+1. We modified function removeTask() from main.js to fetch each by its id. 
+* If the response to the fetch was ok (200) then remove the element from the DOM.
 
 2. We created a remove function in controller.js
 
-3. We also created a new route in the index.js file (server)
-to delete the item from the database by the id
+3. We also created a new route in the index.js file (server) to delete the item from the database by the id
 
-Resume: Our application can now insert (POST), read (GET) and 
-remove (DELETE) tasks to and from the database. The application
-is complete with a frontend and backend, a full stack web app.
+Resume: Our application can now insert (POST), read (GET) and remove (DELETE) tasks to and from the database. The application is complete with a frontend and backend, a full stack web app.
 
-------------------------------------------------------------------------
-Project - Running
+## Running the Project
 
 1. Install dependencies and devDependencies
-> yarn install --production=false
+```bash
+$ yarn install --production=false
+```
 
 2. Put mongodb service up in air
-> docker-compose up -d
+```bash
+$ docker-compose up -d
+```
 
 3. Start application
-> yarn start
+```bash
+$ yarn start
+```
 
 4. Open frontend
 * Open index.html in the browser
 
 Enjoy.
 
-------------------------------------------------------------------------
+# Final Taughts
+
+This is an entensive notes documentation of the work I developed throughout this course, but I hope it can be useful for newcommers in the technologies depicted here.
