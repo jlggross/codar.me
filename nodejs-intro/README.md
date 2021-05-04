@@ -72,6 +72,8 @@ Here you are going to see some detailed explanation about each class from this c
 * [Class 09: Docker and MongoDB (Theory)](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-09-docker-and-mongodb-theory)
 * [Class 09: Docker and MongoDB (Practice)](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-09-docker-and-mongodb-practice)
 * [Class 10: Working with databases](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-10-working-with-databases)
+* [Class 11: Creating Routes](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-11-creating-routes)
+* [Class 12: API Requests](https://github.com/jlggross/codar.me/blob/main/nodejs-intro/README.md#class-12-api-requests)
 
 ## Class 01: Configuration and running first script with node.js
 
@@ -569,160 +571,107 @@ POST http://localhost:8080/users
 
 * Copy one of them, press CTRL + SHIFT + p, type 'rest send', and select the option 'Rest Client: Send Request'. Rest Client will understand the request copied in memory (CTRL + C) and run the request/response in a new tab.
 
-------------------------------------------------------------------------
-Class 13 - Registering data to database
+## Class 13: Registering data to database
 
-1. When we use mongoose to save a data to the database we can create a data
-to store and call the save() method:
+1. When we use mongoose to save a data to the database we can create a data to store and call the save() method:
 
-	const user = new UserModel({
-		name: 'João Gross',
-	})
+```javascript
+const user = new UserModel({
+	name: 'João Gross',
+})
 
-	// Save data to database
-	await user.save()
+// Save data to database
+await user.save()
+```
 
-We use await alongside the save method, because it returns a promise.
+* We use await alongside the save method, because it returns a promise.
+* Running a curl -X POST 'localhost:8080/users' we are able to create a new entry to our database.
 
-Running a curl -X POST 'localhost:8080/users' we are able to create 
-a new entry to our database.
+2. Now we want to POST data from the front-end, e.i., the client inserts data in the front-end (browser) and we will get it on our server side application
+* First we can prepare Insomnia to simulate a a POST. We create a new POST request to localhost:8080/users and in the tab 'Body' we create a 'FORM URL Encoded'. We insert a pair name-value, such as 'name' - 'João Gross'.
+* Now we can prepare our server to receive this data. We create a callback for the servers 'req' parameter:
 
-2. Now we want to POST data from the front-end, e.i., the client inserts
-data in the front-end (browser) and we will get it on our server side
-application
+```javascript
+req.on('data', callback) // On an event 'data' a callback is triggered.
+```
 
-First we can prepare Insomnia to simulate a a POST. We create a new POST
-request to localhost:8080/users and in the tab 'Body' we create a 'FORM 
-URL Encoded'. We insert a pair name-value, such as 'name' - 'João Gross'.
+* The callback above is something similar to this:
 
-Now we can prepare our server to receive this data. We create a callback
-for the servers 'req' parameter:
-
-req.on('data', callback) : On an event 'data' a callback is triggered.
-
-The callback above is something similar to this:
-
+```javascript
 let body = []
 callback = (chunk) => {
 	body.push(chunk)
 }
+```
 
-So here we wait all pieces of data to come from the front-end client,
-and add all this pieces to a 'body' variable.
-	* You will see that this pieces of data come in the form Buffer bytes.
+* So here we wait all pieces of data to come from the front-end client, and add all this pieces to a 'body' variable.
+  * You will see that this pieces of data come in the form Buffer bytes.
+* Later, when all pieces of data arrive, another event will be triggered by node.js, called 'end'. We create another callback to this event.
+* To make the POST in the front-end we have to send a message in Insomnia.
 
-Later, when all pieces of data arrive, another event will be triggered 
-by node.js, called 'end'. We create another callback to this event.
+## Class 14: Dynamic Routes
+* We encapsulated the behavior for each route and method inside a 'routes' variable. Our code is now cleaner and easier to read.
+* We also created new files so we could put each functionality of our application in a different file.
 
-To make the POST in the front-end we have to send a message in Insomnia.
-
-------------------------------------------------------------------------
-Class 14 - Dynamic Routes
-
-We encapsulated the behavior for each route and method inside a 'routes'
-variable. Our code is now cleaner and easier to read.
-
-We also created new files so we could put each functionality of our 
-application in a different file.
-
-------------------------------------------------------------------------
-Class 15 - Database Update
-
-1. Always remember to enter the applications folder and run 'yarn start'
-to run the script defined in package.json
+# Class 15: Database Update
+1. Always remember to enter the applications folder and run 'yarn start' to run the script defined in package.json
 
 2. We created another function in controller.js to update the database.
-We configured another request at Insomnia to make a Put Request. Using
-'Form URL Encoded' we make a request Put of 'id' and 'name'. 
-	* The 'id' will tell us which register to update
-	* 'name' will be the new name set to the register with id equal to 'id'.
+* We configured another request at Insomnia to make a Put Request. Using 'Form URL Encoded' we make a request Put of 'id' and 'name'. 
+  * The 'id' will tell us which register to update
+  * 'name' will be the new name set to the register with id equal to 'id'.
 
-In the update function from controller.js we use mongoose method updateOne
-to make an update to a single register, identified by its id.
+* In the update function from controller.js we use mongoose method updateOne to make an update to a single register, identified by its id.
 
-3. To make the PUT request, first make a GET request and in the listing 
-choose a register and save its id. This id will be used in the PUT request.
-In the PUT request insert the following information to the FORM:
+3. To make the PUT request, first make a GET request and in the listing choose a register and save its id. This id will be used in the PUT request.
+* In the PUT request insert the following information to the FORM:
+  * id - saved id
+  * name - new name
 
-id - saved id
-name - new name
+* After sending the message the updated will be completed, updating the name to the register with id 'id'.
 
-After sending the message the updated will be completed, updating the name
-to the register with id 'id'.
+4. Now we can make a GET request to check the altered register. In the listing of user search for the id you previously copied and check the new name (updated).
 
-4. Now we can make a GET request to check the altered register. In the 
-listing of user search for the id you previously copied and check the 
-new name (updated).
+## Class 16: Database remove
+1. Similar to the update operations, we first have to create a DELETE request in Insomnia. We use 'Form URL Encoded' to send the id we want to remove from the users table in mongo db.
+* We just have to specify the id to remove the register.
 
-------------------------------------------------------------------------
-Class 16 - Database remove
+2. After running the DELETE operation we can check the user listing in the GET Request tab of Insomnia.
 
-1. Similar to the update operations, we first have to create a DELETE 
-request in Insomnia. We use 'Form URL Encoded' to send the id we want to 
-remove from the users table in mongo db.
-	* We just have to specify the id to remove the register.
+3. The remove function in controller.js uses the deleteOne method from mongoose to DELETE a register from the database.
 
-2. After running the DELETE operation we can check the user listing in the
-GET Request tab of Insomnia.
-
-3. The remove function in controller.js uses the deleteOne method from 
-mongoose to DELETE a register from the database.
-
-------------------------------------------------------------------------
-Class 17 - API, Frameworks (Theory)
-
+## Class 17: API, Frameworks (Theory)
 What is an API (Application Programming Interface)?
 * Every exposed interface that a software or developer can use
 * Methods of data structures are APIs
 * API is not just related to the back-end, but it is the most common use.
 
 Framework
-* It is a software package that implements many tasks, making the developer
-job easier, avoiding to re-implement some functions
+* It is a software package that implements many tasks, making the developer job easier, avoiding to re-implement some functions
 
 Node.js frameworks
-* Express: The most used framework to Node.js. It is very simple to use and 
-abstracts a lot of operations. 
-	* Works with middlewares. We can add code inside our routes.
-	* The downside is that it has some security issues.
-	* Has a vast collection of plugins.
-	* Easy to integrate with a lot of different services.
-
-* Koa: Developed by the same team that created Express. It is intended
-to be an improvement over Express. 
-
-* Restify: Designed to create Node.js REST . Has many functionalities similar
-to Express.js.
-	* Has many built-in plugins
-
-* Nest.js: Robust, has been used to work with big applications, like enterprise
-applications.
-	* Very good documentation.
-	* Has a lot of built-in functionality. No need for external software for
-	most uses.
-
+* Express: The most used framework to Node.js. It is very simple to use and abstracts a lot of operations. 
+  * Works with middlewares. We can add code inside our routes.
+  * The downside is that it has some security issues.
+  * Has a vast collection of plugins.
+  * Easy to integrate with a lot of different services.
+* Koa: Developed by the same team that created Express. It is intended to be an improvement over Express. 
+* Restify: Designed to create Node.js REST . Has many functionalities similar to Express.js.
+  * Has many built-in plugins
+* Nest.js: Robust, has been used to work with big applications, like enterprise applications.
+  * Very good documentation.
+  * Has a lot of built-in functionality. No need for external software for most uses.
 * hapi
+* Micro: Created by Zeit. Designed to work with microservices and serveless applications
 
-* Micro: Created by Zeit. Designed to work with microservices and
-serveless applications
-
-------------------------------------------------------------------------
-Class 17 - Restify Framework
-
-Now we begin a new project. In this class we will create our first restify 
-server.
+## Class 17: Restify Framework
+Now we begin a new project. In this class we will create our first restify server.
 
 1. First of all we start a project with '$ yarn init'. package.json is created.
-
 2. '$ yarn add --dev nodemon'
-
 3. '$ yarn add restify'
-
 4. We create a file index.js and start coding our server.
-
-Restify manages the routes for us. We don't need to worry about that as
-we did for our pure node.js server.
-
+* Restify manages the routes for us. We don't need to worry about that as we did for our pure node.js server.
 5. Remember that we can use the VSCode Plugin to test HTTP Requests
 
 ------------------------------------------------------------------------
