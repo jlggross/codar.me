@@ -69,27 +69,20 @@ The configuration steps covered in a section above. To run the first node.js scr
 
 We can check the node.js version with `$ node -v`
 
-------------------------------------------------------------------------
-Class 02 - Modules - CommonJS
-
+## Class 02: Modules - CommonJS
 * Modules is a way to break our code into separate files 
-
 * We have two ways to create modules:
+
 1. CommonJS
-  * It is not the official way of creating modules, but it's been used before
-	ESM was created
-	* We create a separate file for our function and use the 'module' object from 
-	node.js with the 'export' method to export the function. This can only export 
-	one function.
-		* If we want to export more function then we have to create and object 
-		containing the functions and export the object
-	* In the file we want to use the exported function we just use the 'require'
-	method
+* It is not the official way of creating modules, but it's been used before ESM was created
+  * We create a separate file for our function and use the 'module' object from node.js with the 'export' method to export the function. This can only export one function.
+    * If we want to export more function then we have to create and object containing the functions and export the object
+    * In the file we want to use the exported function we just use the 'require' method
 2. ESM - ES Modules - EcmaScript Modules
-	* EcmaScript is the oficial JavaScript programming language name.
-	* ESM is the official way to implement modules in JavaScript. 
-	* You can find many references to ESM in the JavaScript documentation.
-	* Is the more recent approach, coming since 2015.
+* EcmaScript is the oficial JavaScript programming language name.
+* ESM is the official way to implement modules in JavaScript. 
+* You can find many references to ESM in the JavaScript documentation.
+* Is the more recent approach, coming since 2015.
 
 ------------------------------------------------------------------------
 Class 03 - Modules - ESM
