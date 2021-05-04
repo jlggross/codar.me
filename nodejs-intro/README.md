@@ -73,12 +73,13 @@ We can check the node.js version with `$ node -v`
 * Modules is a way to break our code into separate files 
 * We have two ways to create modules:
 
-1. CommonJS
+**1. CommonJS**
 * It is not the official way of creating modules, but it's been used before ESM was created
   * We create a separate file for our function and use the 'module' object from node.js with the 'export' method to export the function. This can only export one function.
     * If we want to export more function then we have to create and object containing the functions and export the object
     * In the file we want to use the exported function we just use the 'require' method
-2. ESM - ES Modules - EcmaScript Modules
+
+**2. ESM - ES Modules - EcmaScript Modules**
 * EcmaScript is the oficial JavaScript programming language name.
 * ESM is the official way to implement modules in JavaScript. 
 * You can find many references to ESM in the JavaScript documentation.
@@ -105,7 +106,7 @@ We can check the node.js version with `$ node -v`
   * Installing yarn https://yarnpkg.com/getting-started
   * yarn also uses package.json for the project's configuration
 
-1. Create a package.json file with yarn
+**1. Create a package.json file with yarn**
 
 ```bash
 $ yarn init
@@ -119,13 +120,13 @@ Some values are required when running `$ yarn init`:
 * private: true
   * If 'private' is set to 'true' than the package will not be published.
 
-2. To publish our package
+**2. To publish our package**
 
 ```bash
 $ npm publish
 ```
 
-3. Adding dependencies to the project
+**3. Adding dependencies to the project**
 
 Example:
 
@@ -135,7 +136,7 @@ $ yarn add react
 
 * This add software/package dependencies which are a necessity to development the project
 
-4. Adding devDependencies to the project
+**4. Adding devDependencies to the project**
 
 ```bash
 $ yarn add --dev @codar/eslint-plugin
@@ -144,36 +145,37 @@ $ yarn add --dev @codar/eslint-plugin
 * This add devDependencies to our project. It does not add code to the project. Instead it adds resources to help the project's development.
   * This will also add a new line in the package.json file
 
-5. Install project's dependencies
+**5. Install project's dependencies**
 
 ```bash
 $ yarn install
 ```
 
-------------------------------------------------------------------------
-Class 05 - Creating a NPM account, Publishing a package
-
+## Class 05: Creating a NPM account, Publishing a package
 1. We create an account in NPM: https://www.npmjs.com/signup
 
 2. Login to npm
 > npm login
 
 3. Check project name on npm website
-	* First we have to check if the package name exists
-	* Go to https://www.npmjs.com/package/<package name>
-	* If the page you try to access does not exist, than you can create a package with that name to publish
+  * First we have to check if the package name exists
+  * Go to https://www.npmjs.com/package/<package name>
+  * If the page you try to access does not exist, than you can create a package with that name to publish
 
 4. We create a package with yarn
-	* Enter via terminal to the folder you want to create the package
-	* Initiate the package
-	> yarn init
-		* name: resume-jlggross
-		* version: 0.1.0
-		* description: João Gross Resume
-		* entry point: index.js
-		* author: João Gross 
-		* license: MIT
-		* private: 
+  * Enter via terminal to the folder you want to create the package
+  * Initiate the package:
+
+  ```bash
+  $ yarn init
+  ```
+      	* name: resume-jlggross
+	* version: 0.1.0
+	* description: João Gross Resume
+	* entry point: index.js
+	* author: João Gross 
+	* license: MIT
+	* private: 
 
 5. We add 'module.exports = "João Gross"' to our index.js file
 
