@@ -384,7 +384,7 @@ $ docker stop mongodb
 
 * Check stopped containers:
 ```bash
-$ docker ps -
+$ docker ps -a
 ```
 
 * Start container again:
@@ -421,84 +421,97 @@ $ mongo -u root -p
 ```
   * With mongodb running in a docker container we can create an application and connect to this database
 
-------------------------------------------------------------------------
-Class 09 - Docker and MongoDB (Practice)
+## Class 09: Docker and MongoDB (Practice)
 
+Docker-Compose
 * docker-compose : Another way to run containers
-
 * Install docker-compose: https://docs.docker.com/compose/install/
-
 * Check if docker-compose is installed in our system:
-> docker-compose -v
+
+```bash
+$ docker-compose -v
+```
 	
-Class09 - Practice:
-* We created a folder 'api' and a file named 'docker-compose.yml'
+Practice Details:
+* We created a folder 'api' and a file named **docker-compose.yml**
 * Go to VSCode extensions and install YAML
 * Open docker-compose.yml and configure the file
-	* See how it is configured in the class09/api folder 
+  * See how it is configured in the class09/api folder 
 * We have to enter at folder api through the command line
 * To run the docker compose:
-> docker-compose up -d
-	* If the container named in docker-compose.yml is already running an error 
-	will pop. You have to make sure the docker image is not running. It is 
-	possible to delete the container with:
-	> docker rm -vf mongodb
+
+```bash
+$ docker-compose up -d
+```
+
+* If the container named in docker-compose.yml is already running an error will pop. You have to make sure the docker image is not running. It is possible to delete the container with:
+
+```bash
+$ docker rm -vf mongodb
+```
+
 * You can check if the docker image started with:
-> docker ps -a
+```bash
+$ docker ps -a
+```
+
 * Enter container bash:
-> docker exec -it mongodb bash
+```bash
+$ docker exec -it mongodb bash
+```
+
 * Enter mongodb:
-> mongo -u root -p
+```bash
+$ mongo -u root -p
+```
+
 * Show dbs:
-> show dbs
+```bash
+$ show dbs
+```
 
 * To put the container down:
-> docker-compose down
-	* Checking 'docker ps -a' will not list the container anymore
+```bash
+$ docker-compose down
+```
+
+* Checking `$ docker ps -a` will not list the container anymore
 
 * To restart container:
-> docker-compose restart
+```bash
+$ docker-compose restart
+```
 
-Docker Compose
+Resume:
 * Much simpler command line way to run a docker image
-* The downside is to configure a file docker-compose.yml
+* The downside is to configure a file **docker-compose.yml**
 * But after the file is configured is is much more easier with docker-compose
-* Instead of executing each docker image by hand with 'docker run', and 
-and linking them manually, with docker compose we have a single file to do this 
-orchestration and put up all the services/containers at once. 
-* This lessens the admins or developers responsibility to manage and deploy and
-to worry with running all the commands to run the	services and its dependencies.
+* Instead of executing each docker image by hand with 'docker run', and and linking them manually, with docker compose we have a single file to do this orchestration and put up all the services/containers at once. 
+* This lessens the admins or developers responsibility to manage and deploy and to worry with running all the commands to run the services and its dependencies.
  
-------------------------------------------------------------------------
-Class 10 - Working with databases
+## Class 10: Working with databases
 
-1. Go to 'api' folder and run '$ yarn init'. A file package.json is created
+1. Go to 'api' folder and run `$ yarn init`. 
+* A file package.json is created
 
-2. '$ yarn add mongoose'. mongoose is a dependency. It is a RM, a library used
-to connect to the database. It has various methods to manipulate the database.
+2. `$ yarn add mongoose`. mongoose is a dependency. 
+* It is a RM, a library used to connect to the database.
+* It has various methods to manipulate the database.
 
-3. '$ yarn add --dev nodemon'
-Nodemon is used to run our server in simpler way
+3. `$ yarn add --dev nodemon`
+* Nodemon is used to run our server in simpler way
 
-4. index.js runs our server. It is basically the same code from class08, where
-we created our first http server. But now we have configurations for the database
-too.
+4. index.js runs our server. It is basically the same code from class08, where we created our first http server. But now we have configurations for the database too.
 
-5. The connection to the database can be done with 'mongoose.connect()'. To 
-configure this method we have to check the information configured in docker-compose.yml.
+5. The connection to the database can be done with `mongoose.connect()`. To  configure this method we have to check the information configured in docker-compose.yml.
 
-6. Put docker image up with '$ docker-compose up -d'. You can check running containers 
-with '$ docker ps -a'
+6. Put docker image up with `$ docker-compose up -d`. You can check running containers with `$ docker ps -a`
 
-7.We run our server '$ node index.js' and can access it in the browser through
-http://localhost:8080/ 
+7.We run our server `$ node index.js` and can access it in the browser through http://localhost:8080/ 
 
-Resume: We put up a docker container with mongodb running and configured mongoose
-to access it. In the server we first inserted a piece of data to the mongo database
-and later we read this information and send it to the front-end user (browser).
+Resume: We put up a docker container with mongodb running and configured mongoose to access it. In the server we first inserted a piece of data to the mongo database and later we read this information and send it to the front-end user (browser).
 
-* Reminder: Before all that we had to configure docker-compose.yml and create
-a package.json file with 'yarn init' to specify our project's dependencies.
+* Reminder: Before all that we had to configure docker-compose.yml and create a package.json file with `$ yarn init` to specify our project's dependencies.
 
 ------------------------------------------------------------------------
 Class 11 - Creating Routes
