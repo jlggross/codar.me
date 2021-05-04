@@ -406,9 +406,9 @@ $ docker rm -vf mongodb
 ```bash
 $ docker exec -it mongodb bash
 ```
-    * -it : interactive
-    * mongodb : container name
-    * bash : command we want to access inside the container. Bash is to access the container's terminal
+  * -it : interactive
+  * mongodb : container name
+  * bash : command we want to access inside the container. Bash is to access the container's terminal
 
 * Check mongodb version inside the container:
 ```bash
