@@ -1,0 +1,50 @@
+React Introduction Course
+
+--------------------------------------------------------------------------------
+Class 01 - What is React?
+
+* React is not a framework, it is a JavaScript library.
+  * A library is designed to solve a specific problem
+  * A framework gives functionality to work with a bigger set of problems
+
+* Angular.js is a front-end framework, working with interface, DOM elements,
+HTTP requests, etc.
+
+* React, on the other hand, is focused in DOM (Document Object Model)
+  * React is a library to create user interfaces
+  * Has a very big market, many companies use React
+  * Its maintained by Facebook
+
+* It is recommended to check the React documentation: https://pt-br.reactjs.org/
+
+--------------------------------------------------------------------------------
+Class 02 - Using Browser-Sync
+
+* Browser-Sync is a tool that can do automatic reload of an HTML page after a 
+change. It is very useful for testing.
+* To download and execute browser-sync type the following commands in the terminal:
+
+$ npm install -g browser-sync
+$ browser-sync start --server --file --watch "." --no-open --directory
+
+* Make sure that the message "[Browsersync] Watching files..." appears in your 
+terminal, indicating that browser-sync reload functionality is active.
+
+* Just go to http://localhost:3000, open your html file and check it reload as 
+you make changes in your code editor and saves the file.
+
+--------------------------------------------------------------------------------
+Class 03 - Adding elements to the DOM - Vanilla JS
+
+* React add elements to the DOM in the div with root id
+  * Our application is created inside this div
+
+* The index.html file of this class is an example of how react 
+works underneath its interface 
+
+--------------------------------------------------------------------------------
+Class 04 - React createElement API
+
+
+
+--------------------------------------------------------------------------------
