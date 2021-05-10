@@ -1,0 +1,47 @@
+<body>
+  <div id="root"></div>
+  <script src="http://unpkg.com/react/umd/react.development.js"></script>
+  <script src="http://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.9.6/babel.js"></script>
+
+  <script type="text/babel">
+    const rootElement = document.getElementById('root')
+
+    function UserInfo({ name, lastName }) {
+      return (
+        <div>
+          Hello {name} {lastName}!
+        </div>
+      )
+    }
+
+    const propTypes = {
+      string(props, propName, componentName) {
+        if (typeof props[propName] !== 'string') {
+          return new Error(
+            `Component ${componentName} expects ${propName} to be string. You passed ${typeof props[
+              propName
+            ]}`
+          )
+        }
+      },
+    }
+
+    UserInfo.propTypes = {
+      name: propTypes.string,
+      lastName: propTypes.string,
+    }
+
+    function App() {
+      return (
+        <>
+          <UserInfo name={'João'} lastName={'Gross'} />
+          <UserInfo name={'João'} lastName={10} />
+          <UserInfo />
+        </>
+      )
+    }
+
+    ReactDOM.render(<App />, rootElement)
+  </script>
+</body>

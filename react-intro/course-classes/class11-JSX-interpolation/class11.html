@@ -1,0 +1,28 @@
+<body>
+  <div id="root"></div>
+  <script src="http://unpkg.com/react/umd/react.development.js"></script>
+  <script src="http://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.9.6/babel.js"></script>
+
+  <script type="text/babel">
+    function CountChars({ text }) {
+      return (
+        <div>
+          The text <strong>"{text}"</strong>{' '}
+          {text.length ? `has ${text.length} characters` : 'is empty'}
+        </div>
+      )
+    }
+
+    function App() {
+      return (
+        <>
+          <CountChars text="My first string" />
+          <CountChars text="" />
+        </>
+      )
+    }
+
+    ReactDOM.render(<App />, document.getElementById('root'))
+  </script>
+</body>

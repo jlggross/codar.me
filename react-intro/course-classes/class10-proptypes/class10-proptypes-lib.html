@@ -1,0 +1,37 @@
+<body>
+  <div id="root"></div>
+  <script src="http://unpkg.com/react/umd/react.development.js"></script>
+  <script src="http://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.9.6/babel.js"></script>
+  <script src="https://unpkg.com/prop-types/prop-types.js"></script>
+
+  <script type="text/babel">
+    const rootElement = document.getElementById('root')
+
+    function UserInfo({ name, lastName }) {
+      return (
+        <div>
+          Hello {name} {lastName}!
+        </div>
+      )
+    }
+
+    // Using object PropTypes from prop-types.js
+    UserInfo.propTypes = {
+      name: PropTypes.string,
+      lastName: PropTypes.string,
+    }
+
+    function App() {
+      return (
+        <>
+          <UserInfo name={'João'} lastName={'Gross'} />
+          <UserInfo name={false} lastName={10} />
+          <UserInfo />
+        </>
+      )
+    }
+
+    ReactDOM.render(<App />, rootElement)
+  </script>
+</body>

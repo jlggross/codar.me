@@ -1,0 +1,45 @@
+<body>
+  <div id="root"></div>
+  <script src="http://unpkg.com/react/umd/react.production.min.js"></script>
+  <script src="http://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.9.6/babel.js"></script>
+
+  <script type="text/babel">
+    const rootElement = document.getElementById('root')
+
+    class App1 extends React.Component {
+      render() {
+        return <h1> {this.props.children} </h1>
+      }
+    }
+
+    function App2(props) {
+      return <h1>{props.children}</h1>
+    }
+
+    // The same as App2, but using destructuring
+    function App3({ children }) {
+      return <h1>{children}</h1>
+    }
+
+    // Reusing <HelloWorld />
+    function HelloWorld() {
+      return <h1>Hello World</h1>
+    }
+    function App4() {
+      return (
+        // Using React.Fragment
+        <>
+          <HelloWorld />
+          <HelloWorld />
+          <HelloWorld />
+        </>
+      )
+    }
+
+    //ReactDOM.render(<App1>My Component</App1>, rootElement)
+    //ReactDOM.render(<App2>Another Component</App2>, rootElement)
+    //ReactDOM.render(<App3>With destructuring</App3>, rootElement)
+    ReactDOM.render(<App4 />, rootElement)
+  </script>
+</body>
