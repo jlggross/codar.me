@@ -18,6 +18,7 @@
   - [Class 11 - JSX Interpolation]()
   - [Class 12 - Re-Render]()
   - [Class 13 - Styling with className and inline styles]()
+  - [Class 14 - Event Handlers]()
 
 # Technologies of this course
 
@@ -137,4 +138,11 @@ Class resume: We created a function that was reused. Also, we created different 
 
 Class resume: Created a Box component with color and size to style different box elements
 
-## Event Handler
+## Class 14 - Event Handlers
+
+- Some events:
+  - onCLick
+  - onBlur
+  - onChange
+  - onMouseOut
+  - ...
