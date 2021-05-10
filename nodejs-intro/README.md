@@ -25,6 +25,7 @@ I've created a dedicated section with notes of each class and for the steps of t
 
 * [Node.js Introduction Course](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#nodejs-introduction-course)
 * [Technologies of this course](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#technologies-of-this-course)
+  * [Packages](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#packages)
   * [Useful testing tools](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#useful-testing-tools)  
 * [About the classes](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#about-the-classes)
   * [Configuring your environment and VSCode](https://github.com/jlggross/codar.me/tree/main/nodejs-intro#configuring-your-environment-and-vscode)  
@@ -74,7 +75,12 @@ As mentioned, this is a course focused on node.js. Along with node.js we are goi
 * **Docker:** There is a brief on docker containers in the class I started using docker. I will talk about how to download a docker image, put a docker image up in air (running image) and how to connect and interact with it. Also, at the end of the course, in class 23, we are going to create a docker image of our completed API  
 * **Docker-Compose:** Docker Compose is a Docker image orchestrator. When manipulating a group of docker containers, an orchestrator will save us time through a file that has all the configurations necessary to run all conatiners. 
 * **MongoDB:** Mongo is the database we are going to work with to save and retrieve data with the created API. Mongo will be handled by a dopcker image.
-* **Restify:** Restify is a framework to work with node.js. It has many functionality already implemented which makes our development job easier. The code is cleaner and more secure.
+
+## Packages
+
+* **restify**: restify is a framework to work with node.js. It has many functionality already implemented which makes our development job easier. The code is cleaner and more secure.
+* **mongoose**: mongoose is a package which allows mongodb object modeling for node.js. It has built-in functions that make connecting to the DB and data handling easier.
+* **nodemon**: nodemon will automatically reload the node.js server every time we change and save files. Very helpful for development.
 
 ## Useful testing tools
 
