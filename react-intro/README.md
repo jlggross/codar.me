@@ -35,6 +35,7 @@
   - [Class 27 - Ready-made solutions]()
   - [Class 28 - Generators]()
   - [Class 29 - Organizing the Application]()
+  - [Class 30 - Components]()
 
 # Technologies of this course
 
@@ -287,5 +288,8 @@ npx create-react-app todo
 
 - The app created by create-react-app has a lot of files we don't need, so lets organize them
 - First, create a folder pages/ inside src/
-  - Deleted files: logo.svg, App.test.js, App.css, reportWebVitals.js, setupTest.js
-  - Inside pages/: App.js (change name to home.js)
+- Deleted files: logo.svg, App.test.js, App.css, reportWebVitals.js, setupTest.js
+- Inside pages/: App.js (change name to home.js)
+- File index.js has been cleaned
+
+## Class 30 - Components
