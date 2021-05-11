@@ -1,0 +1,48 @@
+<body>
+  <div id="root"></div>
+  <script src="http://unpkg.com/react/umd/react.development.js"></script>
+  <script src="http://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.9.6/babel.js"></script>
+
+  <script type="text/babel">
+    function Form() {
+      const [name, setState] = React.useState(() => {
+        console.log('initial')
+        return window.localStorage.getItem('name') || ''
+      })
+
+      const handleName = (ev) => {
+        console.log('rendering')
+        setState(ev.target.value) // Called at re-render operations
+      }
+      // 'name' is the state of our useState()
+      React.useEffect(() => {
+        console.log('Form useEffect')
+        window.localStorage.setItem('name', name) // Create new item inside the local storage
+      }, [name])
+
+      return (
+        <div>
+          <form>
+            <label htmlFor="name">Name:</label>
+            <input type="text" id="name" onChange={handleName} />
+            <div>{name ? <strong>Hello {name}</strong> : 'Type your name'}</div>
+          </form>
+        </div>
+      )
+    }
+
+    function App() {
+      const [count, setCount] = React.useState(0)
+
+      return (
+        <div>
+          <button onClick={() => setCount(count + 1)}>{count}</button>
+          <Form />
+        </div>
+      )
+    }
+
+    ReactDOM.render(<App />, document.getElementById('root'))
+  </script>
+</body>

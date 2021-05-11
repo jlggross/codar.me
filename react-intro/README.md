@@ -4,6 +4,7 @@
 
 - [React Introduction Course]()
 - [Technologies of this course]()
+  - [Packages]()
 - [Course Classes]()
   - [Class 01 - What is React?]()
   - [Class 02 - Using Browser-Sync]()
@@ -19,13 +20,23 @@
   - [Class 12 - Re-Render]()
   - [Class 13 - Styling with className and inline styles]()
   - [Class 14 - Event Handlers]()
+  - [Class 15 - State Management with useState Hook]()
+  - [Class 16 - Side Effects Management with useEffect]()
+  - [Class 17 - Lazy Initializer with useState]()
+  - [Class 18 - useEffect dependencies array]()
+  - [Class 19 - Custom Hook]()
+  - [Class 20 - Hook Lifecycle]()
+  - [Class 21 - Lifting State]()
+  - [Class 22 - Basic Forms]()
 
 # Technologies of this course
 
+## Packages
+
 - react
 - unpkg: CDN for npm packages.
-- JSX
-- babel
+- JSX/babel
+- browser-sync
 
 # Course Classes
 
@@ -146,3 +157,54 @@ Class resume: Created a Box component with color and size to style different box
   - onChange
   - onMouseOut
   - ...
+
+## Class 15 - State Management with useState Hook
+
+- React.useState(initialState) returns an array with two values
+  - The first is the initial state of the variable we want to monitor
+  - The second is a function to set a new state
+  - The initial state is a value we pass to React.useState for the initial state
+- React.useState() is also called a Hook, because on every change we have in the state a virtual hook can be triggered (setState) to alter the state of our monitored variables
+- We can have as make Hooks as we want
+
+```javascript
+const [state1, setState1] = React.useState(0)
+const [state2, setState2] = React.useState(0)
+...
+```
+
+- React Hooks were created to work with functional components in a straightforward way.
+- When dealing with Class Components the re-render operations were defined inside the classes. But with functional components the re-render would occur re-executing the complete component.
+  - The React Hooks will re-render just the parts that change
+
+## Class 16 - Side Effects Management with useEffect
+
+- React.useEffect(): Its a side effect function called every time a re-render of a component is done.
+  - After the setState() Hook executes the useEffect() function is also called
+
+## Class 17 - Lazy Initializer with useState
+
+- When initializing a Hook with React.useState(initial) we can pass a callback as 'initial'
+- In the class example the initial value of the Hook is executed just one time and every time the component changes a new rendering occurs
+
+## Class 18 - useEffect dependencies array
+
+- We can add a second argument to useEffect including all the variables useEffect must look at to be triggered.
+  - It is called a dependency array
+- useEffect will just execute if any of the variables in the array change
+
+## Class 19 - Custom Hook
+
+- We can create our own Hooks
+- To create a new Hook we just need to create a new function
+
+## Class 20 - Hook Lifecycle
+
+Class resume: In this class we saw the order of execution of different Components, the order of re-rendering with nested components and also the order of execution of useState and useEffect
+
+## Class 21 - Lifting State
+
+- We lifted the state of the children components to be inside the parents component (App)
+- State Collocation is the process to send the state back to the child, close to where it is going to be used
+
+## Class 22 - Basic Forms
