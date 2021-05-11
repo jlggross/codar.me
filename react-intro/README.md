@@ -32,6 +32,9 @@
   - [Class 24 - Controlled and uncontrolled components]()
   - [Class 25 - Managing multiple inputs]()
   - [Class 26 - Sending Forms]()
+  - [Class 27 - Ready-made solutions]()
+  - [Class 28 - Generators]()
+  - [Class 29 - Organizing the Application]()
 
 # Technologies of this course
 
@@ -245,3 +248,44 @@ Than, to retrieve the value of the input we use 'event.target.elements.myname.va
 - We also created a handle do update variable changes using a structure with nested arrow functions
 
 ## Class 26 - Sending Forms
+
+- handleSubmit() will be used to send the form
+- Using fetch() and async/await we made a POST to localhost:3002/todos to send the data
+  - localhost:3002/todos is not configured, so the fetch will return an error, but we can see that it tries to send, because the status of the button changes while trying to make the POST
+
+## Class 27 - Ready-made solutions
+
+- When working with forms we don't need to make all the management by hand, we can use a library instead
+- Some options:
+  - React Hook Form: <https://react-hook-form.com/>
+  - Formik: <https://formik.org/docs/overview>
+    - Its very easy to add validation into Formik using another tool called Yup: <https://github.com/jquense/yup>
+    - Formik can get the messages that Yup provides and put inside the form management it does
+
+## Class 28 - Generators
+
+- Until now we saw how to create React applications, but this is not the way used in the industry
+- The correct way of working is configuring imports, babel and other packages outside our html file
+  - Example: babel can be configured as a project dependency.
+
+1. To create a React project and configure its dependencies we run:
+
+```
+npx create-react-app <projectName>
+npx create-react-app todo
+```
+
+- more info of create-react-app in the webiste: <https://create-react-app.dev/>
+
+2. Go to todo/ and run `yarn start`
+
+- 'react-scripts start' is executed, initializing our react project
+
+3. class28-generators folder has all the files created by create-react-app, except for node_modules
+
+## Class 29 - Organizing the Application
+
+- The app created by create-react-app has a lot of files we don't need, so lets organize them
+- First, create a folder pages/ inside src/
+  - Deleted files: logo.svg, App.test.js, App.css, reportWebVitals.js, setupTest.js
+  - Inside pages/: App.js (change name to home.js)

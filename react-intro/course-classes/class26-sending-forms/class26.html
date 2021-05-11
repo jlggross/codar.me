@@ -10,10 +10,29 @@
       const [email, setEmail] = React.useState('')
       const [phone, setPhone] = React.useState('')
       const [password, setPassword] = React.useState('')
+      const [loading, setLoading] = React.useState(false)
 
-      const handleSubmit = (event) => {
+      const handleSubmit = async (event) => {
         event.preventDefault()
+
         console.log(name, email, phone, password)
+
+        setLoading(true)
+
+        try {
+          const { data } = await fetch('http://localhost:3002/todos', {
+            method: 'POST',
+            data: {
+              name,
+              email,
+              phone,
+              password,
+            },
+          })
+          setLoading(false)
+        } catch (error) {
+          setLoading(false)
+        }
       }
 
       // Nested Arrow Functions
@@ -63,7 +82,9 @@
             />
           </div>
 
-          <button type="submit">Send</button>
+          <button type="submit" disabled={loading}>
+            {loading ? 'Sending' : 'Send'}
+          </button>
         </form>
       )
     }
