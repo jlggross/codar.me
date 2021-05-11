@@ -1,0 +1,73 @@
+<body>
+  <div id="root"></div>
+  <script src="http://unpkg.com/react/umd/react.development.js"></script>
+  <script src="http://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.9.6/babel.js"></script>
+
+  <script type="text/babel">
+    function UseForm() {
+      const [name, setName] = React.useState('')
+      const [email, setEmail] = React.useState('')
+      const [phone, setPhone] = React.useState('')
+      const [password, setPassword] = React.useState('')
+
+      const handleSubmit = (event) => {
+        event.preventDefault()
+        console.log(name, email, phone, password)
+      }
+
+      // Nested Arrow Functions
+      const handleChange = (setState) => (event) => {
+        setState(event.target.value.toLowerCase())
+      }
+
+      return (
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="name">Name: </label>
+            <input
+              id="name"
+              type="text"
+              onChange={handleChange(setName)}
+              value={name}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="email">E-mail: </label>
+            <input
+              id="email"
+              type="email"
+              onChange={handleChange(setEmail)}
+              value={email}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="phone">Phone: </label>
+            <input
+              id="phone"
+              type="number"
+              onChange={handleChange(setPhone)}
+              value={phone}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="password">Password: </label>
+            <input
+              id="password"
+              type="password"
+              onChange={handleChange(setPassword)}
+              value={password}
+            />
+          </div>
+
+          <button type="submit">Send</button>
+        </form>
+      )
+    }
+
+    ReactDOM.render(<UseForm />, document.getElementById('root'))
+  </script>
+</body>

@@ -29,7 +29,9 @@
   - [Class 21 - Lifting State]()
   - [Class 22 - Basic Forms]()
   - [Class 23 - Dynamic Forms]()
-  - [Class 24 - Controlled and not controlled components]()
+  - [Class 24 - Controlled and uncontrolled components]()
+  - [Class 25 - Managing multiple inputs]()
+  - [Class 26 - Sending Forms]()
 
 # Technologies of this course
 
@@ -228,4 +230,18 @@ Than, to retrieve the value of the input we use 'event.target.elements.myname.va
 - Here we use React.useState(), which creates a Hook for 'name'. Its easier to manage 'name' this way.
 - When the input changes, handleChange() is triggered and executes setName(), which alters 'name'. And when 'name' alters 'error' is calculated and used to display an error and enable/disable the Send button.
 
-## Class 24 - Controlled and not controlled components
+## Class 24 - Controlled and uncontrolled components
+
+- New functionality to force lowercase in the input as the user types
+- Uncontrolled components: The state of the component is not controlled by the application. Ex.: An input component that receives data from the user.
+- Controlled components: The state of the component is controlled by the application. Ex.: The user types in a input component and as he writes the text is automatically set to lower case.
+- Try writing some text in the input component with capslock enabled to see that the text stays lower case.
+- For a UX point of view its important that the uses and the application see the same data. So, if the application expects the text to be lower case, instead of just getting the text from the input component and converting to lower case, we can also show this result to the user, so he knows what the application expects.
+
+## Class 25 - Managing multiple inputs
+
+- Now we have all the necessary knowledge to create a real form
+- We create a state for every input
+- We also created a handle do update variable changes using a structure with nested arrow functions
+
+## Class 26 - Sending Forms
