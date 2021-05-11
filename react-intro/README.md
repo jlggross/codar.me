@@ -28,6 +28,8 @@
   - [Class 20 - Hook Lifecycle]()
   - [Class 21 - Lifting State]()
   - [Class 22 - Basic Forms]()
+  - [Class 23 - Dynamic Forms]()
+  - [Class 24 - Controlled and not controlled components]()
 
 # Technologies of this course
 
@@ -208,3 +210,22 @@ Class resume: In this class we saw the order of execution of different Component
 - State Collocation is the process to send the state back to the child, close to where it is going to be used
 
 ## Class 22 - Basic Forms
+
+- Here we create a From using pure React, without any additional framework
+- In react the best approach to retrieve values from a input is first specify a name or id for the element:
+
+```HTML
+<input id="myname" type="text" />
+<input name="myname" type="text" />
+```
+
+Than, to retrieve the value of the input we use 'event.target.elements.myname.value'
+
+## Class 23 - Dynamic Forms
+
+- Class 22 was intended to understand how value retrieval works, but it is not the best way to do it in a real project
+  - We were accessing 'name' with event.target.elements.name.value in function handleSubmit()
+- Here we use React.useState(), which creates a Hook for 'name'. Its easier to manage 'name' this way.
+- When the input changes, handleChange() is triggered and executes setName(), which alters 'name'. And when 'name' alters 'error' is calculated and used to display an error and enable/disable the Send button.
+
+## Class 24 - Controlled and not controlled components

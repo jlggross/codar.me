@@ -5,10 +5,41 @@
   <script src="https://unpkg.com/@babel/standalone@7.9.6/babel.js"></script>
 
   <script type="text/babel">
-    function App() {
-      return <div></div>
+    function UseForm() {
+      const handleSubmit = (event) => {
+        event.preventDefault()
+
+        // Get all the same value
+        const name1 = document.querySelector('input').value // Not recommended
+        const name2 = event.target[0].value // Difficult to manage indices if we have lots of values
+        const name3 = event.target.elements[0].value // Difficult to manage indices if we have lots of values
+
+        // Best approach - Reference by 'name'
+        const name4 = event.target.elements.name.value // 'name' is the element name
+        const email = event.target.elements.email.value
+
+        console.log(name1, name2, name3, name4)
+        console.log(email)
+        //console.dir(event.target) // See properties
+      }
+
+      return (
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="name">Name: </label>
+            <input id="name" type="text" />
+          </div>
+
+          <div>
+            <label htmlFor="email">Email: </label>
+            <input id="email" type="text" />
+          </div>
+
+          <button type="submit">Send</button>
+        </form>
+      )
     }
 
-    ReactDOM.render(<App />, document.getElementById('root'))
+    ReactDOM.render(<UseForm />, document.getElementById('root'))
   </script>
 </body>
