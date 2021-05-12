@@ -293,3 +293,8 @@ npx create-react-app todo
 - File index.js has been cleaned
 
 ## Class 30 - Components
+
+- Now we are going to break our Home() function into components
+- A component should begin its name with and upper case letter
+- We divided you webpage into components: Form(), TaskList(), Task() and Home()
+- Each component has a file in components/<componentName>/
