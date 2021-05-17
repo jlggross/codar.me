@@ -36,6 +36,8 @@
   - [Class 28 - Generators]()
   - [Class 29 - Organizing the Application]()
   - [Class 30 - Components]()
+  - [Class 31 - API Communication]()
+  - [Class 32 - Removing Items]()
 
 # Technologies of this course
 
@@ -298,3 +300,65 @@ npx create-react-app todo
 - A component should begin its name with and upper case letter
 - We divided you webpage into components: Form(), TaskList(), Task() and Home()
 - Each component has a file in components/<componentName>/
+
+## Class 31 - API Communication
+
+- The items we are going to create have to be added to an API
+- To develop the API we will use the website JSONPlaceholder: <https://jsonplaceholder.typicode.com/>
+
+  - It does a fake backend, so we don't have to create it.
+  - It has some available paths, such as todos/ : <https://jsonplaceholder.typicode.com/todos>
+
+- Just remember, to load our project, you have to run `yarn start` and wait for the server to run at <http://localhost:3000/>
+
+1. In the home.js file create a useEffect callback that will run every time we change the state of the hooked variables.
+
+- The useEffect callback will be as follows:
+
+```javascript
+useEffect(() => {
+  fetch('https://jsonplaceholder.typicode.com/todos/1')
+    .then((response) => response.json())
+    .then((json) => setState(json))
+}, [])
+```
+
+- This piece of code will run just in the mount of the component
+
+2. We also have to change our component TaskList, because its <li> tag was printing {item.text}, but now we have to change to {item.title}
+
+3. How to create a task in the back-end using JSONPlaceholder?
+
+- Let's check the code provided in the website in section 'Creating a resource': <https://jsonplaceholder.typicode.com/guide/>
+- This code is added in the home.js file
+
+4. We also added a new style to the index.css file, which is the same from the project create in the javascript course
+
+Class Resume: We made our application communicate with an API
+
+## Class 32 - Removing Items
+
+- To remove items we will create one more component
+- In file TaskList/index.js we are going to create a TaskItem component
+
+1. Create the TaskItem component
+
+- TaskList now has the code:
+
+```javascript
+<ul id="tasks">
+  {tasks.map((item) => (
+    <TaskItem key={item.id} {...item} />
+  ))}
+</ul>
+```
+
+- The destructuring operator is used to add all the properties to the component, without the need to add each manually, such as id={item.id}, title={item.title}, and so on.
+
+1. To delete an item we are going to make another fetch from the API.
+
+- In this URL <https://jsonplaceholder.typicode.com/guide/>, go to 'Deleting a resource'
+
+2. The delete method will be available in home.js, decoupled from the component.
+
+- In TaskList/index.js we just make a call for onRemove(), to remove the item, instead of putting inside TaskItem all the logic to remove the item
