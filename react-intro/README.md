@@ -38,6 +38,7 @@
   - [Class 30 - Components]()
   - [Class 31 - API Communication]()
   - [Class 32 - Removing Items]()
+  - [Class 33 - Preparing for Production]()
 
 # Technologies of this course
 
@@ -362,3 +363,29 @@ Class Resume: We made our application communicate with an API
 2. The delete method will be available in home.js, decoupled from the component.
 
 - In TaskList/index.js we just make a call for onRemove(), to remove the item, instead of putting inside TaskItem all the logic to remove the item
+
+## Class 33 - Preparing for Production
+
+- Our application is complete
+- But we are still working with the development environment. We can put this to production and run `yarn start` to put in the server
+- We have to create a build, so we can create a standalone app, and will not need any dependencies after the build
+- React makes this build for us
+  - The package.json file has a script `yarn build`
+  - Running this command will create our build in the build folder
+- To run the app in the browser we have to make small changes, removing the / from:
+
+```html
+<link href="/static/css/main.bc5dedab.chunk.css" rel="stylesheet" />
+<script src="/static/js/2.915f45f6.chunk.js"></script>
+<script src="/static/js/main.ae343166.chunk.js"></script>
+```
+
+to
+
+```html
+<link href="static/css/main.bc5dedab.chunk.css" rel="stylesheet" />
+<script src="static/js/2.915f45f6.chunk.js"></script>
+<script src="static/js/main.ae343166.chunk.js"></script>
+```
+
+- Putting the build/ folder in a hosting server is enough to run our app.
