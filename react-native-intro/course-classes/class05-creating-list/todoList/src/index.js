@@ -1,12 +1,19 @@
 import * as React from 'react';
-import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
+import {useState, useEffect} from 'react';
+import {
+  StyleSheet,
+  View,
+  Text,
+  TouchableOpacity,
+  ScrollView,
+  FlatList,
+} from 'react-native';
+import axios from 'axios';
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#43bc70',
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
 
   title: {
@@ -14,11 +21,31 @@ const styles = StyleSheet.create({
   },
 });
 
-export const App = () => (
-  <View style={styles.container}>
-    <Text style={styles.title}>Hello World</Text>
-    <TouchableOpacity onPress={() => console.log('clicked')}>
-      <Text>Click-me</Text>
-    </TouchableOpacity>
-  </View>
-);
+export const App = () => {
+  const [state, setState] = useState({
+    loading: true,
+    data: [],
+  });
+
+  // useEffect will run just the first time this component is built, so the dependency array is empty []
+  useEffect(() => {
+    axios.get('https://jsonplaceholder.typicode.com/todos').then(res =>
+      setState({
+        loading: false,
+        data: res.data,
+      }),
+    );
+  }, []);
+
+  return (
+    <View style={styles.container}>
+      {state.loading && <Text>Loading</Text>}
+
+      <FlatList
+        data={state.data}
+        keyExtractor={item => `${item.id}`}
+        renderItem={({item}) => <Text>{item.title}</Text>}
+      />
+    </View>
+  );
+};

@@ -155,3 +155,24 @@ export const App = () => (
 Class Resume: We made a simple organization of the structure of our app. Also we created a Hello World screen with a clickable button.
 
 ## Class 05 - Creating a List
+
+- Now we are going to build our application
+- In the React Web course we used fetch API to handle requests. Now we are going to use Axios
+
+1. Add Axios to your project:
+
+```bash
+yarn add axios
+```
+
+2. Clean cache and start emulator, run each in a separate terminal
+
+```
+yarn start --reset-cache
+yarn run android
+```
+
+Components:
+
+- ScrollView: Creates a list with the option to scroll through all items
+- FlatList: Also have a scroll, but the elements are loaded just is the visible area (better for performance)
