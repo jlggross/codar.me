@@ -4,6 +4,7 @@
 
 - [React Native Introduction Course]()
 - [Technologies of this course]()
+- [Running the server and the emulator]()
 - [Course Classes]()
   - [Class 01 - About React Native]()
   - [Class 02 - Programs for React Native]()
@@ -14,6 +15,25 @@
   - [Class 07 - Creating a Form]()
 
 # Technologies of this course
+
+- JavaScript
+- React
+- React Native
+- Axios
+- Yarn
+- Android Studio/Emulator
+
+# Running the server and the emulator
+
+```bash
+yarn run android
+```
+
+- The emulator and the server will start. If you prefer to have the server log in the terminal inside you IDE you can kill the server and run it separately:
+
+```bash
+yarn start --reset-cache
+```
 
 # Course Classes
 
@@ -187,3 +207,8 @@ Components:
 - Pay attention to the index.js file inside components/ that is used to export the components to the index.js file inside the src/ folder
 
 ## Class 07 - Creating a Form
+
+- We added a textbox and a button to the app.
+- The text inserted in the text box can be added to the task list after hitting the button
+- The button was configured to it is only enabled it there is some text in the text box
+- The next step is sending the new tasks to the API and just add them in the task list if the API returns success
