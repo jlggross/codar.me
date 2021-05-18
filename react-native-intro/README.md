@@ -10,6 +10,8 @@
   - [Class 03 - Creating a New Project]()
   - [Class 04 - Structuring the Project]()
   - [Class 05 - Creating a List]()
+  - [Class 06 - Style to our App]()
+  - [Class 07 - Creating a Form]()
 
 # Technologies of this course
 
@@ -38,7 +40,7 @@ Resources:
 Ionic vs. React Native:
 
 - On Ionic the application is developed in a view similar to a browser (Web View), so it is not directly implemented in the target platform
-- React Native, on the other hand, will map our JavaScript classes and objects to native objects on the target platforms (IoS and Android)
+- React Native, on the other hand, will map our JavaScript classes and objects to native objects on the target platforms (iOS and Android)
   - Performance using React Native is improved
 
 Framework
@@ -53,7 +55,7 @@ React Native
   - In fact, hybrid refers to the ability to develop your project in different programming languages, non native, such as JavaScript, and can mix this with native code. React Native gives this possibility.
 - React Native compiles (builds) in native code.
 - We can work on React Native with native code and with JavaScript.
-- If we want to build a plugin for the smartphone camera we can do this with Java (Android) os Swift (IoS). We can build a bridge with this code (native code) and JavaScript. This is also called hybrid development, so not only related to having a web view or not.
+- If we want to build a plugin for the smartphone camera we can do this with Java (Android) os Swift (iOS). We can build a bridge with this code (native code) and JavaScript. This is also called hybrid development, so not only related to having a web view or not.
 - In resume, React Native is considered hybrid development even though it compiles to native code.
 
 ## Class 02 - Programs for React Native
@@ -62,7 +64,7 @@ Emulators:
 
 - Used to emulate the mobile device
 - Needed so we can test our application
-- For IoS you need a Mac to test your app. Apple does not allow emulators on other operating systems
+- For iOS you need a Mac to test your app. Apple does not allow emulators on other operating systems
   - If you have a Mac, just download and install Xcode: <https://apps.apple.com/br/app/xcode/id497799835?mt=12>
   - If you don't you can't test it.
 - For Android you can download Android Studio: <https://developer.android.com/studio>
@@ -176,3 +178,12 @@ Components:
 
 - ScrollView: Creates a list with the option to scroll through all items
 - FlatList: Also have a scroll, but the elements are loaded just is the visible area (better for performance)
+
+## Class 06 - Style to our App
+
+- We are able to get the data from the API. Now its time to adjust this information in the screen.
+- In this class we have created the styles of our components
+- Also, we organized the components is separated files in the components folder
+- Pay attention to the index.js file inside components/ that is used to export the components to the index.js file inside the src/ folder
+
+## Class 07 - Creating a Form
