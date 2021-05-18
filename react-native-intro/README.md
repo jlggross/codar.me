@@ -13,6 +13,8 @@
   - [Class 05 - Creating a List]()
   - [Class 06 - Style to our App]()
   - [Class 07 - Creating a Form]()
+  - [Class 08 - Creating a new task]()
+  - [Class 09 - Removing task from list]()
 
 # Technologies of this course
 
@@ -212,3 +214,15 @@ Components:
 - The text inserted in the text box can be added to the task list after hitting the button
 - The button was configured to it is only enabled it there is some text in the text box
 - The next step is sending the new tasks to the API and just add them in the task list if the API returns success
+
+## Class 08 - Creating a new task
+
+- Our Form is ready, we just need to integrate it with the back end
+- The Form will validate the text and if its ok, the onSuccess function will send the task to the back end
+
+## Class 09 - Removing task from list
+
+- In the web application there is a button to remove items
+- In the mobile application the user experience has to be different, so to remove items we will use another method
+  - We will use the Alert Object
+- We added two functions to remove the task called onRemove and handleRemove
