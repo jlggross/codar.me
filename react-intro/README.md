@@ -123,10 +123,12 @@ Class resume: We created our first react element and inserted it in the DOM.
   - React expects us to use this tag syntax
 
 - Component syntax:
-  - <div></div>
-  - <span></span>
-  - <Component></Component>
-  - <CreateANameHere></CreateANameHere>
+```HTML
+<div></div>
+<span></span>
+<Component></Component>
+<CreateANameHere></CreateANameHere>
+```
 
 ## Class 09 - Reusable Components
 
