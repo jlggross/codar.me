@@ -2,10 +2,10 @@
 
 # Summary
 
-- [React Introduction Course]()
-- [Technologies of this course]()
-  - [Packages]()
-- [Course Classes]()
+- [React Introduction Course](https://github.com/jlggross/codar.me/tree/main/react-intro#react-introduction-course)
+- [Technologies of this course](https://github.com/jlggross/codar.me/tree/main/react-intro#technologies-of-this-course)
+  - [Packages](https://github.com/jlggross/codar.me/tree/main/react-intro#technologies-of-this-course)
+- [Course Classes](https://github.com/jlggross/codar.me/tree/main/react-intro#course-classes)
   - [Class 01 - What is React?](https://github.com/jlggross/codar.me/tree/main/react-intro#class-01---what-is-react)
   - [Class 02 - Using Browser-Sync](https://github.com/jlggross/codar.me/tree/main/react-intro#class-02---using-browser-sync)
   - [Class 03 - Adding elements to the DOM - Vanilla JS](https://github.com/jlggross/codar.me/tree/main/react-intro#class-03---adding-elements-to-the-dom---vanilla-js)
@@ -41,6 +41,9 @@
   - [Class 33 - Preparing for Production](https://github.com/jlggross/codar.me/tree/main/react-intro#class-33---preparing-for-production)
 
 # Technologies of this course
+
+- JavaScript
+- VSCode
 
 ## Packages
 
