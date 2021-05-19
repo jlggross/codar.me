@@ -16,6 +16,7 @@
   - [Class 08 - Creating a new task](https://github.com/jlggross/codar.me/tree/main/react-native-intro#class-08---creating-a-new-task)
   - [Class 09 - Removing task from list](https://github.com/jlggross/codar.me/tree/main/react-native-intro#class-09---removing-task-from-list)
   - [Class 10 - Building the App (Android)](https://github.com/jlggross/codar.me/tree/main/react-native-intro#class-10---building-the-app-android)
+- [Final Thoughts](https://github.com/jlggross/codar.me/tree/main/react-native-intro#final-thoughts)
 
 # Technologies of this course
 
