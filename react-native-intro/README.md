@@ -226,3 +226,50 @@ Components:
 - In the mobile application the user experience has to be different, so to remove items we will use another method
   - We will use the Alert Object
 - We added two functions to remove the task called onRemove and handleRemove
+
+## Class 10 - Building the App (Android)
+
+- Steps to publish a App in the Google Play Store: <https://reactnative.dev/docs/signed-apk-android>
+
+1. Generating an upload key : To ensure the app is ours, and not a copy
+
+```
+keytool -genkeypair -v -storetype PKCS12 -keystore release.keystore -alias todoList -keyalg RSA -keysize 2048 -validity 10000
+```
+
+- This command creates a file release.keystore that holds a secret key
+  - You have to put this file inside android/app/
+
+2. Configure android/app/graddle.properties
+
+3. Configure android/app/build.graddle
+
+```javascript
+signingConfigs {
+        debug {
+            storeFile file('debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
+
+        release {
+            if (project.hasProperty('APP_STORE_FILE')) {
+                storeFile file(APP_STORE_FILE)
+                storePassword APP_STORE_PASSWORD
+                keyAlias APP_KEY_ALIAS
+                keyPassword APP_KEY_PASSWORD
+            }
+        }
+    }
+```
+
+4. Enter folder android and run `./gradlew bundleRelease`
+
+- It may take a while to create the .aab file (release app)
+- File will be in android/app/build/outputs/bundle/release/app-release.aab
+
+5. Enter Developer Account in Play Store: <https://play.google.com/console/signup>
+
+- In your account, create a new app
+- More info here: <https://support.google.com/googleplay/android-developer/answer/9859152?hl=pt-BR&ref_topic=7072031>
