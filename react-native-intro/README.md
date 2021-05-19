@@ -2,19 +2,20 @@
 
 # Summary
 
-- [React Native Introduction Course]()
-- [Technologies of this course]()
-- [Running the server and the emulator]()
-- [Course Classes]()
-  - [Class 01 - About React Native]()
-  - [Class 02 - Programs for React Native]()
-  - [Class 03 - Creating a New Project]()
-  - [Class 04 - Structuring the Project]()
-  - [Class 05 - Creating a List]()
-  - [Class 06 - Style to our App]()
-  - [Class 07 - Creating a Form]()
-  - [Class 08 - Creating a new task]()
-  - [Class 09 - Removing task from list]()
+- [React Native Introduction Course](https://github.com/jlggross/codar.me/tree/main/react-native-intro#react-native-introduction-course)
+- [Technologies of this course](https://github.com/jlggross/codar.me/tree/main/react-native-intro#technologies-of-this-course)
+- [Running the server and the emulator](https://github.com/jlggross/codar.me/tree/main/react-native-intro#running-the-server-and-the-emulator)
+- [Course Classes](https://github.com/jlggross/codar.me/tree/main/react-native-intro#course-classes)
+  - [Class 01 - About React Native](https://github.com/jlggross/codar.me/tree/main/react-native-intro#class-01---about-react-native)
+  - [Class 02 - Programs for React Native](https://github.com/jlggross/codar.me/tree/main/react-native-intro#class-02---programs-for-react-native)
+  - [Class 03 - Creating a New Project](https://github.com/jlggross/codar.me/tree/main/react-native-intro#class-03---creating-a-new-project)
+  - [Class 04 - Structuring the Project](https://github.com/jlggross/codar.me/tree/main/react-native-intro#class-04---structuring-the-project)
+  - [Class 05 - Creating a List](https://github.com/jlggross/codar.me/tree/main/react-native-intro#class-05---creating-a-list)
+  - [Class 06 - Style to our App](https://github.com/jlggross/codar.me/tree/main/react-native-intro#class-06---style-to-our-app)
+  - [Class 07 - Creating a Form](https://github.com/jlggross/codar.me/tree/main/react-native-intro#class-07---creating-a-form)
+  - [Class 08 - Creating a new task](https://github.com/jlggross/codar.me/tree/main/react-native-intro#class-08---creating-a-new-task)
+  - [Class 09 - Removing task from list](https://github.com/jlggross/codar.me/tree/main/react-native-intro#class-09---removing-task-from-list)
+  - [Class 10 - Building the App (Android)](https://github.com/jlggross/codar.me/tree/main/react-native-intro#class-10---building-the-app-android)
 
 # Technologies of this course
 
@@ -273,3 +274,7 @@ signingConfigs {
 
 - In your account, create a new app
 - More info here: <https://support.google.com/googleplay/android-developer/answer/9859152?hl=pt-BR&ref_topic=7072031>
+  
+# Final Thoughts
+  
+This course is just a brief introduction to React Native, but is enough to have a small taste of the power of it. Hope it was useful. Take care and keep learning.  
