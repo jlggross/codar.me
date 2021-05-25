@@ -135,7 +135,13 @@ This project was developed in five classes. Each one of them is detailed in the 
 - Firebase Authentication: Inside Firebase configure an Authentication Login method in the Authentication tab
   - Select the Email/Password option
 
-12. Git
+12. Environment file
+
+- We created a .env file and added it to .gitignore
+- Firebase has some sensitive login information, such as secret keys, and they can't be exposed in a public git repository.
+- The .env file encapsulate these information, which are kept locally and not versionated
+
+13. Git
 
 - Switch to branch development: `git checkout -b develop`
 - Add all items: `git add .`

@@ -20,9 +20,6 @@ import firebase from '../config/firebase'
 
 const validate = (values) => {
   const errors = {}
-  if (!values.username) {
-    errors.username = 'Preenchimento Obrigatório'
-  }
 
   if (!values.password) {
     errors.password = 'Preenchimento Obrigatório'
@@ -63,7 +60,6 @@ export default function Home() {
     //validateSchema, // Used with Yup object
     initialValues: {
       email: '',
-      username: '',
       password: '',
     },
   })
