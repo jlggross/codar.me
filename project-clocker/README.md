@@ -22,6 +22,7 @@ Clocker is an application that allows customers to schedule a time with a profes
 - VSCode
 - Figma (screen design)
 - yarn
+- Git
 - JavaScript
 - React / Next.js
 - Chakra (Style)
@@ -114,6 +115,7 @@ This project was developed in five classes. Each one of them is detailed in the 
 
   ```javascript
   import firebase from 'firebase/app'
+  import 'firebase/auth'
 
   const firebaseConfig = {
     apiKey: '******',
@@ -129,6 +131,17 @@ This project was developed in five classes. Each one of them is detailed in the 
     ? firebase.app()
     : firebase.initializeApp(firebaseConfig)
   ```
+
+- Firebase Authentication: Inside Firebase configure an Authentication Login method in the Authentication tab
+  - Select the Email/Password option
+
+12. Git
+
+- Switch to branch development: `git checkout -b develop`
+- Add all items: `git add .`
+- Remove items from versioning: `git restore --staged config/firebase/index.js`
+- Check items for commit: `git status`
+- Commit: `git commit -m "My message"`
 
 1. Notes
 
