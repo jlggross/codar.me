@@ -153,6 +153,12 @@ This project was developed in five classes. Each one of them is detailed in the 
 
 - handleSubmit from useFormik calls onSubmit
 
+## Class 02 - Finishing authentication and making our first deploy
+
+- Firebase Documentation
+  - First Steps Web: <https://firebase.google.com/docs/web/setup?authuser=0>
+  - Authentication / Persistence os Authentication State: <https://firebase.google.com/docs/auth/web/auth-state-persistence?authuser=0>
+
 # Final Thoughts
 
 - There is no perfect app. Even when the software is complete, changes will be needed. Delivering features incrementally is a good way to shape the software to final use during its development lifecycle.
