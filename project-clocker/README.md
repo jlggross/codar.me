@@ -19,16 +19,23 @@ Clocker is an application that allows customers to schedule a time with a profes
 
 ## Technologies of this project
 
+Tools:
+
 - VSCode
 - Figma (screen design)
 - yarn
-- Git
+- git and gitk
 - JavaScript
+
+Packages / Frameworks:
+
 - React / Next.js
-- Chakra (Style)
+- Chakra UI (Style)
 - Formik (Form Validation)
 - Yup (Form Schema)
-- Firebase (Database)
+- firebase (Database front-end)
+- Node.js (back-end)
+- firebase-admin (Database back-end)
 
 # Project Classes
 
@@ -176,7 +183,20 @@ This project was developed in five classes. Each one of them is detailed in the 
 4. Vercel.com
 
 - Go to <https://vercel.com/dashboard>
-- New Project
+- New Project -> Import Git Repository -> Choose Clocker folder
+- Vercel.com -> Settings -> Environment Variables -> Add variables from .env file
+- Deployments -> Redeploy
+- Change Domain:
+  - Settings -> Domains -> Add Domain -> Copy Nameservers A - @
+  - GoDaddy -> Select Domain -> DNS -> Add Register -> Refresh
+  - Check DNS Propagation: DNS Checker (<https://dnschecker.org/>) -> Search Domain
+
+5. Back-end
+
+- package 'firebase' used in front-end
+- package 'firebase-admin' used in back-end
+- Firebase Website -> Cloud Firebase -> Create Database -> Test Mode
+  - Configuration -> Project Configurations -> Service Accounts -> Create Service Account -> Select Node.js
 
 # Final Thoughts
 

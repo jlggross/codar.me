@@ -16,7 +16,7 @@ import {
 } from '@chakra-ui/react'
 
 import { Logo } from '../components'
-import firebase from '../config/firebase'
+import { firebaseClient } from '../config/firebase/client'
 
 /* Kept for reference. Using validateSchema in useFormik made formik.errors return an empty object
 const validateSchema = yup.object({
@@ -62,7 +62,7 @@ export default function Home() {
   } = useFormik({
     onSubmit: async (values, form) => {
       try {
-        const user = await firebase
+        const user = await firebaseClient
           .auth()
           .createUserWithEmailAndPassword(values.email, values.password)
         console.log(user)
