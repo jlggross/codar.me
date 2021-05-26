@@ -196,7 +196,19 @@ This project was developed in five classes. Each one of them is detailed in the 
 - package 'firebase' used in front-end
 - package 'firebase-admin' used in back-end
 - Firebase Website -> Cloud Firebase -> Create Database -> Test Mode
-  - Configuration -> Project Configurations -> Service Accounts -> Create Service Account -> Select Node.js
+  - Configuration -> Project Configurations -> Service Accounts -> Create Service Account -> Select Node.js -> Create new private key
+  - This creates a file with secret information for our Firebase admin in the server
+  - The value of these secret variables will be saved in an .env file and not committed, to avoid data exposure.
+  - In the app in Vercel.com we have to add these variables to the apps environment: Settings -> Environment Variables -> Add Variables
+
+Class Resume:
+
+- Configured Vercel to publish the app
+  - Connected to github repository
+  - Defined a domain bought from GoDaddy
+  - Configured Environment Variables at Vercel to encapsulate secret firebase values
+- We created two branches at Vercel, one develop and one main. The main is the production branch
+  - Each branch has its own url
 
 # Final Thoughts
 
