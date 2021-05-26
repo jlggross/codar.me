@@ -148,6 +148,8 @@ This project was developed in five classes. Each one of them is detailed in the 
 - Remove items from versioning: `git restore --staged config/firebase/index.js`
 - Check items for commit: `git status`
 - Commit: `git commit -m "My message"`
+- Configure github: `git remote add origin <ssh from github>`
+  - Add a remote server to the git repository
 
 1. Notes
 
@@ -155,9 +157,26 @@ This project was developed in five classes. Each one of them is detailed in the 
 
 ## Class 02 - Finishing authentication and making our first deploy
 
-- Firebase Documentation
-  - First Steps Web: <https://firebase.google.com/docs/web/setup?authuser=0>
-  - Authentication / Persistence os Authentication State: <https://firebase.google.com/docs/auth/web/auth-state-persistence?authuser=0>
+1. Firebase Documentation
+
+- First Steps Web: <https://firebase.google.com/docs/web/setup?authuser=0>
+- Authentication / Persistence os Authentication State: <https://firebase.google.com/docs/auth/web/auth-state-persistence?authuser=0>
+- In the firebase config file we added a LOCAL authentication persistence
+
+2. index.js
+
+- Save authentication status
+- Redirect from Login to Agenda and from Agenda to Login. Agenda is the logged area.
+
+3. Gitk
+
+- Visual Git tool
+- To open, run: `gitk`
+
+4. Vercel.com
+
+- Go to <https://vercel.com/dashboard>
+- New Project
 
 # Final Thoughts
 
