@@ -1,3 +1,4 @@
+import firebase from 'firebase/app'
 import firebaseServer from 'firebase-admin'
 
 const app = firebase.apps.length
@@ -9,12 +10,12 @@ const app = firebase.apps.length
         token_uri: 'https://oauth2.googleapis.com/token',
         auth_provider_x509_cert_url:
           'https://www.googleapis.com/oauth2/v1/certs',
-        project_id: process.env.FIREBASE_PROJECT_ID,
-        private_key_id: process.env.FIREBASE_PRIVATE_KEY_ID,
-        private_key: process.env.FIREBASE_PRIVATE_KEY,
-        client_email: process.env.FIREBASE_CLIENT_EMAIL,
-        client_id: process.env.FIREBASE_CLIENT_ID,
-        client_cert: process.env.FIREBASE_CLIENT_CERT,
+        firebase_project_id: process.env.FIREBASE_PROJECT_ID,
+        firebase_private_key_id: process.env.FIREBASE_PRIVATE_KEY_ID,
+        firebase_private_key: process.env.FIREBASE_PRIVATE_KEY,
+        firebase_client_email: process.env.FIREBASE_CLIENT_EMAIL,
+        firebase_client_id: process.env.FIREBASE_CLIENT_ID,
+        firebase_client_cert: process.env.FIREBASE_CLIENT_CERT,
       }),
     })
 
