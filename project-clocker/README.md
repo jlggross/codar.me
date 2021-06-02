@@ -36,6 +36,7 @@ Packages / Frameworks:
 - firebase (Database front-end)
 - Node.js (back-end)
 - firebase-admin (Database back-end)
+- axios (Promise based HTTP client)
 
 # Project Classes
 
@@ -209,6 +210,25 @@ Class Resume:
   - Configured Environment Variables at Vercel to encapsulate secret firebase values
 - We created two branches at Vercel, one develop and one main. The main is the production branch
   - Each branch has its own url
+
+## Class 03 - Database and data for logged users
+
+- User profile: Load user agenda based on his login information
+
+Signup
+
+- When user make signup we have to:
+  - Create the user
+  - Save the username in the backend
+  - Make the login and redirect to agenda
+
+Axios
+
+- Add axios: `yarn add axios`
+
+Pages/index.js
+
+- Became a redirect file
 
 # Final Thoughts
 
