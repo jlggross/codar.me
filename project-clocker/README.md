@@ -230,6 +230,17 @@ Pages/index.js
 
 - Became a redirect file
 
+Backend
+
+- Got user data from login
+- Got user token id
+- We created a firestore database, the firebase database
+- Finally we created a 'profiles' collection and added our user
+
+In next class next:
+
+- Create user agenda
+
 # Final Thoughts
 
 - There is no perfect app. Even when the software is complete, changes will be needed. Delivering features incrementally is a good way to shape the software to final use during its development lifecycle.
