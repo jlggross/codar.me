@@ -241,6 +241,18 @@ In next class next:
 
 - Create user agenda
 
+## Class 04 - Working with dates to create the agenda
+
+- Added dependencies
+
+  - axios
+  - @refetty/react@1.0.0-rc.11
+  - date-fns : Work with dates
+  - @chakra-ui/icons
+
+- Banckend
+  - We have to send the backend which days we want the agenda
+
 # Final Thoughts
 
 - There is no perfect app. Even when the software is complete, changes will be needed. Delivering features incrementally is a good way to shape the software to final use during its development lifecycle.
