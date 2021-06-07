@@ -14,19 +14,20 @@ const getAgenda = async (when) => {
   const token = await getToken()
 
   try {
-    return await axios({
+    const { data } = await axios({
       method: 'get',
       url: '/api/agenda',
       params: {
         when,
       },
-      /*
       headers: {
         Authorization: `Bearer ${token}`,
-      },*/
+      },
     })
+
+    return data
   } catch (error) {
-    return console.log('Agenda Error:', error)
+    console.log('Agenda Error:', error)
   }
 }
 
