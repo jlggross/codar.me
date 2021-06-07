@@ -5,9 +5,11 @@ const agenda = db.collection('agenda')
 
 export default async (req, res) => {
   const [, token] = req.headers.authorization.split(' ')
+  console.log(req.query)
 
   // Check if user is authorized
-  if (!token) {
+  if (token === 'undefined') {
+    console.log('Error: token undefined')
     return res.status(401)
   }
 

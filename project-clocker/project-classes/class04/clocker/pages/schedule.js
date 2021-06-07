@@ -5,31 +5,26 @@ import axios from 'axios'
 import { addDays, subDays } from 'date-fns'
 
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
-import { Container, Button, Box, IconButton } from '@chakra-ui/react'
+import {
+  Container,
+  Button,
+  Box,
+  IconButton,
+  SimpleGrid,
+  Spinner,
+} from '@chakra-ui/react'
 
 import { useAuth, Logo, formatDate } from './../components'
-import { getToken } from '../config/firebase/client'
 
-const getAgenda = async (when) => {
-  const token = await getToken()
-
-  try {
-    const { data } = await axios({
-      method: 'get',
-      url: '/api/agenda',
-      params: {
-        when,
-      },
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
-
-    //return data
-  } catch (error) {
-    console.log('Agenda Error:', error)
-  }
-}
+const getSchedule = (when) =>
+  axios({
+    method: 'get',
+    url: '/api/schedule',
+    params: {
+      when,
+      username: window.location.pathname,
+    },
+  })
 
 const Header = ({ children }) => (
   <Box p={4} display="flex" alignItems="center" justifyContent="space-between">
@@ -37,21 +32,24 @@ const Header = ({ children }) => (
   </Box>
 )
 
+const TimeBlock = ({ time }) => {
+  return (
+    <Button p={8} bg="blue.500" color="white">
+      {time}
+    </Button>
+  )
+}
+
 export default function Agenda() {
   const router = useRouter()
   const [auth, { logout }] = useAuth()
   const [when, setWhen] = useState(() => new Date())
-  const [data, { loading, status, error }, fetch] = useFetch(getAgenda, {
+  const [data, { loading, status, error }, fetch] = useFetch(getSchedule, {
     lazy: true,
   })
 
   const backwardDay = () => setWhen((prevState) => subDays(prevState, 1))
   const forwardDay = () => setWhen((prevState) => addDays(prevState, 1))
-
-  // Does page redirect
-  useEffect(() => {
-    !auth.user && router.push('/')
-  }, [auth.user])
 
   useEffect(() => {
     fetch(when)
@@ -79,6 +77,21 @@ export default function Agenda() {
           onClick={forwardDay}
         />
       </Box>
+
+      <SimpleGrid p={4} columns={2} spacing={4}>
+        {loading && (
+          <Spinner
+            tickness="4px"
+            speed="0.65s"
+            emptyColor="gray.200"
+            color="blue.500"
+            size="xl"
+          />
+        )}
+        {data?.map((time) => (
+          <TimeBlock key={time} time={time} />
+        ))}
+      </SimpleGrid>
     </Container>
   )
 }
