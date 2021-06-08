@@ -1,6 +1,6 @@
-import Link from 'next/link'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 import { useFormik } from 'formik'
 
 import {
@@ -12,26 +12,21 @@ import {
   FormControl,
   FormLabel,
   FormHelperText,
-  InputLeftAddon,
-  InputGroup,
 } from '@chakra-ui/react'
 
-import { Logo, useAuth } from '../components'
+import { Logo, useAuth } from './../components'
 
 const validate = (values) => {
   const errors = {}
-  if (!values.username) {
-    errors.username = 'Preenchimento obrigatório'
-  }
 
   if (!values.password) {
-    errors.password = 'Preenchimento obrigatório'
+    errors.password = 'Preenchimento Obrigatório'
   } else if (values.password.length < 6) {
     errors.password = 'Senha deve ter pelo menos 6 caracteres'
   }
 
   if (!values.email) {
-    errors.email = 'Preenchimento obrigatório'
+    errors.email = 'Preenchimento Obrigatório'
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
     errors.email = 'E-mail Inválido'
   }
@@ -39,9 +34,8 @@ const validate = (values) => {
   return errors
 }
 
-export default function Home() {
-  const [auth, { signup }] = useAuth()
-
+export default function Login() {
+  const [auth, { login }] = useAuth()
   const router = useRouter()
 
   const {
@@ -53,17 +47,16 @@ export default function Home() {
     touched,
     isSubmitting,
   } = useFormik({
-    onSubmit: signup,
+    onSubmit: login,
     validate,
     initialValues: {
       email: '',
-      username: '',
       password: '',
     },
   })
 
   useEffect(() => {
-    auth.user && router.push('/agenda')
+    auth.user ? router.push('/agenda') : router.push('/login')
   }, [auth.user])
 
   return (
@@ -76,7 +69,7 @@ export default function Home() {
 
         <Box>
           <FormControl id="email" p={4} isRequired>
-            <FormLabel>E-mail:</FormLabel>
+            <FormLabel>E-mail</FormLabel>
             <Input
               size="lg"
               type="email"
@@ -92,7 +85,7 @@ export default function Home() {
           </FormControl>
 
           <FormControl id="password" p={4} isRequired>
-            <FormLabel>Senha:</FormLabel>
+            <FormLabel>Senha</FormLabel>
             <Input
               size="lg"
               type="password"
@@ -107,24 +100,6 @@ export default function Home() {
             )}
           </FormControl>
 
-          <FormControl id="username" p={4} isRequired>
-            <FormLabel>Nome de Usuário:</FormLabel>
-            <InputGroup size="lg">
-              <InputLeftAddon children="clocker.work/" />
-              <Input
-                type="username"
-                value={values.username}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-            </InputGroup>
-            {touched.username && (
-              <FormHelperText textColor="#e74c3c">
-                {errors.username}
-              </FormHelperText>
-            )}
-          </FormControl>
-
           <Box p={4}>
             <Button
               colorScheme="blue"
@@ -132,12 +107,12 @@ export default function Home() {
               onClick={handleSubmit}
               isLoading={isSubmitting}
             >
-              Cadastrar
+              Entrar
             </Button>
           </Box>
         </Box>
 
-        <Link href="/">Já tem uma conta? Faça o Login</Link>
+        <Link href="/signup">Ainda não tem uma conta? Cadastre-se</Link>
       </Container>
     </div>
   )
