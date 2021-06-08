@@ -3,6 +3,8 @@ import { useRouter } from 'next/router'
 import { useFetch } from '@refetty/react'
 import axios from 'axios'
 import { addDays, subDays } from 'date-fns'
+import { useFormik } from 'formik'
+import * as yup from 'yup'
 
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
 import {
@@ -14,7 +16,7 @@ import {
   Spinner,
 } from '@chakra-ui/react'
 
-import { useAuth, Logo, formatDate } from './../components'
+import { formatDate, useAuth, Logo, TimeBlock } from './../components'
 
 const getSchedule = (when) =>
   axios({
@@ -32,15 +34,7 @@ const Header = ({ children }) => (
   </Box>
 )
 
-const TimeBlock = ({ time }) => {
-  return (
-    <Button p={8} bg="blue.500" color="white">
-      {time}
-    </Button>
-  )
-}
-
-export default function Agenda() {
+export default function Schedule() {
   const router = useRouter()
   const [auth, { logout }] = useAuth()
   const [when, setWhen] = useState(() => new Date())
@@ -50,6 +44,18 @@ export default function Agenda() {
 
   const backwardDay = () => setWhen((prevState) => subDays(prevState, 1))
   const forwardDay = () => setWhen((prevState) => addDays(prevState, 1))
+
+  const formik = useFormik({
+    onSubmit: () => {},
+    initialValues: {
+      name: '',
+      email: '',
+    },
+    validationSchema: yup.object().shape({
+      name: yup.string().required('Preenchimento obrigatório'),
+      email: yup.string().required('Preenchimento obrigatório').email(),
+    }),
+  })
 
   useEffect(() => {
     fetch(when)

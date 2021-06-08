@@ -249,6 +249,8 @@ In next class next:
   - @refetty/react@1.0.0-rc.11
   - date-fns : Work with dates
   - @chakra-ui/icons
+  - formik
+  - yup
 
 - Banckend
   - We have to send the backend which days we want the agenda
