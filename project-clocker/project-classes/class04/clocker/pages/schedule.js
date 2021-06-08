@@ -3,8 +3,6 @@ import { useRouter } from 'next/router'
 import { useFetch } from '@refetty/react'
 import axios from 'axios'
 import { addDays, subDays } from 'date-fns'
-import { useFormik } from 'formik'
-import * as yup from 'yup'
 
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
 import {
@@ -18,8 +16,8 @@ import {
 
 import { formatDate, useAuth, Logo, TimeBlock } from './../components'
 
-const getSchedule = (when) =>
-  axios({
+const getSchedule = async (when) =>
+  await axios({
     method: 'get',
     url: '/api/schedule',
     params: {
@@ -44,18 +42,6 @@ export default function Schedule() {
 
   const backwardDay = () => setWhen((prevState) => subDays(prevState, 1))
   const forwardDay = () => setWhen((prevState) => addDays(prevState, 1))
-
-  const formik = useFormik({
-    onSubmit: () => {},
-    initialValues: {
-      name: '',
-      email: '',
-    },
-    validationSchema: yup.object().shape({
-      name: yup.string().required('Preenchimento obrigatório'),
-      email: yup.string().required('Preenchimento obrigatório').email(),
-    }),
-  })
 
   useEffect(() => {
     fetch(when)
