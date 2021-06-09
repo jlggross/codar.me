@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { useFetch } from '@refetty/react'
 import axios from 'axios'
-import { addDays, subDays } from 'date-fns'
+import { addDays, subDays, format } from 'date-fns'
 
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
 import {
@@ -21,8 +21,8 @@ const getSchedule = async (when) =>
     method: 'get',
     url: '/api/schedule',
     params: {
-      when,
-      username: window.location.pathname,
+      username: window.location.pathname.replace('/', ''),
+      date: format(when, 'yyyy-MM-dd'),
     },
   })
 
@@ -80,8 +80,8 @@ export default function Schedule() {
             size="xl"
           />
         )}
-        {data?.map((time) => (
-          <TimeBlock key={time} time={time} date={when} />
+        {data?.map(({ time, isBlocked }) => (
+          <TimeBlock key={time} time={time} date={when} disabled={isBlocked} />
         ))}
       </SimpleGrid>
     </Container>
