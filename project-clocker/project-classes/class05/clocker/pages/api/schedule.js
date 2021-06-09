@@ -18,6 +18,11 @@ for (let blockIndex = 0; blockIndex <= totalHours; blockIndex++) {
 
 const getUserId = async (username) => {
   const profileDoc = await profile.where('username', '==', username).get()
+
+  if (!profileDoc.docs.length) {
+    return false
+  }
+
   const { userId } = profileDoc.docs[0].data()
   return userId
 }
@@ -28,7 +33,7 @@ const setSchedule = async (req, res) => {
   const doc = await agenda.doc(docId).get()
 
   if (doc.exists) {
-    console.log('doc')
+    console.log('setSchedule - Error: doc already exists')
     res.status(400).json({ message: 'Time blocked!' })
     return
   }
@@ -49,6 +54,11 @@ const getSchedule = async (req, res) => {
   try {
     const userId = await getUserId(req.query.username)
 
+    if (!userId) {
+      console.log('Error 404: getSchedule no userId')
+      res.status(404).json({ message: 'Invalid username' })
+    }
+
     const snapshot = await agenda
       .where('userId', '==', userId)
       .where('date', '==', req.query.date)
@@ -63,7 +73,7 @@ const getSchedule = async (req, res) => {
 
     return res.status(200).json(result)
   } catch (error) {
-    console.log('Schedule Firebase Error:', error)
+    console.log('Error 401: Firebase getSchedule Error:', error)
     return res.status(401)
   }
 }

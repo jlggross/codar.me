@@ -14,14 +14,14 @@ import {
   Spinner,
 } from '@chakra-ui/react'
 
-import { formatDate, useAuth, Logo, TimeBlock } from './../components'
+import { formatDate, useAuth, Logo, TimeBlock } from '../components'
 
-const getSchedule = async (when) =>
+const getSchedule = async ({ when, username }) =>
   await axios({
     method: 'get',
     url: '/api/schedule',
     params: {
-      username: window.location.pathname.replace('/', ''),
+      username,
       date: format(when, 'yyyy-MM-dd'),
     },
   })
@@ -43,9 +43,15 @@ export default function Schedule() {
   const backwardDay = () => setWhen((prevState) => subDays(prevState, 1))
   const forwardDay = () => setWhen((prevState) => addDays(prevState, 1))
 
+  // When 'when' or 'username' changes, executes fetch()
   useEffect(() => {
-    fetch(when)
-  }, [when])
+    fetch({ when, username: router.query.username })
+  }, [when, router.query.username])
+
+  if (error) {
+    console.log('ERROR: Invalid route')
+    // Treat error
+  }
 
   return (
     <Container>
