@@ -14,7 +14,7 @@ export const login = async ({ email, password }) => {
     await firebaseClient.auth().signInWithEmailAndPassword(email, password)
     return firebaseClient.auth().currentUser
   } catch (error) {
-    console.log('Login Error:', error)
+    console.log('Login Error:', error.code)
   }
 }
 
@@ -24,16 +24,14 @@ export const signup = async ({ email, password, username }) => {
     const user = await login({ email, password })
     const token = await user.getIdToken()
 
-    const { data } = await axios({
+    await axios({
       method: 'post',
       url: '/api/profiles',
-      data: { username },
+      data: { username, email },
       headers: { Authorization: `Bearer ${token}` },
     })
-
-    //console.log(data)
   } catch (error) {
-    console.log('Signup Error:', error)
+    console.log('Error signup:', error)
   }
 }
 

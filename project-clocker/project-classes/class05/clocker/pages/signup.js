@@ -51,6 +51,7 @@ export default function Home() {
     errors,
     values,
     touched,
+    status,
     isSubmitting,
   } = useFormik({
     onSubmit: signup,
@@ -86,7 +87,11 @@ export default function Home() {
             />
             {touched.email && (
               <FormHelperText textColor="#e74c3c">
-                {errors.email}
+                {(!!status &&
+                  status.type === 'error' &&
+                  status.value == 'email' &&
+                  status.message) ||
+                  errors.email}
               </FormHelperText>
             )}
           </FormControl>
