@@ -252,8 +252,33 @@ In next class next:
   - formik
   - yup
 
-- Banckend
+- Backend
   - We have to send the backend which days we want the agenda
+
+## Class 05 - Finishing application
+
+- Features
+
+  - Check if time block exist before creating a new one
+  - Make time block unavailable if already created
+  - Adding date to time block in agenda (firebase)
+  - Dynamic route to access schedule page
+  - Added phone mask
+
+- Added dependencies
+
+  - remask
+
+- Improvements
+  - 'profile' db changed to 'profiles'
+  - Added email to profile in 'profiles' db
+  - When adding a new user to the 'profiles' db the username is set to lowercase. This avoids two usernames with the same name, for instance, one with lowercase and one with uppercase.
+  - login:
+    - Tell user if email user not found (wrong email)
+    - Tell user if password is wrong
+  - signup:
+    - Tell if email already in use
+    - Tell if username already in use
 
 # Final Thoughts
 
