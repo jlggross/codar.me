@@ -26,7 +26,7 @@ export const signup = async ({ email, password, username }) => {
 
     const { data } = await axios({
       method: 'post',
-      url: '/api/profile',
+      url: '/api/profiles',
       data: { username },
       headers: { Authorization: `Bearer ${token}` },
     })

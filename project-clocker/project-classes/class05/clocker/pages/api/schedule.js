@@ -2,7 +2,7 @@ import { firebaseServer } from '../../config/firebase/server'
 import { differenceInHours, format, addHours } from 'date-fns'
 
 const db = firebaseServer.firestore()
-const profile = db.collection('profiles')
+const profiles = db.collection('profiles')
 const agenda = db.collection('agenda')
 
 const startAt = new Date(2021, 1, 1, 8, 0)
@@ -17,7 +17,7 @@ for (let blockIndex = 0; blockIndex <= totalHours; blockIndex++) {
 }
 
 const getUserId = async (username) => {
-  const profileDoc = await profile.where('username', '==', username).get()
+  const profileDoc = await profiles.where('username', '==', username).get()
 
   if (!profileDoc.docs.length) {
     return false

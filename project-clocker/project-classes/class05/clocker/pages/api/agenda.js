@@ -5,7 +5,6 @@ const agenda = db.collection('agenda')
 
 export default async (req, res) => {
   const [, token] = req.headers.authorization.split(' ')
-  console.log(req.query)
 
   // Check if user is authorized
   if (token === 'undefined') {
@@ -14,17 +13,27 @@ export default async (req, res) => {
   }
 
   try {
-    const { user_id } = await firebaseServer.auth().verifyIdToken(token)
-    console.log(user_id)
+    // Return has to be user_id
+    const { user_id: userId } = await firebaseServer.auth().verifyIdToken(token)
+    console.log('userId: ', userId)
+    console.log('Date:', req.query.date)
 
     const snapshot = await agenda
-      .where('userId', '==', user_id)
-      .where('when', '==', req.query.when)
+      .where('userId', '==', userId)
+      .where('date', '==', req.query.date)
       .get()
 
-    return res.status(200).json(snapshot.docs)
+    const docs = snapshot.docs.map((doc) => doc.data())
+
+    console.log('------------------------')
+    console.log('userId: ', userId)
+    console.log('date:', req.query.date)
+    console.log('docs:', docs)
+    console.log('------------------------')
+
+    return res.status(200).json(docs)
   } catch (error) {
-    console.log('Firebase Error:', error)
+    console.log('API Agenda - Firebase Error:', error)
     return res.status(401)
   }
 }
